@@ -1,0 +1,4850 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webseiten die verkaufen | CR-optimiert in Rekordzeit | SEOX</title>
+<meta name="description" content="SEOX erstellt Webseiten die verkaufen - CR-optimiert auf Basis von 1'000+ Datenpunkten. Ab CHF 299/Mt. oder einmalig ab CHF 899. Optionale SEO, GEO, SEA & Content Module.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --pink: #d4238a;
+  --pink-mid: #e83da0;
+  --pink-light: #f472c0;
+  --pink-pale: #fdf0f8;
+  --pink-dark: #9e1868;
+  --pink-dm: #e04da0;
+  --black: #0b0b0b;
+  --gray-950: #111111;
+  --gray-900: #1c1c1e;
+  --gray-700: #3a3a3c;
+  --gray-500: #6e6e73;
+  --gray-100: #f2f2f7;
+  --gray-50: #f8f8f8;
+  --white: #ffffff;
+  --bg-body: #0e0d12;
+  --text-primary: #e0dfe6;
+  --text-secondary: rgba(224,223,230,0.7);
+  --text-muted: rgba(224,223,230,0.55);
+  --card-bg: rgba(255,255,255,0.08);
+  --card-border: rgba(255,255,255,0.13);
+  --card-bg-hover: rgba(255,255,255,0.12);
+  --success: #34d399;
+  --danger: #f87171;
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+  --shadow-pink: 0 4px 20px rgba(212,35,138,0.3);
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --blur: blur(20px);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  background: var(--bg-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== KEYFRAME ANIMATIONS ========== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(212,35,138,0.2); }
+  50% { box-shadow: 0 0 40px rgba(212,35,138,0.4); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.6); }
+  70% { transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes count-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes strike-through {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes draw-check {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes bar-grow {
+  from { width: 0; }
+  to { width: var(--bar-width); }
+}
+
+@keyframes number-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(52,211,153,0.3); }
+  50% { text-shadow: 0 0 25px rgba(52,211,153,0.6); }
+}
+
+@keyframes slide-out-left {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-30px); }
+}
+
+@keyframes slide-out-right {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(30px); }
+}
+
+@keyframes pop-out {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); }
+}
+
+/* ========== SKIP NAV ========== */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  background: var(--pink);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-nav:focus {
+  top: 0;
+}
+
+/* ========== HEADER ========== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(14,13,18,0.75);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border-bottom: 1px solid var(--card-border);
+  transition: box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--pink-dm); }
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.header-nav a:hover { color: var(--white); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--pink-mid);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-pink);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--card-border);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.btn-large {
+  padding: 18px 40px;
+  font-size: 1.05rem;
+  border-radius: var(--radius);
+}
+
+.btn-header {
+  padding: 10px 22px;
+  font-size: 0.85rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ========== HERO ========== */
+.hero {
+  padding: 140px 0 100px;
+  background: linear-gradient(160deg, #0e0d12 0%, #1a0f1e 50%, #0e0d12 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(212,35,138,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(224,77,160,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-slow 10s ease-in-out infinite reverse;
+}
+
+/* Animated grid overlay */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(212,35,138,0.15);
+  color: var(--pink-dm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(212,35,138,0.25);
+  animation: pop-in 0.6s ease-out 0.2s both;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  animation: slide-in-up 0.7s ease-out 0.3s both;
+}
+
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--pink-dm), var(--pink-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 480px;
+  animation: slide-in-up 0.7s ease-out 0.5s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  animation: slide-in-up 0.7s ease-out 0.7s both;
+}
+
+.trust-badges {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  animation: slide-in-up 0.7s ease-out 0.9s both;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.trust-badge svg { flex-shrink: 0; }
+
+/* ========== HERO VISUAL WITH FLOATING BADGES ========== */
+.hero-visual {
+  position: relative;
+  animation: slide-in-right 0.8s ease-out 0.4s both;
+}
+
+.hero-mockup {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  backdrop-filter: var(--blur);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.mockup-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mockup-dot:nth-child(1) { background: #ff5f57; }
+.mockup-dot:nth-child(2) { background: #ffbd2e; }
+.mockup-dot:nth-child(3) { background: #28ca42; }
+
+.mockup-url {
+  margin-left: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.06);
+  padding: 4px 12px;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.mockup-body {
+  padding: 32px;
+  min-height: 280px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  position: relative;
+}
+
+.mockup-body .fake-nav {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.mockup-body .fake-nav span {
+  width: 48px;
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+
+.mockup-body .fake-nav span:first-child {
+  width: 60px;
+  background: var(--pink-dm);
+}
+
+.mockup-body .fake-hero-text {
+  width: 75%;
+  height: 14px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.mockup-body .fake-hero-text-sm {
+  width: 55%;
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.mockup-body .fake-btn {
+  width: 100px;
+  height: 28px;
+  background: var(--pink);
+  border-radius: 6px;
+  margin-bottom: 28px;
+}
+
+.mockup-body .fake-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.mockup-body .fake-card {
+  flex: 1;
+  height: 80px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+/* Mockup Score Overlay */
+.mockup-scores {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.score-ring {
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.score-ring svg {
+  transform: rotate(-90deg);
+}
+
+.score-ring .ring-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.08);
+  stroke-width: 3;
+}
+
+.score-ring .ring-fill {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.score-ring.animated .ring-fill {
+  stroke-dashoffset: var(--offset);
+}
+
+.score-ring .ring-fill.green { stroke: #34d399; }
+.score-ring .ring-fill.pink { stroke: var(--pink-dm); }
+
+.score-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Floating Feature Badges */
+.floating-badges {
+  position: absolute;
+  inset: -20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.fbadge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(14,13,18,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.fbadge.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fbadge-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fbadge-icon.green { background: rgba(52,211,153,0.15); }
+.fbadge-icon.pink { background: rgba(212,35,138,0.15); }
+.fbadge-icon.blue { background: rgba(96,165,250,0.15); }
+.fbadge-icon.orange { background: rgba(251,191,36,0.15); }
+
+.fbadge-1 { top: -10px; right: -20px; transition-delay: 0s; }
+.fbadge-2 { top: 30%; left: -30px; transition-delay: 0.3s; }
+.fbadge-3 { bottom: 25%; right: -25px; transition-delay: 0.6s; }
+.fbadge-4 { bottom: -5px; left: -15px; transition-delay: 0.9s; }
+.fbadge-5 { top: 15%; right: -30px; transition-delay: 1.2s; }
+
+.fbadge-1.float { animation: float 4s ease-in-out infinite; }
+.fbadge-2.float { animation: float 5s ease-in-out infinite 0.5s; }
+.fbadge-3.float { animation: float 4.5s ease-in-out infinite 0.3s; }
+.fbadge-4.float { animation: float 5.5s ease-in-out infinite 0.8s; }
+.fbadge-5.float { animation: float 4s ease-in-out infinite 1s; }
+
+.fbadge-value {
+  color: var(--success);
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+.fbadge-value.pink-val { color: var(--pink-dm); }
+
+/* ========== SECTION COMMON ========== */
+.section {
+  padding: 100px 0;
+}
+
+.section-alt {
+  background: rgba(255,255,255,0.02);
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--pink-dm);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.text-center { text-align: center; }
+
+/* ========== STATS COUNTER ========== */
+.stats-bar {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  padding: 40px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--pink-dm);
+  margin-bottom: 4px;
+}
+
+.stat-item.counted h3 {
+  animation: count-pulse 0.4s ease-out;
+}
+
+.stat-item p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ========== PROBLEM ========== */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.problem-card {
+  background: var(--card-bg);
+  padding: 36px;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  backdrop-filter: var(--blur);
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  background: var(--card-bg-hover);
+}
+
+.problem-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(212,35,138,0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.problem-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.problem-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ========== SOLUTION ========== */
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.solution-card {
+  text-align: center;
+  padding: 40px 28px;
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: var(--blur);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.solution-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--pink), var(--pink-mid));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.solution-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.solution-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ========== BEFORE/AFTER ========== */
+.ba-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.ba-side {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: var(--blur);
+  transition: transform 0.3s;
+}
+
+.ba-side:hover {
+  transform: translateY(-4px);
+}
+
+.ba-before { border-color: rgba(248,113,113,0.2); }
+.ba-after { border-color: rgba(52,211,153,0.2); }
+
+.ba-label {
+  text-align: center;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ba-before .ba-label {
+  background: rgba(239,68,68,0.1);
+  color: #f87171;
+}
+
+.ba-after .ba-label {
+  background: rgba(52,211,153,0.1);
+  color: #34d399;
+}
+
+.ba-mockup {
+  padding: 24px;
+  min-height: 300px;
+  background: rgba(255,255,255,0.02);
+  position: relative;
+}
+
+/* BEFORE mockup styles */
+.ba-before .ba-mockup {
+  font-family: 'Times New Roman', serif;
+}
+
+.ba-before .ba-mockup .old-header {
+  background: #555;
+  color: #ff0;
+  font-size: 0.75rem;
+  padding: 6px 8px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.ba-before .ba-mockup .old-nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ba-before .ba-mockup .old-nav span {
+  font-size: 0.65rem;
+  color: #6ea8fe;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.ba-before .ba-mockup .old-content {
+  border: 2px dashed rgba(255,255,255,0.12);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.ba-before .ba-mockup .old-content p {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.ba-before .ba-mockup .old-gif {
+  width: 60px;
+  height: 30px;
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04) 4px, rgba(255,255,255,0.08) 4px, rgba(255,255,255,0.08) 8px);
+  margin: 8px auto;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.ba-before .ba-mockup .old-counter {
+  text-align: center;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* BEFORE: Animated consequence warnings */
+.ba-consequences {
+  padding: 0 24px 20px;
+}
+
+.ba-consequence {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  background: rgba(248,113,113,0.06);
+  border: 1px solid rgba(248,113,113,0.1);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.ba-consequence.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ba-consequence:nth-child(1) { transition-delay: 0s; }
+.ba-consequence:nth-child(2) { transition-delay: 0.15s; }
+.ba-consequence:nth-child(3) { transition-delay: 0.3s; }
+.ba-consequence:nth-child(4) { transition-delay: 0.45s; }
+.ba-consequence:nth-child(5) { transition-delay: 0.6s; }
+
+.consequence-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+}
+
+.consequence-icon.red {
+  background: rgba(248,113,113,0.15);
+  color: #f87171;
+}
+
+.ba-consequence .con-text {
+  font-size: 0.75rem;
+  color: rgba(248,113,113,0.9);
+  font-weight: 600;
+  flex: 1;
+}
+
+.ba-consequence .con-stat {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #f87171;
+  white-space: nowrap;
+}
+
+/* AFTER mockup styles */
+.ba-after .ba-mockup {
+  background: rgba(255,255,255,0.04);
+}
+
+.ba-after .ba-mockup .new-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ba-after .ba-mockup .new-logo {
+  width: 45px;
+  height: 10px;
+  background: var(--pink-dm);
+  border-radius: 3px;
+}
+
+.ba-after .ba-mockup .new-links {
+  display: flex;
+  gap: 10px;
+}
+
+.ba-after .ba-mockup .new-links span {
+  width: 30px;
+  height: 4px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+}
+
+.ba-after .ba-mockup .new-hero {
+  background: linear-gradient(135deg, var(--pink-dark), var(--pink));
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.ba-after .ba-mockup .new-hero .nh-title {
+  width: 65%;
+  height: 8px;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+.ba-after .ba-mockup .new-hero .nh-sub {
+  width: 45%;
+  height: 5px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.ba-after .ba-mockup .new-hero .nh-btn {
+  width: 50px;
+  height: 16px;
+  background: var(--pink-mid);
+  border-radius: 4px;
+}
+
+.ba-after .ba-mockup .new-cards-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ba-after .ba-mockup .new-card {
+  flex: 1;
+  height: 40px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+}
+
+/* AFTER: Animated advantage bars */
+.ba-advantages {
+  padding: 0 24px 20px;
+}
+
+.ba-advantage {
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.ba-advantage.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ba-advantage:nth-child(1) { transition-delay: 0s; }
+.ba-advantage:nth-child(2) { transition-delay: 0.2s; }
+.ba-advantage:nth-child(3) { transition-delay: 0.4s; }
+.ba-advantage:nth-child(4) { transition-delay: 0.6s; }
+.ba-advantage:nth-child(5) { transition-delay: 0.8s; }
+
+.adv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.adv-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.adv-label svg {
+  flex-shrink: 0;
+}
+
+.adv-value {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #34d399;
+}
+
+.adv-bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.adv-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  background: linear-gradient(90deg, var(--pink), var(--success));
+}
+
+.ba-advantage.animated .adv-bar-fill {
+  width: var(--bar-width);
+}
+
+/* ========== PRICING ========== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  backdrop-filter: var(--blur);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.featured {
+  border-color: var(--pink);
+  position: relative;
+  box-shadow: 0 0 40px rgba(212,35,138,0.15);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--pink);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 20px;
+  border-radius: 0 0 8px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-header {
+  padding: 40px 32px 24px;
+  text-align: center;
+}
+
+.pricing-card.featured .pricing-header {
+  padding-top: 52px;
+}
+
+.pricing-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.pricing-price {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.pricing-price span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.pricing-period {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Rabatt-System */
+.pricing-original {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+.pricing-save-badge {
+  display: inline-block;
+  background: rgba(52,211,153,0.12);
+  color: #34d399;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* Leasing Feature mit Gratis-Highlight */
+.pricing-features li.pv-free-item {
+  color: #34d399;
+  font-weight: 600;
+  position: relative;
+}
+.pricing-features li.pv-free-item .pv-free-tag {
+  background: rgba(52,211,153,0.15);
+  color: #34d399;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pricing-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0 32px 24px;
+  text-align: center;
+}
+
+.pricing-features {
+  padding: 0 32px 32px;
+  list-style: none;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  border-top: 1px solid var(--card-border);
+}
+
+.pricing-features li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-footer {
+  padding: 0 32px 32px;
+}
+
+.pricing-footer .btn {
+  width: 100%;
+}
+
+/* ========== ADDON MODULES ========== */
+.addon-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 56px 0 8px;
+}
+.addon-section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 28px;
+}
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 16px;
+}
+.addon-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color 0.3s, background 0.3s;
+}
+.addon-card:hover {
+  border-color: var(--pink);
+  background: var(--card-bg-hover);
+}
+.addon-card .addon-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(212,35,138,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.addon-card .addon-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--pink);
+  fill: none;
+  stroke-width: 2;
+}
+.addon-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+.addon-card .addon-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+.addon-card .addon-price span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.addon-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.addon-card ul {
+  list-style: none;
+  margin-top: 12px;
+}
+.addon-card ul li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 3px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.addon-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+
+@media (max-width: 768px) {
+  .addon-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 16px; }
+}
+
+/* ========== CHATBOT ========== */
+.chatbot-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--pink);
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(212,35,138,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.chatbot-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(212,35,138,0.5);
+}
+.chatbot-fab svg { width: 28px; height: 28px; }
+.chatbot-fab .fab-close { display: none; }
+.chatbot-fab.open .fab-logo { display: none; }
+.chatbot-fab.open .fab-close { display: block; }
+.chatbot-pulse {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--pink);
+  z-index: 9998;
+  animation: chatPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes chatPulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.chatbot-hint {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: var(--blur);
+  border-radius: var(--radius) var(--radius) 4px var(--radius);
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  z-index: 9999;
+  max-width: 240px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+.chatbot-hint.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.chatbot-window {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 380px;
+  max-height: 520px;
+  background: var(--bg-body);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(16px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.chatbot-window.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 18px;
+  background: rgba(212,35,138,0.08);
+  border-bottom: 1px solid var(--card-border);
+}
+.chatbot-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.chatbot-avatar svg { width: 18px; height: 18px; }
+.chatbot-header-info h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0;
+}
+.chatbot-header-info p {
+  font-size: 0.72rem;
+  color: var(--success);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.chatbot-header-info p::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  display: inline-block;
+}
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 260px;
+  max-height: 340px;
+}
+.chatbot-msg {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: var(--radius) var(--radius) var(--radius) 4px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  animation: msgIn 0.3s ease;
+}
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chatbot-msg.bot {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  align-self: flex-start;
+}
+.chatbot-msg.user {
+  background: var(--pink);
+  color: #fff;
+  align-self: flex-end;
+  border-radius: var(--radius) var(--radius) 4px var(--radius);
+}
+.chatbot-msg.typing {
+  display: flex;
+  gap: 4px;
+  padding: 14px 18px;
+}
+.chatbot-msg.typing span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: typeDot 1.2s ease-in-out infinite;
+}
+.chatbot-msg.typing span:nth-child(2) { animation-delay: 0.2s; }
+.chatbot-msg.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typeDot {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+.chatbot-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.chatbot-quick-btn {
+  background: rgba(212,35,138,0.1);
+  border: 1px solid rgba(212,35,138,0.25);
+  color: var(--pink-dm);
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, border-color 0.2s;
+}
+.chatbot-quick-btn:hover {
+  background: rgba(212,35,138,0.2);
+  border-color: var(--pink);
+}
+.chatbot-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--card-border);
+  background: rgba(255,255,255,0.03);
+}
+.chatbot-input {
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.chatbot-input:focus {
+  border-color: var(--pink);
+}
+.chatbot-input::placeholder {
+  color: var(--text-muted);
+}
+.chatbot-send {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pink);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.chatbot-send:hover { background: var(--pink-mid); }
+.chatbot-send svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2; }
+@media (max-width: 480px) {
+  .chatbot-window { width: calc(100vw - 32px); right: 16px; bottom: 88px; }
+  .chatbot-fab { bottom: 16px; right: 16px; }
+  .chatbot-pulse { bottom: 16px; right: 16px; }
+  .chatbot-hint { right: 16px; bottom: 84px; }
+}
+
+/* ========== KONFIGURATOR ========== */
+.konfig-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.konfig-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+.konfig-progress-dot {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--card-border);
+  transition: background 0.4s;
+}
+.konfig-progress-dot.active {
+  background: var(--pink);
+}
+.konfig-progress-dot.done {
+  background: var(--success);
+}
+.konfig-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  backdrop-filter: var(--blur);
+}
+.konfig-step-label {
+  font-size: 0.75rem;
+  color: var(--pink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.konfig-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.konfig-sub {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+.konfig-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.konfig-opt {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.15s;
+}
+.konfig-opt:hover {
+  border-color: rgba(212,35,138,0.4);
+  background: rgba(255,255,255,0.06);
+}
+.konfig-opt:active {
+  transform: scale(0.98);
+}
+.konfig-opt.selected {
+  border-color: var(--pink);
+  background: rgba(212,35,138,0.1);
+  box-shadow: 0 0 0 1px var(--pink);
+}
+.konfig-opt-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.konfig-opt-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.konfig-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+.konfig-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s, background 0.2s, transform 0.15s;
+  font-family: inherit;
+}
+.konfig-btn:active {
+  transform: scale(0.97);
+}
+.konfig-btn-next {
+  background: var(--pink);
+  color: #fff;
+}
+.konfig-btn-next:hover {
+  background: var(--pink-mid);
+}
+.konfig-btn-next:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.konfig-btn-back {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+.konfig-btn-back:hover {
+  background: var(--card-bg);
+}
+.konfig-btn-cta {
+  background: var(--pink);
+  color: #fff;
+  padding: 14px 36px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  width: 100%;
+  margin-top: 16px;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.15s;
+}
+.konfig-btn-cta:hover {
+  background: var(--pink-mid);
+}
+.konfig-btn-cta:active {
+  transform: scale(0.98);
+}
+.konfig-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  transition: border-color 0.2s;
+}
+.konfig-result-item.recommended {
+  border-color: var(--pink);
+  background: rgba(212,35,138,0.08);
+}
+.konfig-result-item.optional {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.konfig-result-item.optional:hover {
+  opacity: 1;
+  border-color: rgba(212,35,138,0.4);
+}
+.konfig-result-item.optional.added {
+  opacity: 1;
+  border-color: var(--pink);
+  background: rgba(212,35,138,0.08);
+}
+.konfig-ri-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.konfig-ri-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.konfig-ri-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+.konfig-ri-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--pink);
+  white-space: nowrap;
+}
+.konfig-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: var(--pink);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.konfig-tag-opt {
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: rgba(255,255,255,0.12);
+  color: var(--text-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.konfig-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: 1px solid var(--card-border);
+  margin-top: 12px;
+}
+.konfig-total-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.konfig-total-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.konfig-total-price span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.konfig-proof {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(52,211,153,0.08);
+  border: 1px solid rgba(52,211,153,0.2);
+  border-radius: var(--radius-sm);
+}
+.konfig-urgency {
+  font-size: 0.78rem;
+  color: var(--pink);
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: rgba(212,35,138,0.06);
+  border: 1px solid rgba(212,35,138,0.15);
+  border-radius: var(--radius-sm);
+}
+.konfig-savings {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--success);
+  font-weight: 600;
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .konfig-options { grid-template-columns: 1fr; }
+  .konfig-card { padding: 24px 18px; }
+  .konfig-title { font-size: 1.25rem; }
+}
+
+/* ========== PROCESS ========== */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 44px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: var(--card-border);
+  z-index: 0;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.process-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--pink-mid));
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.process-step h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* ========== REFERENZEN / PORTFOLIO ========== */
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 1024px) {
+  .ref-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.ref-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  backdrop-filter: var(--blur);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ref-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ref-screenshot {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(212,35,138,0.08), rgba(255,255,255,0.03));
+}
+
+.ref-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.ref-card:hover .ref-screenshot img {
+  transform: scale(1.05);
+}
+
+.ref-screenshot .ref-url-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(14,13,18,0.85);
+  backdrop-filter: blur(8px);
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border);
+  font-family: var(--font-mono, monospace);
+}
+
+.ref-body {
+  padding: 24px;
+}
+
+.ref-branche {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--pink-dm);
+  margin-bottom: 8px;
+}
+
+.ref-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.ref-body p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.ref-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ref-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--success);
+  background: rgba(52,211,153,0.08);
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.ref-stat svg { flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .ref-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 36px;
+  border: 1px solid var(--card-border);
+  backdrop-filter: var(--blur);
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover { transform: translateY(-4px); }
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+
+.testimonial-card blockquote {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), var(--pink-mid));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.testimonial-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.testimonial-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ========== FAQ ========== */
+.faq-list {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--card-border);
+}
+
+.faq-toggle { display: none; }
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.faq-question:hover { color: var(--pink-dm); }
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.2s;
+}
+
+.faq-toggle:checked + .faq-question .faq-icon {
+  transform: rotate(45deg);
+  background: var(--pink);
+}
+
+.faq-toggle:checked + .faq-question .faq-icon svg line { stroke: #fff; }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-toggle:checked ~ .faq-answer {
+  max-height: 300px;
+  padding-bottom: 22px;
+}
+
+.faq-answer p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ========== FINAL CTA ========== */
+.cta-section {
+  background: linear-gradient(160deg, #1a0f1e 0%, #0e0d12 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212,35,138,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-text h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.cta-text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.cta-checklist {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.cta-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.cta-form-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid var(--card-border);
+  backdrop-filter: var(--blur);
+}
+
+.cta-form-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form-group { margin-bottom: 16px; }
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.06);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--pink-dm);
+  box-shadow: 0 0 0 3px rgba(212,35,138,0.2);
+}
+
+.form-group input::placeholder { color: var(--text-muted); }
+.form-group select option { background: var(--gray-900); color: var(--text-primary); }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-submit { width: 100%; margin-top: 8px; }
+
+.form-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: var(--gray-950);
+  color: var(--text-secondary);
+  padding: 60px 0 30px;
+  border-top: 1px solid var(--card-border);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+.footer-brand .logo {
+  color: #fff;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-links h4 {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  display: block;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--pink-dm); }
+
+.footer-bottom {
+  border-top: 1px solid var(--card-border);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover { color: var(--pink-dm); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 2.4rem; }
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .fbadge-2, .fbadge-5 { display: none; }
+}
+
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .header-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(14,13,18,0.95);
+    backdrop-filter: var(--blur);
+    padding: 24px;
+    gap: 16px;
+    box-shadow: var(--shadow);
+    border-top: 1px solid var(--card-border);
+  }
+  .mobile-toggle { display: block; }
+
+  .hero { padding: 110px 0 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero h1 { font-size: 2rem; }
+  .hero-visual { order: -1; }
+  .floating-badges { display: none; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .stat-item h3 { font-size: 1.6rem; }
+
+  .problem-grid { grid-template-columns: 1fr; }
+  .solution-grid { grid-template-columns: 1fr; }
+  .ba-container { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .pricing-card.featured { order: -1; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid::before { display: none; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+  .section { padding: 60px 0; }
+  .section-title { font-size: 1.7rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero-buttons { flex-direction: column; }
+  .trust-badges { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .pricing-header { padding: 32px 24px 20px; }
+  .pricing-features { padding: 0 24px 24px; }
+  .pricing-footer { padding: 0 24px 24px; }
+  .cta-form-card { padding: 28px 20px; }
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== ADVANCED ANIMATIONS ========== */
+
+/* --- Particle Canvas --- */
+#heroParticles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero { position: relative; }
+.hero .container { position: relative; z-index: 1; }
+.hero-grid-overlay { z-index: 0; }
+
+/* --- Gradient Animated Headline --- */
+.hero h1 em {
+  background: linear-gradient(90deg, var(--pink), #f472c0, #a78bfa, var(--pink));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-text 6s ease infinite;
+  font-style: normal;
+}
+
+@keyframes gradient-text {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* --- 3D Tilt on Cards --- */
+.pricing-card,
+.addon-card,
+.process-step,
+.feature-card {
+  transition: transform 0.35s cubic-bezier(.03,.98,.52,.99), box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.pricing-card:hover,
+.addon-card:hover,
+.process-step:hover,
+.feature-card:hover {
+  box-shadow: 0 20px 60px rgba(212,35,138,0.15), 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* --- Magnetic Button Effect --- */
+.btn-primary,
+.btn-outline {
+  transition: transform 0.25s cubic-bezier(.03,.98,.52,.99), background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* --- Animated Gradient Border on Popular Card --- */
+.pricing-card.popular {
+  position: relative;
+  border: none;
+  background-clip: padding-box;
+}
+.pricing-card.popular::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--pink), #a78bfa, var(--pink-light), var(--pink));
+  background-size: 400% 400%;
+  animation: border-glow 4s ease infinite;
+  z-index: -1;
+}
+
+@keyframes border-glow {
+  0%, 100% { background-position: 0% 50%; }
+  25% { background-position: 100% 0%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+}
+
+/* --- Enhanced Scroll Reveal with Stagger --- */
+.fade-up {
+  transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+}
+
+/* --- Glowing Cursor Trail on Hero --- */
+.hero-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,35,138,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transition: left 0.4s ease-out, top 0.4s ease-out;
+  filter: blur(30px);
+}
+
+/* --- Stats Counter Glow Pulse --- */
+.stat-item.counted .counter {
+  animation: number-glow 2s ease infinite;
+}
+
+/* --- Section Divider Glow Line --- */
+.glow-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
+  opacity: 0.3;
+  margin: 0;
+}
+
+/* --- Floating Accent Orbs --- */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  animation: orb-float 8s ease-in-out infinite;
+}
+.hero-orb-1 {
+  width: 300px; height: 300px;
+  background: var(--pink);
+  top: 10%; left: -5%;
+}
+.hero-orb-2 {
+  width: 200px; height: 200px;
+  background: #a78bfa;
+  bottom: 15%; right: -3%;
+  animation-delay: -4s;
+}
+
+@keyframes orb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.05); }
+  66% { transform: translate(-10px, 10px) scale(0.95); }
+}
+
+@media (max-width: 768px) {
+  .hero-orb { display: none; }
+  #heroParticles { display: none; }
+  .hero-glow { display: none; }
+}
+
+/* ========== ALPS SYSTEM ========== */
+.alps-section { position: relative; overflow: hidden; }
+
+.alps-header { text-align: center; margin-bottom: 56px; }
+
+.alps-letters-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px 0 16px;
+  flex-wrap: wrap;
+}
+.alps-letter-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+.alps-letter-char {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--pink), #a78bfa);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-right: 3px;
+}
+.alps-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--pink);
+  opacity: 0.5;
+  margin: 0 6px;
+}
+
+.alps-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Timeline */
+.alps-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.alps-timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--pink), #a78bfa, var(--pink-light), transparent);
+  opacity: 0.3;
+}
+
+.alps-phase {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.alps-phase-marker {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--pink), #a78bfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #fff;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(212,35,138,0.3);
+}
+.alps-phase-marker::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, var(--pink), #a78bfa);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.alps-phase-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform 0.35s cubic-bezier(.03,.98,.52,.99), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.alps-phase-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212,35,138,0.12);
+  border-color: rgba(212,35,138,0.25);
+}
+
+.alps-phase-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pink);
+  background: rgba(212,35,138,0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.alps-phase-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.alps-phase-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.alps-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.alps-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.alps-feature svg {
+  flex-shrink: 0;
+}
+
+/* Guarantee banner */
+.alps-guarantee {
+  margin-top: 48px;
+  text-align: center;
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(212,35,138,0.08), rgba(167,139,250,0.08));
+  border: 1px solid rgba(212,35,138,0.15);
+  border-radius: var(--radius);
+}
+.alps-guarantee-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink), #a78bfa);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.alps-guarantee h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.alps-guarantee p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .alps-timeline::before { left: 20px; }
+  .alps-phase { grid-template-columns: 40px 1fr; gap: 16px; }
+  .alps-phase-marker { width: 40px; height: 40px; font-size: 1rem; border-radius: 12px; }
+  .alps-phase-content { padding: 20px; }
+  .alps-letters-row { gap: 4px; }
+  .alps-letter-char { width: 28px; height: 28px; font-size: 0.9rem; }
+  .alps-letter-item { font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- SKIP NAV -->
+<a href="#hero" class="skip-nav">Zum Inhalt springen</a>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="logo"><img src="seox-logo-weiss.svg" alt="SEOX" style="height:44px;width:auto;"></a>
+    <nav class="header-nav" id="navMenu">
+      <a href="#problem">Herausforderungen</a>
+      <a href="#alps">ALPS&trade;</a>
+      <a href="#pakete">Pakete</a>
+      <a href="#konfigurator">Berater</a>
+      <a href="#portfolio">Referenzen</a>
+      <a href="#prozess">So funktioniert's</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt" class="btn btn-primary btn-header">Kostenlose Demo</a>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Navigation oeffnen" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas id="heroParticles"></canvas>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-glow" id="heroGlow"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Neu: Webseiten die verkaufen -- in Rekordzeit</div>
+      <h1>Wir bauen nicht nur Webseiten. <em>Wir bauen Umsatzmaschinen.</em></h1>
+      <p>CR-optimiert auf Basis von 1'000+ Datenpunkten. Webseite ab CHF 299/Mt. oder einmalig ab CHF 899. Dazu optional: SEO, GEO, SEA & Content Module.</p>
+      <div class="hero-buttons">
+        <a href="#kontakt" class="btn btn-primary btn-large">Kostenlose Website-Analyse</a>
+        <a href="#pakete" class="btn btn-outline btn-large">Pakete & Preise</a>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          46+ Kundenprojekte
+        </div>
+        <div class="trust-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Swiss Made
+        </div>
+        <div class="trust-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          25+ Jahre Erfahrung
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- Floating Feature Badges -->
+      <div class="floating-badges" id="floatingBadges">
+        <div class="fbadge fbadge-1">
+          <div class="fbadge-icon green">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          Mobile optimiert <span class="fbadge-value">100%</span>
+        </div>
+        <div class="fbadge fbadge-2">
+          <div class="fbadge-icon pink">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          Core Web Vitals <span class="fbadge-value">bestanden</span>
+        </div>
+        <div class="fbadge fbadge-3">
+          <div class="fbadge-icon blue">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          SEO & GEO optimiert
+        </div>
+        <div class="fbadge fbadge-4">
+          <div class="fbadge-icon orange">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          </div>
+          Conversion Rate <span class="fbadge-value pink-val">+140%</span>
+        </div>
+        <div class="fbadge fbadge-5">
+          <div class="fbadge-icon green">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          Ladezeit <span class="fbadge-value">&lt;1.5s</span>
+        </div>
+      </div>
+      <div class="hero-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-dot"></div>
+          <div class="mockup-url">www.dein-unternehmen.ch</div>
+        </div>
+        <div class="mockup-body">
+          <div class="fake-nav">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="fake-hero-text"></div>
+          <div class="fake-hero-text-sm"></div>
+          <div class="fake-btn"></div>
+          <div class="fake-cards">
+            <div class="fake-card"></div>
+            <div class="fake-card"></div>
+            <div class="fake-card"></div>
+          </div>
+          <!-- Score Rings -->
+          <div class="mockup-scores">
+            <div class="score-ring" id="scorePerf">
+              <svg width="44" height="44" viewBox="0 0 44 44">
+                <circle class="ring-bg" cx="22" cy="22" r="17"/>
+                <circle class="ring-fill green" cx="22" cy="22" r="17" style="--offset:7;" stroke-dasharray="107" stroke-dashoffset="107"/>
+              </svg>
+              <span class="score-label">98</span>
+            </div>
+            <div class="score-ring" id="scoreSeo">
+              <svg width="44" height="44" viewBox="0 0 44 44">
+                <circle class="ring-bg" cx="22" cy="22" r="17"/>
+                <circle class="ring-fill pink" cx="22" cy="22" r="17" style="--offset:5;" stroke-dasharray="107" stroke-dashoffset="107"/>
+              </svg>
+              <span class="score-label">100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3><span class="counter" data-target="46">0</span>+</h3>
+        <p>Kundenprojekte</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="1000">0</span>+</h3>
+        <p>Top-1 Rankings</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="25">0</span>+</h3>
+        <p>Jahre Erfahrung</p>
+      </div>
+      <div class="stat-item">
+        <h3><span class="counter" data-target="95">0</span>%</h3>
+        <p>Kundenzufriedenheit</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section section-alt" id="problem">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Das Problem</div>
+      <h2 class="section-title">Verlierst Du Kunden an Deine Konkurrenz?</h2>
+      <p class="section-subtitle">Jeden Tag entscheiden sich potenzielle Kunden fuer einen Mitbewerber -- nur weil dessen Online-Auftritt besser ist.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-up">
+        <div class="problem-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="7" y1="8" x2="17" y2="12"/></svg>
+        </div>
+        <h3>Veraltete oder keine Webseite</h3>
+        <p>Deine Webseite sieht aus wie aus dem Jahr 2010 -- oder Du hast gar keine. Potenzielle Kunden nehmen Dich nicht ernst und klicken weiter zur Konkurrenz.</p>
+      </div>
+      <div class="problem-card fade-up">
+        <div class="problem-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="5" y1="10" x2="19" y2="6"/></svg>
+        </div>
+        <h3>Nicht mobile-optimiert</h3>
+        <p>Ueber 70% der Besucher kommen via Smartphone. Eine nicht responsive Webseite vergrault Deine besten Interessenten innerhalb von Sekunden.</p>
+      </div>
+      <div class="problem-card fade-up">
+        <div class="problem-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        </div>
+        <h3>Bei Google unsichtbar</h3>
+        <p>Wer nicht auf Seite 1 bei Google erscheint, existiert fuer die meisten Kunden nicht. Ohne SEO-Optimierung verschenkst Du täglich Umsatz.</p>
+      </div>
+      <div class="problem-card fade-up">
+        <div class="problem-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e04da0" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/><line x1="15" y1="9" x2="9" y2="9"/></svg>
+        </div>
+        <h3>Keine Anfragen über die Website</h3>
+        <p>Deine Webseite generiert keine Leads. Es fehlen klare Handlungsaufforderungen, Kontaktformulare und eine überzeugende Darstellung Deiner Leistungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section" id="lösung">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Die Lösung</div>
+      <h2 class="section-title">Was SEOX anders macht</h2>
+      <p class="section-subtitle">Kein monatelanges Warten, keine versteckten Kosten. Wir liefern Ergebnisse, bevor Du Dich entscheiden musst.</p>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-card fade-up">
+        <div class="solution-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Proaktive Erstellung</h3>
+        <p>Wir erstellen Deine Webseite, bevor Du einen Franken bezahlst. Du siehst das fertige Ergebnis und entscheidest dann.</p>
+      </div>
+      <div class="solution-card fade-up">
+        <div class="solution-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg>
+        </div>
+        <h3>KI-gestützte Optimierung</h3>
+        <p>Modernste KI-Technologie sorgt fuer optimale Texte, perfektes SEO und eine Webseite, die bei Google und KI-Suchen gefunden wird.</p>
+      </div>
+      <div class="solution-card fade-up">
+        <div class="solution-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h3>All-inclusive Leasing</h3>
+        <p>Design, Entwicklung, Hosting, SSL, Updates, Support -- alles in einer monatlichen Rate. Keine Ueberraschungen, keine versteckten Kosten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section section-alt" id="vergleich">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Der Unterschied</div>
+      <h2 class="section-title">Vorher vs. Nachher</h2>
+      <p class="section-subtitle">So verwandeln wir veraltete Online-Auftritte in moderne, conversion-optimierte Webseiten.</p>
+    </div>
+    <div class="ba-container">
+      <!-- BEFORE -->
+      <div class="ba-side ba-before fade-up">
+        <div class="ba-label">Vorher -- Ohne SEOX</div>
+        <div class="ba-mockup">
+          <div class="old-header">*** Willkommen auf unserer Homepage ***</div>
+          <div class="old-nav">
+            <span>Home</span><span>Ueber uns</span><span>Kontakt</span><span>Gaestebuch</span>
+          </div>
+          <div class="old-content">
+            <p>Herzlich willkommen auf unserer Internetseite. Hier finden Sie Informationen über unser Unternehmen.</p>
+          </div>
+          <div class="old-gif"></div>
+          <div class="old-counter">Besucher: 000482 | Letzte Aktualisierung: 14.03.2016</div>
+        </div>
+        <div class="ba-consequences" id="baConsequences">
+          <div class="ba-consequence">
+            <div class="consequence-icon red">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <span class="con-text">Nicht auffindbar bei Google</span>
+            <span class="con-stat">Seite 8+</span>
+          </div>
+          <div class="ba-consequence">
+            <div class="consequence-icon red">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>
+            </div>
+            <span class="con-text">Besucher brechen sofort ab</span>
+            <span class="con-stat">89% Bounce</span>
+          </div>
+          <div class="ba-consequence">
+            <div class="consequence-icon red">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="5" y1="10" x2="19" y2="6"/></svg>
+            </div>
+            <span class="con-text">Auf Smartphones unbenutzbar</span>
+            <span class="con-stat">0% mobil</span>
+          </div>
+          <div class="ba-consequence">
+            <div class="consequence-icon red">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <span class="con-text">Keine Kundenanfragen</span>
+            <span class="con-stat">0 Leads/Mt.</span>
+          </div>
+          <div class="ba-consequence">
+            <div class="consequence-icon red">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+            </div>
+            <span class="con-text">Ladezeit über 8 Sekunden</span>
+            <span class="con-stat">8.2s</span>
+          </div>
+        </div>
+      </div>
+      <!-- AFTER -->
+      <div class="ba-side ba-after fade-up">
+        <div class="ba-label">Nachher -- Mit SEOX</div>
+        <div class="ba-mockup">
+          <div class="new-nav">
+            <div class="new-logo"></div>
+            <div class="new-links"><span></span><span></span><span></span></div>
+          </div>
+          <div class="new-hero">
+            <div class="nh-title"></div>
+            <div class="nh-sub"></div>
+            <div class="nh-btn"></div>
+          </div>
+          <div class="new-cards-row">
+            <div class="new-card"></div>
+            <div class="new-card"></div>
+            <div class="new-card"></div>
+          </div>
+        </div>
+        <div class="ba-advantages" id="baAdvantages">
+          <div class="ba-advantage" style="--bar-width:95%">
+            <div class="adv-header">
+              <span class="adv-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Google Seite 1
+              </span>
+              <span class="adv-value">Top 3</span>
+            </div>
+            <div class="adv-bar-track"><div class="adv-bar-fill"></div></div>
+          </div>
+          <div class="ba-advantage" style="--bar-width:88%">
+            <div class="adv-header">
+              <span class="adv-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Organische Besucher
+              </span>
+              <span class="adv-value">+320%</span>
+            </div>
+            <div class="adv-bar-track"><div class="adv-bar-fill"></div></div>
+          </div>
+          <div class="ba-advantage" style="--bar-width:100%">
+            <div class="adv-header">
+              <span class="adv-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                100% Mobile-optimiert
+              </span>
+              <span class="adv-value">Responsive</span>
+            </div>
+            <div class="adv-bar-track"><div class="adv-bar-fill"></div></div>
+          </div>
+          <div class="ba-advantage" style="--bar-width:82%">
+            <div class="adv-header">
+              <span class="adv-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Kundenanfragen
+              </span>
+              <span class="adv-value">+140%</span>
+            </div>
+            <div class="adv-bar-track"><div class="adv-bar-fill"></div></div>
+          </div>
+          <div class="ba-advantage" style="--bar-width:96%">
+            <div class="adv-header">
+              <span class="adv-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Ladezeit
+              </span>
+              <span class="adv-value">&lt;1.5s</span>
+            </div>
+            <div class="adv-bar-track"><div class="adv-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEOX ALPS SYSTEM -->
+<section class="section alps-section" id="alps">
+  <div class="container">
+    <div class="alps-header fade-up">
+      <div class="section-tag">Unsere Formel</div>
+      <h2 class="section-title">Das SEOX ALPS&trade; System</h2>
+      <div class="alps-letters-row">
+        <span class="alps-letter-item"><span class="alps-letter-char">A</span>nalyse</span>
+        <span class="alps-dot"></span>
+        <span class="alps-letter-item"><span class="alps-letter-char">L</span>ayout</span>
+        <span class="alps-dot"></span>
+        <span class="alps-letter-item"><span class="alps-letter-char">P</span>räsenz</span>
+        <span class="alps-dot"></span>
+        <span class="alps-letter-item"><span class="alps-letter-char">S</span>kalierung</span>
+      </div>
+      <p class="alps-subtitle">Vier Phasen, ein bewährtes System. So garantieren wir messbare Ergebnisse -- von der ersten Analyse bis zur nachhaltigen Skalierung Deines Wachstums.</p>
+    </div>
+
+    <div class="alps-timeline">
+
+      <!-- Phase A -->
+      <div class="alps-phase fade-up">
+        <div class="alps-phase-marker">A</div>
+        <div class="alps-phase-content">
+          <div class="alps-phase-tag">Phase 1 -- Analyse</div>
+          <h3>Datenbasierte Analyse & Audit</h3>
+          <p>Wir durchleuchten Deine aktuelle Webseite, Conversion Rate, SEO-Rankings und KI-Sichtbarkeit. Du erhältst einen konkreten Massnahmenplan mit priorisierten Quick-Wins und langfristigen Hebeln.</p>
+          <div class="alps-features">
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> CR-Analyse</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> SEO-Audit</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> GEO/LLM-Check</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Wettbewerbsanalyse</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Keyword-Recherche</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase L -->
+      <div class="alps-phase fade-up">
+        <div class="alps-phase-marker">L</div>
+        <div class="alps-phase-content">
+          <div class="alps-phase-tag">Phase 2 -- Layout</div>
+          <h3>Layout & Conversion-Architektur</h3>
+          <p>Wir bauen Deine Webseite als Umsatzmaschine: Conversion-optimiertes Design auf Basis von 1'000+ Datenpunkten, sauberes Schema-Markup und blitzschnelle Ladezeiten unter 1.5 Sekunden.</p>
+          <div class="alps-features">
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> CR-optimiertes Design</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mobile-First</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Schema-Markup</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Pagespeed A+</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> KI-Architektur</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase P -->
+      <div class="alps-phase fade-up">
+        <div class="alps-phase-marker">P</div>
+        <div class="alps-phase-content">
+          <div class="alps-phase-tag">Phase 3 -- Präsenz</div>
+          <h3>Präsenz & Sichtbarkeit aufbauen</h3>
+          <p>SEO-Optimierung für Google-Rankings UND GEO-Strategien für KI-Zitierungen. Wir sorgen dafür, dass Du in Google, ChatGPT, Gemini und Perplexity als Experte empfohlen wirst.</p>
+          <div class="alps-features">
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> SEO-Optimierung</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> GEO & LLMO</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Content-Strategie</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Local SEO</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Linkbuilding</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase S -->
+      <div class="alps-phase fade-up">
+        <div class="alps-phase-marker">S</div>
+        <div class="alps-phase-content">
+          <div class="alps-phase-tag">Phase 4 -- Skalierung</div>
+          <h3>Skalieren & nachhaltiges Wachstum</h3>
+          <p>Google Ads für sofortige Neukunden, Social Media für Reichweite -- während SEO und GEO Deine organische Sichtbarkeit kontinuierlich ausbauen. Monatliches Reporting zeigt Dir jeden Fortschritt.</p>
+          <div class="alps-features">
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Google Ads</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Social Media</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Analytics & KPIs</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Conversion-Optimierung</span>
+            <span class="alps-feature"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> A/B-Testing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Guarantee -->
+    <div class="alps-guarantee fade-up">
+      <div class="alps-guarantee-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <h3>Erfolgsgarantie mit System</h3>
+      <p>ALPS&trade; ist keine Theorie -- es ist unsere bewährte Formel aus 25+ Jahren Erfahrung und 46+ erfolgreichen Kundenprojekten. Jede Phase baut auf der vorherigen auf und garantiert messbare Ergebnisse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pakete">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Pakete & Preise</div>
+      <h2 class="section-title">Deine Webseite. Dein Modell. Deine Module.</h2>
+      <p class="section-subtitle">Waehle Dein Basispaket und erweitere es mit optionalen Modulen -- genau so, wie Du es brauchst.</p>
+    </div>
+
+    <!-- PRICING TOGGLE -->
+    <div style="display:flex;justify-content:center;margin-bottom:40px;gap:0;">
+      <button id="toggleLeasing" onclick="showPricing('leasing')" class="btn btn-primary" style="border-radius:14px 0 0 14px;min-width:160px;">Leasing (monatlich)</button>
+      <button id="toggleEinmalig" onclick="showPricing('einmalig')" class="btn btn-outline" style="border-radius:0 14px 14px 0;min-width:160px;">Einmalig (Kauf)</button>
+    </div>
+
+    <!-- LEASING GRID -->
+    <div id="pricingLeasing">
+      <div class="pricing-grid">
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <div class="pricing-name">Starter</div>
+            <div class="pricing-original">Webseite Wert: CHF 1'499</div>
+            <div class="pricing-price"><span>CHF </span>299<span>/Mt.</span></div>
+            <div class="pricing-period">24 Monate Laufzeit</div>
+            <div class="pricing-save-badge">Webseite GRATIS &mdash; Du sparst CHF 1'499</div>
+          </div>
+          <p class="pricing-desc">Perfekt zum Einstieg &mdash; CR-optimierte Webseite mit Rundum-Pflege.</p>
+          <ul class="pricing-features">
+            <li class="pv-free-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Webseite (5 Seiten) <span class="pv-free-tag">Gratis</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiertes Design</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>On-Page SEO Basis</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SSL & Premium-Hosting</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2h Änderungen/Monat</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>E-Mail Support</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-outline">Jetzt starten</a></div>
+        </div>
+        <div class="pricing-card featured fade-up">
+          <div class="pricing-badge">Beliebteste Wahl</div>
+          <div class="pricing-header">
+            <div class="pricing-name">Business</div>
+            <div class="pricing-original">Webseite Wert: CHF 2'899</div>
+            <div class="pricing-price"><span>CHF </span>499<span>/Mt.</span></div>
+            <div class="pricing-period">24 Monate Laufzeit</div>
+            <div class="pricing-save-badge">Webseite GRATIS &mdash; Du sparst CHF 2'899</div>
+          </div>
+          <p class="pricing-desc">Fuer wachsende KMU &mdash; mehr Seiten, Reports und persoenlicher Support.</p>
+          <ul class="pricing-features">
+            <li class="pv-free-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Webseite (15 Seiten) <span class="pv-free-tag">Gratis</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Erweiterte CR-Optimierung</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>On-Page SEO + Reports</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SSL & Premium-Hosting</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4h Änderungen/Monat</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>E-Mail + Telefon Support</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Monatliche Performance-Reports</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-primary">Jetzt starten</a></div>
+        </div>
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <div class="pricing-name">Premium</div>
+            <div class="pricing-original">Webseite Wert: CHF 5'000+</div>
+            <div class="pricing-price"><span>CHF </span>799<span>/Mt.</span></div>
+            <div class="pricing-period">12 Monate Laufzeit</div>
+            <div class="pricing-save-badge">Webseite GRATIS &mdash; Du sparst CHF 5'000+</div>
+          </div>
+          <p class="pricing-desc">Maximum an Betreuung &mdash; mit A/B-Testing und persoenlichem Ansprechpartner.</p>
+          <ul class="pricing-features">
+            <li class="pv-free-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Webseite (30 Seiten) <span class="pv-free-tag">Gratis</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Premium CR + A/B-Testing</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>On-Page SEO Basis</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SSL & Premium-Hosting</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>8h Änderungen/Monat</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority Support + Slack</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Persoenlicher Ansprechpartner</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-outline">Jetzt starten</a></div>
+        </div>
+      </div>
+
+      <!-- LEASING ADD-ONS -->
+      <div class="addon-section-title">Optionale Module <span style="color:var(--pink)">dazu buchen</span></div>
+      <div class="addon-section-subtitle">Erweitere Dein Paket mit genau den Services, die Du brauchst.</div>
+      <div class="addon-grid">
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h4>SEO Starter</h4>
+          <div class="addon-price">CHF 399<span> /Mt.</span></div>
+          <p>Gezielte Optimierung auf 3 Keywords mit monatlichem Ranking-Report.</p>
+          <ul>
+            <li>Keyword-Recherche & Strategie</li>
+            <li>On-Page + Off-Page Optimierung</li>
+            <li>3 Keywords aktiv betreut</li>
+            <li>Monatlicher Ranking-Report</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M8 11h6M11 8v6"/></svg></div>
+          <h4>SEO Professional</h4>
+          <div class="addon-price">CHF 799<span> /Mt.</span></div>
+          <p>Umfassende SEO-Betreuung mit 10 Keywords, Content-Strategie und Link-Building.</p>
+          <ul>
+            <li>10 Keywords aktiv betreut</li>
+            <li>Content-Erstellung (2 Beiträge/Mt.)</li>
+            <li>Link-Building Kampagne</li>
+            <li>Woechentlicher Report + Call</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h4>SEA Starter</h4>
+          <div class="addon-price">CHF 299<span> /Mt.</span></div>
+          <p>Google Ads Management fuer bis zu 3 Kampagnen. Media Budget exkl.</p>
+          <ul>
+            <li>Bis zu 3 Kampagnen</li>
+            <li>Keyword- & Anzeigen-Setup</li>
+            <li>Laufende Optimierung</li>
+            <li>Monatlicher Performance-Report</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/><line x1="17" y1="2" x2="21" y2="6"/></svg></div>
+          <h4>SEA Professional</h4>
+          <div class="addon-price">CHF 599<span> /Mt.</span></div>
+          <p>Erweiterte Kampagnen-Betreuung mit Remarketing und Conversion-Tracking. Media Budget exkl.</p>
+          <ul>
+            <li>Bis zu 8 Kampagnen</li>
+            <li>Remarketing & Display Ads</li>
+            <li>Conversion-Tracking Setup</li>
+            <li>Woechentliche Optimierung + Report</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h4>GEO-Optimierung</h4>
+          <div class="addon-price">CHF 349<span> /Mt.</span></div>
+          <p>Sichtbarkeit in KI-Suchmaschinen wie ChatGPT, Perplexity und Gemini.</p>
+          <ul>
+            <li>Strukturierte Daten & Schema</li>
+            <li>AI-Snippet Optimierung</li>
+            <li>Monatliches GEO-Monitoring</li>
+            <li>Anpassungen & Empfehlungen</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <h4>Content & Social</h4>
+          <div class="addon-price">CHF 499<span> /Mt.</span></div>
+          <p>Regelmässiger Content fuer Blog und Social Media, abgestimmt auf Deine SEO-Strategie.</p>
+          <ul>
+            <li>4 Blog-Beiträge / Monat</li>
+            <li>8 Social-Media Posts</li>
+            <li>Content-Kalender & Planung</li>
+            <li>Performance-Tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- EINMALIG GRID -->
+    <div id="pricingEinmalig" style="display:none;">
+      <div class="pricing-grid">
+
+        <!-- 1 Pager -->
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <div class="pricing-name">1 Pager</div>
+            <div class="pricing-price"><span>ab CHF </span>899<span> einmalig</span></div>
+            <div class="pricing-period">Lieferzeit: 3 Werktage</div>
+          </div>
+          <p class="pricing-desc">Eine einzelne Landingpage &mdash; perfekt fuer Launches, Kampagnen oder als digitale Visitenkarte.</p>
+          <ul class="pricing-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>1 Landingpage</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiertes Design</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Responsive &amp; Mobile-First</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>On-Page SEO Basis</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kontaktformular</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Volle Eigentumsrechte</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-outline">Jetzt starten</a></div>
+        </div>
+
+        <!-- Essential -->
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <div class="pricing-name">Essential</div>
+            <div class="pricing-price"><span>CHF </span>1'499<span> einmalig</span></div>
+            <div class="pricing-period">Lieferzeit: 5 Werktage</div>
+          </div>
+          <p class="pricing-desc">CR-optimierte Multi-Page Website fuer Gruender und kleine Betriebe.</p>
+          <ul class="pricing-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bis zu 5 Seiten</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiertes Design</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>On-Page SEO Basis</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Responsive Design</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Volle Eigentumsrechte</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>30 Tage Nachbetreuung</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-outline">Jetzt starten</a></div>
+        </div>
+
+        <!-- Professional -->
+        <div class="pricing-card featured fade-up">
+          <div class="pricing-badge">Bestes Preis-Leistungs-Verhaeltnis</div>
+          <div class="pricing-header">
+            <div class="pricing-name">Professional</div>
+            <div class="pricing-price"><span>CHF </span>2'899<span> einmalig</span></div>
+            <div class="pricing-period">Lieferzeit: 10 Werktage</div>
+          </div>
+          <p class="pricing-desc">Erweiterte CR-Optimierung mit Heatmaps, Blog und Local SEO.</p>
+          <ul class="pricing-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bis zu 15 Seiten</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Erweiterte CR + Heatmaps</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full SEO + Local SEO</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Blog / News-Bereich</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Volle Eigentumsrechte</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>60 Tage Nachbetreuung</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Google My Business Setup</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-primary">Jetzt starten</a></div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <div class="pricing-name">Enterprise</div>
+            <div class="pricing-price"><span>ab CHF </span>5'000<span> einmalig</span></div>
+            <div class="pricing-period">Lieferzeit: 15 Werktage</div>
+          </div>
+          <p class="pricing-desc">Alles inklusive: Premium CR, A/B-Tests, Schulung und Source-Code.</p>
+          <ul class="pricing-features">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Bis zu 30+ Seiten</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Premium CR + A/B-Testing</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full SEO + GEO Setup</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Volle Rechte + Source Code</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>90 Tage Nachbetreuung</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Team-Schulung (2h)</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Persoenlicher Ansprechpartner</li>
+          </ul>
+          <div class="pricing-footer"><a href="#kontakt" class="btn btn-outline">Jetzt starten</a></div>
+        </div>
+
+      </div>
+
+      <!-- EINMALIG ADD-ONS -->
+      <div class="addon-section-title">Optionale Einmal-Pakete <span style="color:var(--pink)">dazu buchen</span></div>
+      <div class="addon-section-subtitle">Einmalige Setups, die Du bei Bedarf zu Deiner Webseite hinzufügen kannst.</div>
+      <div class="addon-grid">
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h4>SEO Kickstart</h4>
+          <div class="addon-price">CHF 2'490<span> einmalig</span></div>
+          <p>Einmaliges SEO-Setup mit Keyword-Recherche, On-Page-Optimierung und technischem Audit.</p>
+          <ul>
+            <li>Keyword-Recherche (bis 10 Keywords)</li>
+            <li>On-Page Optimierung aller Seiten</li>
+            <li>Technisches SEO-Audit + Fix</li>
+            <li>Google Search Console Setup</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h4>SEA Kickstart</h4>
+          <div class="addon-price">CHF 1'990<span> einmalig</span></div>
+          <p>Google Ads Setup mit bis zu 3 Kampagnen, Conversion-Tracking und Anzeigentexten. Media Budget exkl.</p>
+          <ul>
+            <li>3 Kampagnen Setup</li>
+            <li>Keyword- & Anzeigen-Erstellung</li>
+            <li>Conversion-Tracking</li>
+            <li>30 Tage Optimierung inklusive</li>
+          </ul>
+        </div>
+        <div class="addon-card fade-up">
+          <div class="addon-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h4>GEO-Setup</h4>
+          <div class="addon-price">CHF 1'490<span> einmalig</span></div>
+          <p>Einmalige Optimierung fuer KI-Suchmaschinen: Schema Markup, strukturierte Daten, AI-Snippets.</p>
+          <ul>
+            <li>Schema & strukturierte Daten</li>
+            <li>AI-Snippet Optimierung</li>
+            <li>FAQ- & How-To-Markup</li>
+            <li>Dokumentation & Handover</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONFIGURATOR -->
+<section class="section section-alt" id="konfigurator">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Dein digitaler Berater</div>
+      <h2 class="section-title">Finde Dein perfektes Paket in 60 Sekunden</h2>
+      <p class="section-subtitle">Beantworte 4 kurze Fragen und erhalte eine massgeschneiderte Empfehlung -- kostenlos und unverbindlich.</p>
+    </div>
+    <div class="konfig-wrap">
+      <div class="konfig-progress" id="konfigBar"></div>
+      <div class="konfig-card" id="konfigContent"></div>
+      <div class="konfig-nav" id="konfigNav"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-alt" id="prozess">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">So funktioniert's</div>
+      <h2 class="section-title">In 4 Schritten zur Umsatzmaschine</h2>
+      <p class="section-subtitle">Von der Analyse bis zum Go-Live -- wir machen es Dir so einfach wie möglich.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-num">1</div>
+        <h3>Daten-Analyse & Strategie</h3>
+        <p>Wir analysieren Deine Branche, Zielgruppe und Wettbewerber auf Basis von 1'000+ Datenpunkten und erstellen eine CR-Strategie.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">2</div>
+        <h3>Design & Conversion-Optimierung</h3>
+        <p>Deine Webseite wird so gestaltet, dass Besucher zu Kunden werden -- jedes Element datenbasiert optimiert.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">3</div>
+        <h3>SEO, GEO & SEA Setup</h3>
+        <p>Wir sorgen dafür, dass Deine Webseite gefunden wird -- in Google, in KI-Suchmaschinen und über bezahlte Werbung.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">4</div>
+        <h3>Go-Live & Skalierung</h3>
+        <p>Deine Umsatzmaschine geht online. Im Leasing-Modell optimieren wir laufend weiter, beim Kauf erhältst Du alle Assets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZEN / PORTFOLIO -->
+<section class="section section-alt" id="portfolio">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Referenzen</div>
+      <h2 class="section-title">Projekte, die Ergebnisse liefern</h2>
+      <p class="section-subtitle">Ein Auszug unserer Kundenprojekte &mdash; jedes Projekt CR-optimiert nach dem ALPS&trade;-System.</p>
+    </div>
+    <div class="ref-grid">
+
+      <!-- Ref 1: Likoo -->
+      <a href="https://likoo.ch" target="_blank" rel="noopener" class="ref-card fade-up" style="text-decoration:none;color:inherit;">
+        <div class="ref-screenshot">
+          <img src="ref-likoo.jpg" alt="Likoo.ch - Moebel nach Mass Schweiz" loading="lazy" width="700" height="400">
+          <span class="ref-url-badge">likoo.ch</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-branche">Moebel / Interior Design</div>
+          <h3>Likoo &mdash; Moebel nach Mass</h3>
+          <p>Individuelle Moebel nach Mass aus der Schweiz. Premium-Webseite mit Projekt-Galerie und Online-Beratungsbuchung.</p>
+          <div class="ref-stats">
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiert</div>
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SEO &amp; GEO</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ref 2: Swimatic -->
+      <a href="https://swimatic.ch" target="_blank" rel="noopener" class="ref-card fade-up" style="text-decoration:none;color:inherit;">
+        <div class="ref-screenshot">
+          <img src="ref-swimatic.jpg" alt="Swimatic.ch - Schwimmkurse Zuerich" loading="lazy" width="700" height="400">
+          <span class="ref-url-badge">swimatic.ch</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-branche">Sport / Schwimmschule</div>
+          <h3>Swimatic &mdash; Schwimmkurse Zuerich</h3>
+          <p>Fuehrende Schwimmschule in Zuerich. Webseite mit Kurs-Buchungssystem, Standort-Uebersicht und mobilem First-Design.</p>
+          <div class="ref-stats">
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiert</div>
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Online-Buchung</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ref 3: Myssak Aesthetics -->
+      <a href="https://www.myssakaesthetics.com/" target="_blank" rel="noopener" class="ref-card fade-up" style="text-decoration:none;color:inherit;">
+        <div class="ref-screenshot">
+          <img src="ref-myssak.jpg" alt="MYSSAK aesthetics - Schooenheitsbehandlungen Berlin" loading="lazy" width="700" height="400">
+          <span class="ref-url-badge">myssakaesthetics.com</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-branche">Aesthetik / Medizin</div>
+          <h3>MYSSAK aesthetics</h3>
+          <p>Premium-Praxis fuer aesthetische Behandlungen in Berlin. Elegante Webseite mit Termin-Buchung und Behandlungsuebersicht.</p>
+          <div class="ref-stats">
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiert</div>
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SEO &amp; GEO</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ref 4: HR Beauty -->
+      <a href="https://hrbeauty.ch" target="_blank" rel="noopener" class="ref-card fade-up" style="text-decoration:none;color:inherit;">
+        <div class="ref-screenshot">
+          <img src="ref-hrbeauty.jpg" alt="HR Hair & Beauty - Coiffeur Basel" loading="lazy" width="700" height="400">
+          <span class="ref-url-badge">hrbeauty.ch</span>
+        </div>
+        <div class="ref-body">
+          <div class="ref-branche">Beauty / Coiffeur</div>
+          <h3>HR Hair &amp; Beauty</h3>
+          <p>Coiffeur-Salon in Basel mit Herz. Webseite mit Online-Terminbuchung, Galerie und Team-Vorstellung.</p>
+          <div class="ref-stats">
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CR-optimiert</div>
+            <div class="ref-stat"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Online-Buchung</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="kundenstimmen">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Kundenstimmen</div>
+      <h2 class="section-title">Was unsere Kunden sagen</h2>
+      <p class="section-subtitle">KMU-Inhaber aus der ganzen Schweiz vertrauen auf SEOX fuer ihren Online-Auftritt.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Ich war skeptisch, weil ich schon schlechte Erfahrungen mit Webagenturen gemacht hatte. Bei SEOX habe ich zuerst das Ergebnis gesehen und mich dann entschieden. Seit dem Launch kommen 3x mehr Anfragen über die Webseite."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MK</div>
+          <div>
+            <div class="testimonial-name">Marco Keller</div>
+            <div class="testimonial-role">Keller Sanitär GmbH, Winterthur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Als Zahnärztin habe ich weder Zeit noch Lust, mich um eine Webseite zu kümmern. SEOX hat alles übernommen -- und das Ergebnis ist wirklich professionell. Neue Patienten finden uns jetzt viel einfacher online."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SB</div>
+          <div>
+            <div class="testimonial-name">Dr. Sarah Brunner</div>
+            <div class="testimonial-role">Zahnarztpraxis Brunner, Luzern</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote>"Unser Restaurant hatte eine veraltete Webseite, die auf dem Handy kaum nutzbar war. Mit der neuen Seite von SEOX koennen Gaeste jetzt einfach reservieren. Die Tischbuchungen über die Webseite haben sich verdoppelt."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LM</div>
+          <div>
+            <div class="testimonial-name">Luigi Moretti</div>
+            <div class="testimonial-role">Ristorante Da Luigi, Zürich</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Haeufige Fragen</div>
+      <h2 class="section-title">Alles, was Du wissen musst</h2>
+      <p class="section-subtitle">Transparenz ist uns wichtig. Hier findest Du Antworten auf die haeufigsten Fragen.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq1">
+        <label class="faq-question" for="faq1">Wie lange ist die Mindestlaufzeit?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Die Mindestlaufzeit betraegt 24 Monate. Danach verlaengert sich der Vertrag jeweils um 12 Monate, kann aber jederzeit mit einer Frist von 3 Monaten zum Ende der Laufzeit gekuendigt werden.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq2">
+        <label class="faq-question" for="faq2">Kann ich den Vertrag vorzeitig kuendigen?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Eine vorzeitige Kündigung ist möglich. In diesem Fall wird eine Abloese fuer die verbleibenden Monate fällig. Sprich uns an -- wir finden eine faire Lösung.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq3">
+        <label class="faq-question" for="faq3">Ist ein Mediabudget (z.B. Google Ads) inklusive?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Das Mediabudget fuer bezahlte Werbung (Google Ads, Social Media) ist nicht im Leasing enthalten. Im Premium-Paket ist jedoch das Setup und die Betreuung Deiner Kampagnen inbegriffen -- Du zahlst nur das Werbebudget direkt an Google.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq4">
+        <label class="faq-question" for="faq4">Kann ich meine bestehende Domain behalten?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Ja, selbstverstaendlich. Deine bestehende Domain (.ch, .com, etc.) wird einfach auf die neue Webseite umgeleitet. Falls Du noch keine Domain hast, helfen wir Dir bei der Registrierung.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq5">
+        <label class="faq-question" for="faq5">Wie schnell ist meine Webseite online?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Nachdem Du Dich fuer eines unserer Pakete entschieden hast, ist Deine Webseite innerhalb von 48 Stunden live. Die Demo erstellen wir in der Regel innerhalb von 5 Werktagen nach Deiner Anfrage.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq6">
+        <label class="faq-question" for="faq6">Wem gehoert die Webseite nach Vertragsende?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Nach Ende der Vertragslaufzeit kannst Du die Webseite zu einem fairen Restwert übernehmen. Alternativ verlaengerst Du einfach den Leasing-Vertrag zu aktualisierten Konditionen.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq7">
+        <label class="faq-question" for="faq7">Kann ich Änderungen an der Webseite vornehmen?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Ja. Kleinere Änderungen wie Textanpassungen, Bildaustausch oder Aktualisierungen sind im Leasing inbegriffen. Für grössere Umbauten erstellen wir ein individuelles Angebot.</p></div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" class="faq-toggle" id="faq8">
+        <label class="faq-question" for="faq8">Was passiert, wenn ich mit der Demo nicht zufrieden bin?<span class="faq-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e0dfe6" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></label>
+        <div class="faq-answer"><p>Kein Problem. Die Demo ist völlig kostenlos und unverbindlich. Wenn Dir das Ergebnis nicht gefällt, entstehen fuer Dich keinerlei Kosten oder Verpflichtungen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section" id="kontakt">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <div class="section-tag" style="color: rgba(224,77,160,0.6);">Jetzt starten</div>
+        <h2>Sieh Dir Deine neue Webseite an -- kostenlos und unverbindlich.</h2>
+        <p>Füll das Formular aus und wir erstellen Deine persönliche Demo-Webseite. Kein Risiko, keine Verpflichtung.</p>
+        <ul class="cta-checklist">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Kostenlose Demo in 5 Werktagen</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Keine Vorabzahlung erforderlich</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>100% unverbindlich</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Persönliche Beratung inklusive</li>
+        </ul>
+      </div>
+      <div class="cta-form-card">
+        <h3>Kostenlose Demo anfordern</h3>
+        <form action="#" method="POST" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Vor- und Nachname *</label>
+              <input type="text" id="name" name="name" placeholder="Max Muster" required>
+            </div>
+            <div class="form-group">
+              <label for="firma">Firmenname *</label>
+              <input type="text" id="firma" name="firma" placeholder="Muster GmbH" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="branche">Branche</label>
+              <select id="branche" name="branche">
+                <option value="">Bitte waehlen...</option>
+                <option value="handwerk">Handwerk & Gewerbe</option>
+                <option value="gesundheit">Gesundheit & Medizin</option>
+                <option value="gastronomie">Gastronomie & Hotellerie</option>
+                <option value="detailhandel">Detailhandel</option>
+                <option value="dienstleistung">Dienstleistung & Beratung</option>
+                <option value="immobilien">Immobilien</option>
+                <option value="fitness">Fitness & Wellness</option>
+                <option value="andere">Andere Branche</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="telefon">Telefonnummer *</label>
+              <input type="tel" id="telefon" name="telefon" placeholder="+41 79 123 45 67" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="website">Aktuelle Website-URL (falls vorhanden)</label>
+            <input type="url" id="website" name="website" placeholder="https://www.beispiel.ch">
+          </div>
+          <button type="submit" class="btn btn-primary btn-large form-submit">Kostenlose Demo anfordern</button>
+          <p class="form-note">Deine Daten sind sicher. Wir kontaktieren Dich innerhalb von 24 Stunden.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHATBOT -->
+<div class="chatbot-pulse" id="chatPulse"></div>
+<div class="chatbot-hint" id="chatHint">Brauchst Du Hilfe bei der Wahl? Ich berate Dich gerne!</div>
+<button class="chatbot-fab" id="chatFab" aria-label="Chat öffnen">
+  <svg class="fab-logo" viewBox="0 0 666 315" xmlns="http://www.w3.org/2000/svg" style="width:42px;height:auto;">
+    <path fill="#fff" d="m114.32,217.07c-8.31,0-16.28-1.11-23.91-3.34-7.62-2.23-13.26-5.6-13.26-5.6-2.83-1.7-4.04-5.54-2.68-8.55l3.23-7.17c1.36-3.01,4.79-4.09,7.63-2.41,0,0,4.56,2.71,10.65,4.73,6.09,2.03,12.25,3.04,18.49,3.04,4.75,0,8.59-.47,11.51-1.41,2.92-.94,5.07-2.25,6.46-3.93,1.39-1.68,2.08-3.61,2.08-5.79,0-2.77-1.09-4.97-3.27-6.61-2.18-1.63-5.05-2.97-8.61-4.01-3.56-1.04-7.5-2.03-11.8-2.97-4.31-.94-8.61-2.1-12.92-3.49-4.31-1.39-8.24-3.17-11.8-5.35-3.56-2.18-6.46-5.05-8.69-8.61-2.23-3.56-3.34-8.12-3.34-13.66,0-5.94,1.61-11.36,4.83-16.26,3.22-4.9,8.07-8.81,14.55-11.73,6.48-2.92,14.63-4.38,24.43-4.38,6.53,0,12.97.77,19.3,2.3,6.33,1.54,11.44,4.16,11.44,4.16,2.93,1.51,4.32,5.24,3.08,8.3l-2.91,7.15c-1.24,3.06-4.68,4.36-7.63,2.89,0,0-4.33-2.15-9.18-3.49-4.85-1.34-9.6-2-14.25-2s-8.46.55-11.43,1.63c-2.97,1.09-5.1,2.5-6.38,4.23-1.29,1.73-1.93,3.74-1.93,6.01,0,2.67,1.09,4.83,3.27,6.46,2.18,1.63,5.05,2.95,8.61,3.93,3.56.99,7.5,1.98,11.8,2.97,4.31.99,8.61,2.13,12.92,3.42,4.31,1.29,8.24,3.02,11.8,5.2,3.56,2.18,6.46,5.05,8.69,8.61s3.34,8.07,3.34,13.51c0,5.84-1.63,11.19-4.9,16.04-3.27,4.85-8.14,8.76-14.63,11.73-6.48,2.97-14.68,4.45-24.57,4.45Z"/>
+    <path fill="#fff" d="m249.38,195.99c3.3,0,6,2.7,6,6v7.31c0,3.3-2.7,6-6,6h-68.48c-3.3,0-6-2.7-6-6v-91.94c0-3.3,2.7-6,6-6h66.55c3.3,0,6,2.7,6,6v7.3c0,3.3-2.7,6-6,6h-42.65c-3.3,0-6,2.7-6,6v10.57c0,3.3,2.7,6,6,6h36.26c3.3,0,6,2.7,6,6v6.71c0,3.3-2.7,6-6,6h-36.26c-3.3,0-6,2.7-6,6v12.05c0,3.3,2.7,6,6,6h44.58Z"/>
+    <path fill="#fff" d="m325.01,217.07c-8.22,0-15.81-1.34-22.79-4.01s-13.02-6.43-18.11-11.28c-5.1-4.85-9.06-10.54-11.88-17.08-2.82-6.53-4.23-13.66-4.23-21.38s1.41-14.85,4.23-21.38c2.82-6.53,6.8-12.22,11.95-17.08,5.15-4.85,11.18-8.61,18.11-11.28,6.93-2.67,14.45-4.01,22.57-4.01s15.76,1.34,22.64,4.01c6.88,2.67,12.87,6.44,17.97,11.28,5.1,4.85,9.08,10.52,11.95,17,2.87,6.48,4.31,13.64,4.31,21.46s-1.44,14.87-4.31,21.46c-2.87,6.58-6.86,12.28-11.95,17.08-5.1,4.8-11.09,8.54-17.97,11.21-6.88,2.67-14.38,4.01-22.49,4.01Zm-.15-20.49c4.65,0,8.93-.79,12.84-2.38,3.91-1.58,7.35-3.86,10.32-6.83,2.97-2.97,5.27-6.48,6.9-10.54,1.63-4.06,2.45-8.56,2.45-13.51s-.82-9.45-2.45-13.51c-1.63-4.06-3.91-7.57-6.83-10.54-2.92-2.97-6.36-5.25-10.32-6.83-3.96-1.58-8.27-2.38-12.92-2.38s-8.93.79-12.84,2.38c-3.91,1.58-7.35,3.86-10.32,6.83-2.97,2.97-5.27,6.48-6.9,10.54-1.63,4.06-2.45,8.56-2.45,13.51s.82,9.33,2.45,13.44c1.63,4.11,3.91,7.65,6.83,10.62,2.92,2.97,6.36,5.25,10.32,6.83,3.96,1.58,8.26,2.38,12.92,2.38Z"/>
+    <path fill="#fff" d="m593.43,37.8c3.3,0,6,2.7,6,6v20.17c0,3.3-1.91,7.91-4.24,10.24l-110.94,110.93c-2.33,2.33-6.15,2.33-8.49,0l-77.28-77.28c-2.33-2.33-4.24-6.94-4.24-10.24v-20.17c0-3.3,2.7-6,6-6h20.16c3.3,0,7.91,1.91,10.24,4.24l45.13,45.12c2.33,2.33,6.15,2.33,8.49,0l78.77-78.77c2.33-2.33,6.94-4.24,10.24-4.24h20.17Z"/>
+    <path fill="#fff" d="m460.59,200.31c2.33,2.33,2.33,6.15,0,8.49l-29.96,29.96c-2.33,2.33-6.94,4.24-10.24,4.24h-20.17c-3.3,0-6-2.7-6-6v-20.17c0-3.3,1.91-7.91,4.24-10.24l29.96-29.96c2.33-2.33,6.15-2.33,8.49,0l23.68,23.68Z"/>
+    <path fill="#fff" d="m561.53,206.59c2.33,2.33,4.24,6.94,4.24,10.24v20.17c0,3.3-2.7,6-6,6h-20.17c-3.3,0-7.91-1.91-10.24-4.24l-29.96-29.96c-2.33-2.33-2.33-6.15,0-8.49l23.68-23.68c2.33-2.33,6.15-2.33,8.49,0l29.96,29.96Z"/>
+  </svg>
+  <svg class="fab-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+</button>
+<div class="chatbot-window" id="chatWindow">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">
+      <svg viewBox="0 0 666 315" xmlns="http://www.w3.org/2000/svg" style="width:26px;height:auto;">
+        <path fill="#fff" d="m114.32,217.07c-8.31,0-16.28-1.11-23.91-3.34-7.62-2.23-13.26-5.6-13.26-5.6-2.83-1.7-4.04-5.54-2.68-8.55l3.23-7.17c1.36-3.01,4.79-4.09,7.63-2.41,0,0,4.56,2.71,10.65,4.73,6.09,2.03,12.25,3.04,18.49,3.04,4.75,0,8.59-.47,11.51-1.41,2.92-.94,5.07-2.25,6.46-3.93,1.39-1.68,2.08-3.61,2.08-5.79,0-2.77-1.09-4.97-3.27-6.61-2.18-1.63-5.05-2.97-8.61-4.01-3.56-1.04-7.5-2.03-11.8-2.97-4.31-.94-8.61-2.1-12.92-3.49-4.31-1.39-8.24-3.17-11.8-5.35-3.56-2.18-6.46-5.05-8.69-8.61-2.23-3.56-3.34-8.12-3.34-13.66,0-5.94,1.61-11.36,4.83-16.26,3.22-4.9,8.07-8.81,14.55-11.73,6.48-2.92,14.63-4.38,24.43-4.38,6.53,0,12.97.77,19.3,2.3,6.33,1.54,11.44,4.16,11.44,4.16,2.93,1.51,4.32,5.24,3.08,8.3l-2.91,7.15c-1.24,3.06-4.68,4.36-7.63,2.89,0,0-4.33-2.15-9.18-3.49-4.85-1.34-9.6-2-14.25-2s-8.46.55-11.43,1.63c-2.97,1.09-5.1,2.5-6.38,4.23-1.29,1.73-1.93,3.74-1.93,6.01,0,2.67,1.09,4.83,3.27,6.46,2.18,1.63,5.05,2.95,8.61,3.93,3.56.99,7.5,1.98,11.8,2.97,4.31.99,8.61,2.13,12.92,3.42,4.31,1.29,8.24,3.02,11.8,5.2,3.56,2.18,6.46,5.05,8.69,8.61s3.34,8.07,3.34,13.51c0,5.84-1.63,11.19-4.9,16.04-3.27,4.85-8.14,8.76-14.63,11.73-6.48,2.97-14.68,4.45-24.57,4.45Z"/>
+        <path fill="#fff" d="m249.38,195.99c3.3,0,6,2.7,6,6v7.31c0,3.3-2.7,6-6,6h-68.48c-3.3,0-6-2.7-6-6v-91.94c0-3.3,2.7-6,6-6h66.55c3.3,0,6,2.7,6,6v7.3c0,3.3-2.7,6-6,6h-42.65c-3.3,0-6,2.7-6,6v10.57c0,3.3,2.7,6,6,6h36.26c3.3,0,6,2.7,6,6v6.71c0,3.3-2.7,6-6,6h-36.26c-3.3,0-6,2.7-6,6v12.05c0,3.3,2.7,6,6,6h44.58Z"/>
+        <path fill="#fff" d="m325.01,217.07c-8.22,0-15.81-1.34-22.79-4.01s-13.02-6.43-18.11-11.28c-5.1-4.85-9.06-10.54-11.88-17.08-2.82-6.53-4.23-13.66-4.23-21.38s1.41-14.85,4.23-21.38c2.82-6.53,6.8-12.22,11.95-17.08,5.15-4.85,11.18-8.61,18.11-11.28,6.93-2.67,14.45-4.01,22.57-4.01s15.76,1.34,22.64,4.01c6.88,2.67,12.87,6.44,17.97,11.28,5.1,4.85,9.08,10.52,11.95,17,2.87,6.48,4.31,13.64,4.31,21.46s-1.44,14.87-4.31,21.46c-2.87,6.58-6.86,12.28-11.95,17.08-5.1,4.8-11.09,8.54-17.97,11.21-6.88,2.67-14.38,4.01-22.49,4.01Zm-.15-20.49c4.65,0,8.93-.79,12.84-2.38,3.91-1.58,7.35-3.86,10.32-6.83,2.97-2.97,5.27-6.48,6.9-10.54,1.63-4.06,2.45-8.56,2.45-13.51s-.82-9.45-2.45-13.51c-1.63-4.06-3.91-7.57-6.83-10.54-2.92-2.97-6.36-5.25-10.32-6.83-3.96-1.58-8.27-2.38-12.92-2.38s-8.93.79-12.84,2.38c-3.91,1.58-7.35,3.86-10.32,6.83-2.97,2.97-5.27,6.48-6.9,10.54-1.63,4.06-2.45,8.56-2.45,13.51s.82,9.33,2.45,13.44c1.63,4.11,3.91,7.65,6.83,10.62,2.92,2.97,6.36,5.25,10.32,6.83,3.96,1.58,8.26,2.38,12.92,2.38Z"/>
+        <path fill="#fff" d="m593.43,37.8c3.3,0,6,2.7,6,6v20.17c0,3.3-1.91,7.91-4.24,10.24l-110.94,110.93c-2.33,2.33-6.15,2.33-8.49,0l-77.28-77.28c-2.33-2.33-4.24-6.94-4.24-10.24v-20.17c0-3.3,2.7-6,6-6h20.16c3.3,0,7.91,1.91,10.24,4.24l45.13,45.12c2.33,2.33,6.15,2.33,8.49,0l78.77-78.77c2.33-2.33,6.94-4.24,10.24-4.24h20.17Z"/>
+        <path fill="#fff" d="m460.59,200.31c2.33,2.33,2.33,6.15,0,8.49l-29.96,29.96c-2.33,2.33-6.94,4.24-10.24,4.24h-20.17c-3.3,0-6-2.7-6-6v-20.17c0-3.3,1.91-7.91,4.24-10.24l29.96-29.96c2.33-2.33,6.15-2.33,8.49,0l23.68,23.68Z"/>
+        <path fill="#fff" d="m561.53,206.59c2.33,2.33,4.24,6.94,4.24,10.24v20.17c0,3.3-2.7,6-6,6h-20.17c-3.3,0-7.91-1.91-10.24-4.24l-29.96-29.96c-2.33-2.33-2.33-6.15,0-8.49l23.68-23.68c2.33-2.33,6.15-2.33,8.49,0l29.96,29.96Z"/>
+      </svg>
+    </div>
+    <div class="chatbot-header-info">
+      <h4>SEOX Berater</h4>
+      <p>Online</p>
+    </div>
+  </div>
+  <div class="chatbot-messages" id="chatMessages"></div>
+  <div class="chatbot-input-area">
+    <input type="text" class="chatbot-input" id="chatInput" placeholder="Deine Frage..." autocomplete="off">
+    <button class="chatbot-send" id="chatSend"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo"><img src="seox-logo-weiss.svg" alt="SEOX" style="height:44px;width:auto;"></a>
+        <p>SEOX baut Webseiten die verkaufen -- CR-optimiert auf Basis von 1'000+ Datenpunkten, kombiniert mit SEO, GEO & SEA Expertise.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Angebot</h4>
+        <a href="#pakete">Preise & Pakete</a>
+        <a href="#lösung">Unsere Lösung</a>
+        <a href="#prozess">So funktioniert's</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-links">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@seox.ch">info@seox.ch</a>
+        <a href="tel:+41442441888">+41 44 244 18 88</a>
+        <a>Badenerstrasse 549</a>
+        <a>8048 Zürich</a>
+        <a href="https://seox.ch" target="_blank">seox.ch</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SEOX GmbH. Alle Rechte vorbehalten.</span>
+      <div class="footer-legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Pricing Toggle
+function showPricing(type) {
+  const leasing = document.getElementById('pricingLeasing');
+  const einmalig = document.getElementById('pricingEinmalig');
+  const btnLeasing = document.getElementById('toggleLeasing');
+  const btnEinmalig = document.getElementById('toggleEinmalig');
+  if (type === 'leasing') {
+    leasing.style.display = '';
+    einmalig.style.display = 'none';
+    btnLeasing.className = 'btn btn-primary';
+    btnEinmalig.className = 'btn btn-outline';
+  } else {
+    leasing.style.display = 'none';
+    einmalig.style.display = '';
+    btnLeasing.className = 'btn btn-outline';
+    btnEinmalig.className = 'btn btn-primary';
+  }
+}
+
+// Sticky header
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navMenu = document.getElementById('navMenu');
+mobileToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+  const isOpen = navMenu.classList.contains('open');
+  mobileToggle.setAttribute('aria-expanded', isOpen);
+  mobileToggle.setAttribute('aria-label', isOpen ? 'Navigation schliessen' : 'Navigation oeffnen');
+});
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navMenu.classList.remove('open'));
+});
+
+// Scroll animations (fade-up)
+const fadeEls = document.querySelectorAll('.fade-up');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+// === SIMPLE TRANSITION-BASED LOOP ===
+// Just toggles a .show class on/off. CSS transitions handle the rest.
+function startLoop(elements, showClass, holdMs, hideMs, pauseMs, onShow, onHide) {
+  let active = false;
+
+  function show() {
+    if (!active) return;
+    // Add show class (CSS transition animates in)
+    elements.forEach(el => el.classList.add(showClass));
+    if (onShow) onShow();
+    // After hold time, hide
+    setTimeout(hide, holdMs);
+  }
+
+  function hide() {
+    if (!active) return;
+    if (onHide) onHide();
+    // Remove show class (CSS transition animates out)
+    elements.forEach(el => el.classList.remove(showClass));
+    // After transition out + pause, show again
+    setTimeout(show, hideMs + pauseMs);
+  }
+
+  return {
+    start() {
+      if (active) return;
+      active = true;
+      show();
+    }
+  };
+}
+
+// --- Floating badges ---
+const floatingBadges = document.querySelectorAll('.fbadge');
+const heroVisual = document.querySelector('.hero-visual');
+let floatTimer = null;
+
+const badgeLoop = startLoop(
+  floatingBadges, 'show',
+  10000,  // 10s sichtbar
+  1500,   // 1.5s fuer Ausblend-Transition
+  2000,   // 2s Pause
+  () => {
+    // Float-Effekt nach dem Einblenden
+    floatTimer = setTimeout(() => {
+      floatingBadges.forEach(b => b.classList.add('float'));
+    }, 2000);
+  },
+  () => {
+    clearTimeout(floatTimer);
+    floatingBadges.forEach(b => b.classList.remove('float'));
+  }
+);
+
+const badgeObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) badgeLoop.start();
+}, { threshold: 0.3 });
+if (heroVisual) badgeObserver.observe(heroVisual);
+
+// --- Score rings (one-shot, no loop) ---
+const scoreRings = document.querySelectorAll('.score-ring');
+const ringObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated');
+      const fill = entry.target.querySelector('.ring-fill');
+      if (fill) {
+        const offset = fill.style.getPropertyValue('--offset');
+        fill.style.strokeDashoffset = offset;
+      }
+      ringObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+scoreRings.forEach(ring => ringObserver.observe(ring));
+
+// --- Consequences loop ---
+const consequences = document.querySelectorAll('.ba-consequence');
+const conSection = document.getElementById('baConsequences');
+
+const conLoop = startLoop(
+  consequences, 'show',
+  10000, 1500, 2000,
+  null, null
+);
+
+const conObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) conLoop.start();
+}, { threshold: 0.3 });
+if (conSection) conObserver.observe(conSection);
+
+// --- Advantages loop ---
+const advantages = document.querySelectorAll('.ba-advantage');
+const advSection = document.getElementById('baAdvantages');
+let barTimers = [];
+
+const advLoop = startLoop(
+  advantages, 'show',
+  10000, 1500, 2000,
+  () => {
+    // Bars wachsen lassen nach Einblenden
+    barTimers = advantages.map((adv, i) =>
+      setTimeout(() => adv.classList.add('animated'), 500 + i * 200)
+    );
+  },
+  () => {
+    barTimers.forEach(t => clearTimeout(t));
+    advantages.forEach(adv => {
+      adv.classList.remove('animated');
+    });
+  }
+);
+
+const advObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) advLoop.start();
+}, { threshold: 0.3 });
+if (advSection) advObserver.observe(advSection);
+
+// Counters
+function formatNumber(n) {
+  if (n === 0) return '0';
+  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+}
+
+const counters = document.querySelectorAll('.counter');
+let counterStarted = false;
+
+function startCounters() {
+  if (counterStarted) return;
+  counterStarted = true;
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    if (target === 0) { counter.textContent = '0'; return; }
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+        counter.closest('.stat-item').classList.add('counted');
+      }
+      counter.textContent = formatNumber(Math.floor(current));
+    }, 16);
+  });
+}
+
+const statsBar = document.querySelector('.stats-bar');
+const statsObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    startCounters();
+    statsObserver.unobserve(statsBar);
+  }
+}, { threshold: 0.3 });
+statsObserver.observe(statsBar);
+
+// Form handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  btn.textContent = 'Wird gesendet...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Erfolgreich gesendet!';
+    btn.style.background = '#34d399';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+      this.reset();
+    }, 3000);
+  }, 1500);
+});
+
+// ========== KONFIGURATOR ==========
+(function(){
+  const kSteps = [
+    {
+      label: 'Schritt 1 von 4',
+      title: 'Was ist Deine grösste Herausforderung?',
+      sub: 'Waehle alles, was auf Dich zutrifft.',
+      multi: true,
+      options: [
+        {id:'no-leads', t:'Zu wenig Anfragen', d:'Webseite bringt kaum Leads oder Anrufe'},
+        {id:'not-found', t:'Online nicht sichtbar', d:'Kunden finden Dich nicht bei Google'},
+        {id:'old-site', t:'Veraltete Webseite', d:'Design und Technik nicht mehr zeitgemaess'},
+        {id:'no-time', t:'Keine Zeit / kein Know-how', d:'Du willst Dich auf Dein Business konzentrieren'},
+        {id:'bad-ads', t:'Werbung bringt nichts', d:'Google Ads laufen, aber ohne messbaren Erfolg'},
+        {id:'ai-invisible', t:'KI-Suche ignoriert mich', d:'ChatGPT & Co. empfehlen die Konkurrenz'}
+      ]
+    },
+    {
+      label: 'Schritt 2 von 4',
+      title: 'Wie gross ist Dein Unternehmen?',
+      sub: 'Das hilft uns, den richtigen Umfang einzuschätzen.',
+      multi: false,
+      options: [
+        {id:'solo', t:'Einzelunternehmen', d:'1 Person, gerade am Starten oder etabliert'},
+        {id:'small', t:'Kleines KMU (2-10 MA)', d:'Wachsendes Team, lokaler Fokus'},
+        {id:'medium', t:'Mittleres KMU (11-50 MA)', d:'Mehrere Standorte oder Abteilungen'},
+        {id:'large', t:'Grösseres Unternehmen (50+)', d:'Nationale/internationale Präsenz'}
+      ]
+    },
+    {
+      label: 'Schritt 3 von 4',
+      title: 'Wie wichtig ist Dir laufende Betreuung?',
+      sub: 'Damit wir das richtige Modell fuer Dich finden.',
+      multi: false,
+      options: [
+        {id:'diy', t:'Ich mach es selbst', d:'Einmalige Webseite, danach übernehme ich'},
+        {id:'some-help', t:'Etwas Unterstuetzung', d:'Ab und zu Änderungen und Updates'},
+        {id:'full-service', t:'Rundum-sorglos', d:'Webseite + Marketing komplett betreut'},
+        {id:'growth', t:'Wachstumspartner', d:'Ich will aktiv skalieren'}
+      ]
+    },
+    {
+      label: 'Schritt 4 von 4',
+      title: 'Welches Budget-Modell passt besser?',
+      sub: 'Kein Commitment -- nur damit wir Dir den passenden Vorschlag zeigen.',
+      multi: false,
+      options: [
+        {id:'leasing', t:'Monatlich (Leasing)', d:'Ab CHF 299/Mt., planbare Kosten, laufende Betreuung'},
+        {id:'einmalig', t:'Einmalig (Kauf)', d:'Ab CHF 899, volle Eigentumsrechte'}
+      ]
+    }
+  ];
+
+  let kCur = 0;
+  let kSel = {};
+  let kOptional = {};
+
+  function kFmt(n) {
+    return n.toLocaleString('de-CH');
+  }
+
+  function kRender() {
+    // Progress bar
+    const bar = document.getElementById('konfigBar');
+    const totalDots = kSteps.length + 1;
+    bar.innerHTML = '';
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'konfig-progress-dot' + (i < kCur ? ' done' : (i === kCur ? ' active' : ''));
+      bar.appendChild(dot);
+    }
+
+    const content = document.getElementById('konfigContent');
+    const nav = document.getElementById('konfigNav');
+
+    if (kCur < kSteps.length) {
+      const s = kSteps[kCur];
+      const chosen = kSel[kCur] || [];
+
+      let html = '<div class="konfig-step-label">' + s.label + '</div>';
+      html += '<div class="konfig-title">' + s.title + '</div>';
+      html += '<div class="konfig-sub">' + s.sub + '</div>';
+      html += '<div class="konfig-options">';
+      s.options.forEach(function(o) {
+        const isSel = chosen.indexOf(o.id) >= 0;
+        html += '<div class="konfig-opt' + (isSel ? ' selected' : '') + '" data-step="' + kCur + '" data-id="' + o.id + '" data-multi="' + s.multi + '">';
+        html += '<div class="konfig-opt-title">' + o.t + '</div>';
+        html += '<div class="konfig-opt-desc">' + o.d + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+      content.innerHTML = html;
+
+      // Click handlers
+      content.querySelectorAll('.konfig-opt').forEach(function(el) {
+        el.addEventListener('click', function() {
+          const step = parseInt(this.dataset.step);
+          const id = this.dataset.id;
+          const multi = this.dataset.multi === 'true';
+          if (!kSel[step]) kSel[step] = [];
+          if (multi) {
+            const idx = kSel[step].indexOf(id);
+            if (idx >= 0) kSel[step].splice(idx, 1);
+            else kSel[step].push(id);
+          } else {
+            kSel[step] = [id];
+          }
+          kRender();
+        });
+      });
+
+      // Navigation
+      let navHtml = '';
+      if (kCur > 0) {
+        navHtml += '<button class="konfig-btn konfig-btn-back" id="konfigBack">Zurueck</button>';
+      } else {
+        navHtml += '<span></span>';
+      }
+      navHtml += '<button class="konfig-btn konfig-btn-next" id="konfigNext"' + (chosen.length === 0 ? ' disabled' : '') + '>Weiter</button>';
+      nav.innerHTML = navHtml;
+
+      if (kCur > 0) {
+        document.getElementById('konfigBack').addEventListener('click', function() { kCur--; kRender(); });
+      }
+      var nextBtn = document.getElementById('konfigNext');
+      nextBtn.addEventListener('click', function() {
+        if ((kSel[kCur] || []).length > 0) { kCur++; kRender(); }
+      });
+
+    } else {
+      kShowResult();
+    }
+  }
+
+  function kShowResult() {
+    const ch = kSel[0] || [];
+    const size = (kSel[1] || [])[0] || 'small';
+    const care = (kSel[2] || [])[0] || 'some-help';
+    const model = (kSel[3] || [])[0] || 'leasing';
+    const isL = model === 'leasing';
+
+    // Determine base package
+    var baseName, basePrice;
+    if (isL) {
+      if (size === 'solo') { baseName = 'Starter Webseite'; basePrice = 299; }
+      else if (size === 'large' || care === 'growth') { baseName = 'Premium Webseite'; basePrice = 799; }
+      else { baseName = 'Business Webseite'; basePrice = 499; }
+    } else {
+      if (size === 'solo') { baseName = '1 Pager'; basePrice = 899; }
+      else if (size === 'large' || care === 'growth') { baseName = 'Enterprise Webseite'; basePrice = 5000; }
+      else if (care === 'full-service') { baseName = 'Professional Webseite'; basePrice = 2899; }
+      else { baseName = 'Essential Webseite'; basePrice = 1499; }
+    }
+
+    // Determine recommended modules
+    var recMods = [];
+    var optMods = [];
+
+    if (ch.indexOf('not-found') >= 0 || ch.indexOf('no-leads') >= 0) {
+      if (size === 'large' || care === 'full-service' || care === 'growth') {
+        recMods.push(isL
+          ? {n:'SEO Professional', p:799, u:'/Mt.', d:'10 Keywords, Content & Link-Building'}
+          : {n:'SEO Kickstart', p:2490, u:' einmalig', d:'10 Keywords + On-Page + technisches Audit'});
+      } else {
+        recMods.push(isL
+          ? {n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'}
+          : {n:'SEO Kickstart', p:2490, u:' einmalig', d:'Keyword-Recherche + On-Page Optimierung'});
+      }
+    }
+
+    if (ch.indexOf('bad-ads') >= 0) {
+      if (size === 'large' || care === 'growth') {
+        recMods.push(isL
+          ? {n:'SEA Professional', p:599, u:'/Mt.', d:'8 Kampagnen + Remarketing (exkl. Media)'}
+          : {n:'SEA Kickstart', p:1990, u:' einmalig', d:'3 Kampagnen + 30 Tage Optimierung'});
+      } else {
+        recMods.push(isL
+          ? {n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'}
+          : {n:'SEA Kickstart', p:1990, u:' einmalig', d:'3 Kampagnen Setup + Tracking'});
+      }
+    }
+
+    if (ch.indexOf('ai-invisible') >= 0) {
+      recMods.push(isL
+        ? {n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in ChatGPT, Perplexity & Co.'}
+        : {n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippet Optimierung'});
+    }
+
+    // Optional modules (not recommended but available)
+    if (isL) {
+      if (!recMods.find(function(m){ return m.n.indexOf('SEO') >= 0; })) {
+        optMods.push({n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('SEA') >= 0; })) {
+        optMods.push({n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('GEO') >= 0; })) {
+        optMods.push({n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in KI-Suchmaschinen'});
+      }
+      if (care === 'full-service' || care === 'growth') {
+        recMods.push({n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
+      } else {
+        optMods.push({n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
+      }
+    } else {
+      if (!recMods.find(function(m){ return m.n.indexOf('SEO') >= 0; })) {
+        optMods.push({n:'SEO Kickstart', p:2490, u:' einmalig', d:'Keyword-Recherche + On-Page Optimierung'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('SEA') >= 0; })) {
+        optMods.push({n:'SEA Kickstart', p:1990, u:' einmalig', d:'3 Kampagnen Setup + Tracking'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('GEO') >= 0; })) {
+        optMods.push({n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippets'});
+      }
+    }
+
+    kOptional = {};
+
+    var pUnit = isL ? '/Mt.' : ' einmalig';
+
+    function calcTotal() {
+      var t = basePrice;
+      recMods.forEach(function(m) { t += m.p; });
+      optMods.forEach(function(m, i) { if (kOptional[i]) t += m.p; });
+      return t;
+    }
+
+    function renderResult() {
+      var total = calcTotal();
+      var html = '<div class="konfig-step-label">Deine persönliche Empfehlung</div>';
+      html += '<div class="konfig-title">Das passt zu Dir</div>';
+      html += '<div class="konfig-sub">Basierend auf Deinen Angaben empfehlen wir diese Kombination. Klicke auf optionale Module, um sie hinzuzufuegen.</div>';
+
+      // Base
+      html += '<div class="konfig-result-item recommended">';
+      html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + baseName + ' <span class="konfig-tag">Basis</span></div>';
+      html += '<div class="konfig-ri-desc">CR-optimiertes Design + Hosting + Pflege</div></div>';
+      html += '<div class="konfig-ri-price">CHF ' + kFmt(basePrice) + pUnit + '</div></div>';
+
+      // Recommended
+      recMods.forEach(function(m) {
+        html += '<div class="konfig-result-item recommended">';
+        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + m.n + ' <span class="konfig-tag">Empfohlen</span></div>';
+        html += '<div class="konfig-ri-desc">' + m.d + '</div></div>';
+        html += '<div class="konfig-ri-price">CHF ' + kFmt(m.p) + m.u + '</div></div>';
+      });
+
+      // Optional
+      optMods.forEach(function(m, i) {
+        var added = kOptional[i];
+        html += '<div class="konfig-result-item optional' + (added ? ' added' : '') + '" data-opt-idx="' + i + '">';
+        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + m.n + ' <span class="konfig-tag-opt">' + (added ? 'Hinzugefügt' : 'Optional') + '</span></div>';
+        html += '<div class="konfig-ri-desc">' + m.d + '</div></div>';
+        html += '<div class="konfig-ri-price">+ CHF ' + kFmt(m.p) + m.u + '</div></div>';
+      });
+
+      // Total
+      html += '<div class="konfig-total"><div class="konfig-total-label">Gesamt' + (isL ? ' monatlich' : '') + '</div>';
+      html += '<div class="konfig-total-price">CHF ' + kFmt(total) + ' <span>' + pUnit + '</span></div></div>';
+
+      // Social proof & urgency
+      html += '<div class="konfig-proof">87% unserer Kunden mit ähnlichem Profil haben sich fuer diese Kombination entschieden.</div>';
+      html += '<div class="konfig-urgency">Noch 3 Plätze fuer kostenlose Erstberatung im Mai verfügbar.</div>';
+
+      // CTA
+      html += '<button class="konfig-btn-cta" onclick="document.getElementById(\'kontakt\').scrollIntoView({behavior:\'smooth\'})">Kostenloses Beratungsgespraech buchen</button>';
+      html += '<div class="konfig-savings">Unverbindlich und kostenlos -- in 15 Minuten weisst Du, was möglich ist.</div>';
+
+      content.innerHTML = html;
+
+      // Optional toggle handlers
+      content.querySelectorAll('.konfig-result-item.optional').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var idx = parseInt(this.dataset.optIdx);
+          kOptional[idx] = !kOptional[idx];
+          renderResult();
+        });
+      });
+    }
+
+    var content = document.getElementById('konfigContent');
+    renderResult();
+
+    // Nav
+    var nav = document.getElementById('konfigNav');
+    nav.innerHTML = '<button class="konfig-btn konfig-btn-back" id="konfigBackResult">Zurueck</button><button class="konfig-btn konfig-btn-back" id="konfigReset">Neu starten</button>';
+    document.getElementById('konfigBackResult').addEventListener('click', function() { kCur--; kRender(); });
+    document.getElementById('konfigReset').addEventListener('click', function() { kCur = 0; kSel = {}; kOptional = {}; kRender(); });
+  }
+
+  // Init
+  kRender();
+})();
+
+// ========== CHATBOT ==========
+(function(){
+  var fab = document.getElementById('chatFab');
+  var win = document.getElementById('chatWindow');
+  var msgs = document.getElementById('chatMessages');
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('chatSend');
+  var hint = document.getElementById('chatHint');
+  var pulse = document.getElementById('chatPulse');
+  var isOpen = false;
+  var conversationState = 'init';
+
+  // Show hint after 5 seconds
+  setTimeout(function() {
+    if (!isOpen) { hint.classList.add('visible'); }
+  }, 5000);
+  // Hide hint after 12 seconds
+  setTimeout(function() {
+    hint.classList.remove('visible');
+  }, 12000);
+
+  fab.addEventListener('click', function() {
+    isOpen = !isOpen;
+    fab.classList.toggle('open', isOpen);
+    win.classList.toggle('open', isOpen);
+    hint.classList.remove('visible');
+    pulse.style.display = isOpen ? 'none' : '';
+    if (isOpen && msgs.children.length === 0) {
+      startConversation();
+    }
+    if (isOpen) input.focus();
+  });
+
+  function addMsg(text, type, quickReplies) {
+    var div = document.createElement('div');
+    div.className = 'chatbot-msg ' + type;
+    div.innerHTML = text;
+    if (quickReplies && quickReplies.length) {
+      var qr = document.createElement('div');
+      qr.className = 'chatbot-quick-replies';
+      quickReplies.forEach(function(r) {
+        var btn = document.createElement('button');
+        btn.className = 'chatbot-quick-btn';
+        btn.textContent = r.label;
+        btn.addEventListener('click', function() {
+          addMsg(r.label, 'user');
+          qr.remove();
+          if (r.action) r.action();
+        });
+        qr.appendChild(btn);
+      });
+      div.appendChild(qr);
+    }
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function showTyping() {
+    var div = document.createElement('div');
+    div.className = 'chatbot-msg bot typing';
+    div.id = 'typingIndicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function hideTyping() {
+    var t = document.getElementById('typingIndicator');
+    if (t) t.remove();
+  }
+
+  function botReply(text, quickReplies, delay) {
+    showTyping();
+    setTimeout(function() {
+      hideTyping();
+      addMsg(text, 'bot', quickReplies);
+    }, delay || 1200);
+  }
+
+  function startConversation() {
+    conversationState = 'greeting';
+    botReply('Hallo! Ich bin der SEOX Berater. Ich helfe Dir, das passende Paket zu finden. Was beschreibt Deine Situation am besten?', [
+      {label: 'Ich brauche eine neue Webseite', action: function(){ handleNeed('new'); }},
+      {label: 'Meine Webseite bringt keine Kunden', action: function(){ handleNeed('noconv'); }},
+      {label: 'Ich will online sichtbarer werden', action: function(){ handleNeed('seo'); }},
+      {label: 'Ich will einfach mal schauen', action: function(){ handleNeed('browse'); }}
+    ], 600);
+  }
+
+  function handleNeed(need) {
+    conversationState = 'need-' + need;
+    var responses = {
+      'new': 'Eine neue Webseite -- gute Entscheidung! Wir bauen keine normalen Webseiten, sondern <strong>Umsatzmaschinen</strong>, die auf Basis von 1\'000+ Datenpunkten optimiert sind.',
+      'noconv': 'Das hören wir oft. Die meisten Webseiten sind hübsch, aber nicht auf Conversion optimiert. Genau da setzen wir an -- mit <strong>datenbasierter CR-Optimierung</strong>.',
+      'seo': 'Sichtbarkeit ist der Schlüssel! Wir kombinieren <strong>SEO, GEO (KI-Suche)</strong> und <strong>SEA</strong> zu einer Strategie, die Dich überall sichtbar macht.',
+      'browse': 'Kein Problem! Schau Dich in Ruhe um. Ich bin hier, wenn Du Fragen hast.'
+    };
+    botReply(responses[need], null, 1000);
+
+    if (need === 'browse') {
+      setTimeout(function() {
+        botReply('Ein paar Optionen, falls Du doch neugierig bist:', [
+          {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+          {label: 'Was macht SEOX anders?', action: function(){ handleUSP(); }},
+          {label: 'Zum Konfigurator', action: function(){ scrollToKonfig(); }}
+        ]);
+      }, 2000);
+      return;
+    }
+
+    setTimeout(function() {
+      botReply('Wie möchtest Du am liebsten arbeiten?', [
+        {label: 'Monatliches Leasing ab 299.-', action: function(){ handleModel('leasing'); }},
+        {label: 'Einmalig kaufen ab 3\'990.-', action: function(){ handleModel('einmalig'); }},
+        {label: 'Bin mir unsicher', action: function(){ handleModel('unsure'); }}
+      ]);
+    }, 2800);
+  }
+
+  function handleModel(model) {
+    conversationState = 'model-' + model;
+    if (model === 'unsure') {
+      botReply('Kein Problem! Unser <strong>Konfigurator</strong> hilft Dir in 60 Sekunden die perfekte Kombination zu finden. Oder ich kann Dir die Unterschiede erklären.', [
+        {label: 'Zum Konfigurator', action: function(){ scrollToKonfig(); }},
+        {label: 'Erkläre die Unterschiede', action: function(){ handleCompare(); }},
+        {label: 'Lieber persönlich beraten', action: function(){ handleContact(); }}
+      ]);
+    } else {
+      var text = model === 'leasing'
+        ? '<strong>Leasing</strong> ist ideal, wenn Du planbare Kosten willst und laufende Betreuung schätzt. Ab CHF 299/Mt. bekommst Du eine CR-optimierte Webseite mit Hosting und Pflege. Dazu kannst Du Module wie SEO (ab 399/Mt.) oder SEA (ab 299/Mt.) buchen.'
+        : '<strong>Einmalig</strong> ist perfekt, wenn Du volle Eigentumsrechte willst. Ab CHF 3\'990 bekommst Du eine CR-optimierte Webseite mit allen Source Files. SEO- und SEA-Kickstart-Pakete gibt es als Einmal-Setup dazu.';
+      botReply(text, [
+        {label: 'Pakete anschauen', action: function(){ scrollToPricing(); }},
+        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }},
+        {label: 'Kostenlose Beratung buchen', action: function(){ handleContact(); }}
+      ]);
+    }
+  }
+
+  function handlePricing() {
+    botReply('Unsere Webseiten starten ab <strong>CHF 299/Mt.</strong> im Leasing oder <strong>CHF 899 einmalig</strong>. Dazu gibt es optionale Module wie SEO (ab 399/Mt.), SEA (ab 299/Mt.) und GEO-Optimierung (349/Mt.).', [
+      {label: 'Pakete vergleichen', action: function(){ scrollToPricing(); }},
+      {label: 'Konfigurator nutzen', action: function(){ scrollToKonfig(); }},
+      {label: 'Was ist GEO?', action: function(){ handleGEO(); }}
+    ]);
+  }
+
+  function handleUSP() {
+    botReply('Was uns unterscheidet:<br><br><strong>1. Datenbasiert:</strong> Jede Webseite wird auf Basis von 1\'000+ Datenpunkten CR-optimiert.<br><strong>2. Full-Stack:</strong> SEO + GEO + SEA aus einer Hand.<br><strong>3. Geschwindigkeit:</strong> Go-Live in Rekordzeit.<br><strong>4. Modularer Ansatz:</strong> Du zahlst nur, was Du brauchst.', [
+      {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+      {label: 'Kostenlose Demo anfordern', action: function(){ handleContact(); }}
+    ]);
+  }
+
+  function handleGEO() {
+    botReply('<strong>GEO (Generative Engine Optimization)</strong> sorgt dafür, dass KI-Suchmaschinen wie ChatGPT, Perplexity und Gemini Dein Unternehmen empfehlen. Das ist die Zukunft der Sichtbarkeit -- und wir sind einer der wenigen Anbieter in der Schweiz, die das anbieten.', [
+      {label: 'GEO-Modul buchen', action: function(){ scrollToPricing(); }},
+      {label: 'Kostenlose Beratung', action: function(){ handleContact(); }}
+    ]);
+  }
+
+  function handleCompare() {
+    botReply('<strong>Leasing:</strong> Planbare Kosten, laufende Betreuung, Hosting inkl., ideal wenn Du Dich nicht um Technik kümmern willst.<br><br><strong>Einmalig:</strong> Volle Eigentumsrechte, Source Code gehört Dir, ideal wenn Du ein eigenes Team hast oder unabhängig sein willst.', [
+      {label: 'Leasing wählen', action: function(){ handleModel('leasing'); }},
+      {label: 'Einmalig wählen', action: function(){ handleModel('einmalig'); }},
+      {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }}
+    ]);
+  }
+
+  function handleContact() {
+    botReply('Sehr gerne! Scroll zum Formular und fordere eine <strong>kostenlose Demo</strong> an -- oder ruf uns direkt an unter <strong>+41 44 244 18 88</strong>. Wir melden uns innerhalb von 24 Stunden.', [
+      {label: 'Zum Formular', action: function(){ scrollToContact(); }},
+      {label: 'Noch eine Frage', action: function(){ handleMoreQ(); }}
+    ]);
+  }
+
+  function handleMoreQ() {
+    botReply('Klar, frag einfach! Du kannst auch gerne unten eine Nachricht eintippen.', null);
+  }
+
+  function scrollToKonfig() {
+    addMsg('Ich öffne den Konfigurator für Dich!', 'bot');
+    setTimeout(function() {
+      document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'});
+    }, 500);
+  }
+
+  function scrollToPricing() {
+    addMsg('Hier sind unsere Pakete:', 'bot');
+    setTimeout(function() {
+      document.getElementById('pakete').scrollIntoView({behavior:'smooth'});
+    }, 500);
+  }
+
+  function scrollToContact() {
+    addMsg('Ich bringe Dich zum Formular!', 'bot');
+    setTimeout(function() {
+      document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    }, 500);
+  }
+
+  // Free text input handling
+  function handleFreeText(text) {
+    var t = text.toLowerCase();
+    if (t.indexOf('preis') >= 0 || t.indexOf('kost') >= 0 || t.indexOf('budget') >= 0 || t.indexOf('chf') >= 0 || t.indexOf('geld') >= 0) {
+      handlePricing();
+    } else if (t.indexOf('seo') >= 0 || t.indexOf('google') >= 0 || t.indexOf('ranking') >= 0 || t.indexOf('sichtbar') >= 0) {
+      botReply('SEO ist eines unserer Kerngebiete! Wir bieten SEO Starter (3 Keywords, CHF 399/Mt.) und SEO Professional (10 Keywords, CHF 799/Mt.) als optionale Module an.', [
+        {label: 'SEO-Modul buchen', action: function(){ scrollToPricing(); }},
+        {label: 'Mehr zu SEO erfahren', action: function(){ handleUSP(); }}
+      ]);
+    } else if (t.indexOf('sea') >= 0 || t.indexOf('ads') >= 0 || t.indexOf('werbung') >= 0 || t.indexOf('kampagne') >= 0) {
+      botReply('Google Ads Management gibt es als SEA Starter (3 Kampagnen, CHF 299/Mt.) oder SEA Professional (8 Kampagnen + Remarketing, CHF 599/Mt.). Media Budget ist exkl.', [
+        {label: 'SEA-Modul anschauen', action: function(){ scrollToPricing(); }},
+        {label: 'Kostenlose Beratung', action: function(){ handleContact(); }}
+      ]);
+    } else if (t.indexOf('geo') >= 0 || t.indexOf('chatgpt') >= 0 || t.indexOf('ki') >= 0 || t.indexOf('perplexity') >= 0 || t.indexOf('gemini') >= 0) {
+      handleGEO();
+    } else if (t.indexOf('kontakt') >= 0 || t.indexOf('termin') >= 0 || t.indexOf('anruf') >= 0 || t.indexOf('beraten') >= 0 || t.indexOf('demo') >= 0) {
+      handleContact();
+    } else if (t.indexOf('leasing') >= 0 || t.indexOf('monatl') >= 0 || t.indexOf('miete') >= 0) {
+      handleModel('leasing');
+    } else if (t.indexOf('einmal') >= 0 || t.indexOf('kauf') >= 0 || t.indexOf('eigen') >= 0) {
+      handleModel('einmalig');
+    } else if (t.indexOf('unterschied') >= 0 || t.indexOf('vergleich') >= 0) {
+      handleCompare();
+    } else if (t.indexOf('hallo') >= 0 || t.indexOf('hi') >= 0 || t.indexOf('hey') >= 0 || t.indexOf('grüss') >= 0) {
+      botReply('Hallo! Schön, dass Du da bist. Wie kann ich Dir helfen?', [
+        {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+        {label: 'Was macht SEOX anders?', action: function(){ handleUSP(); }},
+        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }}
+      ]);
+    } else {
+      botReply('Gute Frage! Für eine detaillierte Antwort empfehle ich Dir ein kostenloses Beratungsgespräch. Oder versuch es mit dem Konfigurator -- der findet in 60 Sekunden Dein ideales Paket.', [
+        {label: 'Kostenlose Beratung', action: function(){ handleContact(); }},
+        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }},
+        {label: 'Pakete anschauen', action: function(){ scrollToPricing(); }}
+      ]);
+    }
+  }
+
+  function sendMessage() {
+    var text = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    input.value = '';
+    handleFreeText(text);
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') sendMessage();
+  });
+})();
+
+// ========== ADVANCED ANIMATIONS ==========
+
+// --- Particle Background ---
+(function() {
+  const canvas = document.getElementById('heroParticles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [], animId;
+  const PARTICLE_COUNT = 45;
+  const CONNECT_DIST = 120;
+  const pink = [212, 35, 138];
+  const white = [249, 250, 252];
+
+  function resize() {
+    const hero = document.getElementById('hero');
+    w = canvas.width = hero.offsetWidth;
+    h = canvas.height = hero.offsetHeight;
+  }
+
+  function createParticle() {
+    const useWhite = Math.random() > 0.5;
+    const c = useWhite ? white : pink;
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 0.5,
+      color: c,
+      alpha: Math.random() * 0.4 + 0.1
+    };
+  }
+
+  function init() {
+    resize();
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    // Connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECT_DIST) {
+          const opacity = (1 - dist / CONNECT_DIST) * 0.12;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(' + pink.join(',') + ',' + opacity + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    // Particles
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.color.join(',') + ',' + p.alpha + ')';
+      ctx.fill();
+    });
+    animId = requestAnimationFrame(draw);
+  }
+
+  // Only run when hero is visible
+  const heroObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      if (!animId) draw();
+    } else {
+      cancelAnimationFrame(animId);
+      animId = null;
+    }
+  }, { threshold: 0 });
+  heroObs.observe(document.getElementById('hero'));
+
+  init();
+  window.addEventListener('resize', function() {
+    resize();
+    particles.forEach(p => {
+      if (p.x > w) p.x = w - 10;
+      if (p.y > h) p.y = h - 10;
+    });
+  });
+})();
+
+// --- Hero Cursor Glow ---
+(function() {
+  const hero = document.getElementById('hero');
+  const glow = document.getElementById('heroGlow');
+  if (!hero || !glow) return;
+  hero.addEventListener('mousemove', function(e) {
+    const rect = hero.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left - 175) + 'px';
+    glow.style.top = (e.clientY - rect.top - 175) + 'px';
+  });
+})();
+
+// --- 3D Tilt on Cards ---
+(function() {
+  const cards = document.querySelectorAll('.pricing-card, .addon-card, .process-step, .alps-phase-content');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotateX = ((y - cy) / cy) * -5;
+      const rotateY = ((x - cx) / cx) * 5;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+})();
+
+// --- Magnetic Button Effect ---
+(function() {
+  var btns = document.querySelectorAll('.btn-primary, .btn-outline');
+  btns.forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function() {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+})();
+
+// --- Glow Dividers between sections ---
+(function() {
+  var sections = document.querySelectorAll('.section, .section-alt');
+  sections.forEach(function(sec) {
+    if (!sec.previousElementSibling || !sec.previousElementSibling.classList.contains('section') && !sec.previousElementSibling.classList.contains('section-alt')) return;
+    var divider = document.createElement('div');
+    divider.className = 'glow-divider';
+    sec.parentNode.insertBefore(divider, sec);
+  });
+})();
+</script>
+
+</body>
+</html>
