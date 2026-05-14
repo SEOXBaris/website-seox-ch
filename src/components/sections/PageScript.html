@@ -1,0 +1,926 @@
+// Pricing Toggle
+function showPricing(type) {
+  const leasing = document.getElementById('pricingLeasing');
+  const einmalig = document.getElementById('pricingEinmalig');
+  const btnLeasing = document.getElementById('toggleLeasing');
+  const btnEinmalig = document.getElementById('toggleEinmalig');
+  if (type === 'leasing') {
+    leasing.style.display = '';
+    einmalig.style.display = 'none';
+    btnLeasing.className = 'btn btn-primary';
+    btnEinmalig.className = 'btn btn-outline';
+  } else {
+    leasing.style.display = 'none';
+    einmalig.style.display = '';
+    btnLeasing.className = 'btn btn-outline';
+    btnEinmalig.className = 'btn btn-primary';
+  }
+}
+
+// Sticky header
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navMenu = document.getElementById('navMenu');
+mobileToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+  const isOpen = navMenu.classList.contains('open');
+  mobileToggle.setAttribute('aria-expanded', isOpen);
+  mobileToggle.setAttribute('aria-label', isOpen ? 'Navigation schliessen' : 'Navigation oeffnen');
+});
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navMenu.classList.remove('open'));
+});
+
+// Scroll animations (fade-up)
+const fadeEls = document.querySelectorAll('.fade-up');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => fadeObserver.observe(el));
+
+// === SIMPLE TRANSITION-BASED LOOP ===
+// Just toggles a .show class on/off. CSS transitions handle the rest.
+function startLoop(elements, showClass, holdMs, hideMs, pauseMs, onShow, onHide) {
+  let active = false;
+
+  function show() {
+    if (!active) return;
+    // Add show class (CSS transition animates in)
+    elements.forEach(el => el.classList.add(showClass));
+    if (onShow) onShow();
+    // After hold time, hide
+    setTimeout(hide, holdMs);
+  }
+
+  function hide() {
+    if (!active) return;
+    if (onHide) onHide();
+    // Remove show class (CSS transition animates out)
+    elements.forEach(el => el.classList.remove(showClass));
+    // After transition out + pause, show again
+    setTimeout(show, hideMs + pauseMs);
+  }
+
+  return {
+    start() {
+      if (active) return;
+      active = true;
+      show();
+    }
+  };
+}
+
+// --- Floating badges ---
+const floatingBadges = document.querySelectorAll('.fbadge');
+const heroVisual = document.querySelector('.hero-visual');
+let floatTimer = null;
+
+const badgeLoop = startLoop(
+  floatingBadges, 'show',
+  10000,  // 10s sichtbar
+  1500,   // 1.5s fuer Ausblend-Transition
+  2000,   // 2s Pause
+  () => {
+    // Float-Effekt nach dem Einblenden
+    floatTimer = setTimeout(() => {
+      floatingBadges.forEach(b => b.classList.add('float'));
+    }, 2000);
+  },
+  () => {
+    clearTimeout(floatTimer);
+    floatingBadges.forEach(b => b.classList.remove('float'));
+  }
+);
+
+const badgeObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) badgeLoop.start();
+}, { threshold: 0.3 });
+if (heroVisual) badgeObserver.observe(heroVisual);
+
+// --- Score rings (one-shot, no loop) ---
+const scoreRings = document.querySelectorAll('.score-ring');
+const ringObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated');
+      const fill = entry.target.querySelector('.ring-fill');
+      if (fill) {
+        const offset = fill.style.getPropertyValue('--offset');
+        fill.style.strokeDashoffset = offset;
+      }
+      ringObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+scoreRings.forEach(ring => ringObserver.observe(ring));
+
+// --- Consequences loop ---
+const consequences = document.querySelectorAll('.ba-consequence');
+const conSection = document.getElementById('baConsequences');
+
+const conLoop = startLoop(
+  consequences, 'show',
+  10000, 1500, 2000,
+  null, null
+);
+
+const conObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) conLoop.start();
+}, { threshold: 0.3 });
+if (conSection) conObserver.observe(conSection);
+
+// --- Advantages loop ---
+const advantages = document.querySelectorAll('.ba-advantage');
+const advSection = document.getElementById('baAdvantages');
+let barTimers = [];
+
+const advLoop = startLoop(
+  advantages, 'show',
+  10000, 1500, 2000,
+  () => {
+    // Bars wachsen lassen nach Einblenden
+    barTimers = advantages.map((adv, i) =>
+      setTimeout(() => adv.classList.add('animated'), 500 + i * 200)
+    );
+  },
+  () => {
+    barTimers.forEach(t => clearTimeout(t));
+    advantages.forEach(adv => {
+      adv.classList.remove('animated');
+    });
+  }
+);
+
+const advObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) advLoop.start();
+}, { threshold: 0.3 });
+if (advSection) advObserver.observe(advSection);
+
+// Counters
+function formatNumber(n) {
+  if (n === 0) return '0';
+  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+}
+
+const counters = document.querySelectorAll('.counter');
+let counterStarted = false;
+
+function startCounters() {
+  if (counterStarted) return;
+  counterStarted = true;
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-target'));
+    if (target === 0) { counter.textContent = '0'; return; }
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+        counter.closest('.stat-item').classList.add('counted');
+      }
+      counter.textContent = formatNumber(Math.floor(current));
+    }, 16);
+  });
+}
+
+const statsBar = document.querySelector('.stats-bar');
+const statsObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    startCounters();
+    statsObserver.unobserve(statsBar);
+  }
+}, { threshold: 0.3 });
+statsObserver.observe(statsBar);
+
+// Form handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  btn.textContent = 'Wird gesendet...';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Erfolgreich gesendet!';
+    btn.style.background = '#34d399';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+      this.reset();
+    }, 3000);
+  }, 1500);
+});
+
+// ========== KONFIGURATOR ==========
+(function(){
+  const kSteps = [
+    {
+      label: 'Schritt 1 von 4',
+      title: 'Was ist Deine grösste Herausforderung?',
+      sub: 'Waehle alles, was auf Dich zutrifft.',
+      multi: true,
+      options: [
+        {id:'no-leads', t:'Zu wenig Anfragen', d:'Webseite bringt kaum Leads oder Anrufe'},
+        {id:'not-found', t:'Online nicht sichtbar', d:'Kunden finden Dich nicht bei Google'},
+        {id:'old-site', t:'Veraltete Webseite', d:'Design und Technik nicht mehr zeitgemaess'},
+        {id:'no-time', t:'Keine Zeit / kein Know-how', d:'Du willst Dich auf Dein Business konzentrieren'},
+        {id:'bad-ads', t:'Werbung bringt nichts', d:'Google Ads laufen, aber ohne messbaren Erfolg'},
+        {id:'ai-invisible', t:'KI-Suche ignoriert mich', d:'ChatGPT & Co. empfehlen die Konkurrenz'}
+      ]
+    },
+    {
+      label: 'Schritt 2 von 4',
+      title: 'Wie gross ist Dein Unternehmen?',
+      sub: 'Das hilft uns, den richtigen Umfang einzuschätzen.',
+      multi: false,
+      options: [
+        {id:'solo', t:'Einzelunternehmen', d:'1 Person, gerade am Starten oder etabliert'},
+        {id:'small', t:'Kleines KMU (2-10 MA)', d:'Wachsendes Team, lokaler Fokus'},
+        {id:'medium', t:'Mittleres KMU (11-50 MA)', d:'Mehrere Standorte oder Abteilungen'},
+        {id:'large', t:'Grösseres Unternehmen (50+)', d:'Nationale/internationale Präsenz'}
+      ]
+    },
+    {
+      label: 'Schritt 3 von 4',
+      title: 'Wie wichtig ist Dir laufende Betreuung?',
+      sub: 'Damit wir das richtige Modell fuer Dich finden.',
+      multi: false,
+      options: [
+        {id:'diy', t:'Ich mach es selbst', d:'Einmalige Webseite, danach übernehme ich'},
+        {id:'some-help', t:'Etwas Unterstuetzung', d:'Ab und zu Änderungen und Updates'},
+        {id:'full-service', t:'Rundum-sorglos', d:'Webseite + Marketing komplett betreut'},
+        {id:'growth', t:'Wachstumspartner', d:'Ich will aktiv skalieren'}
+      ]
+    },
+    {
+      label: 'Schritt 4 von 4',
+      title: 'Welches Budget-Modell passt besser?',
+      sub: 'Kein Commitment -- nur damit wir Dir den passenden Vorschlag zeigen.',
+      multi: false,
+      options: [
+        {id:'leasing', t:'Monatlich (Leasing)', d:'Ab CHF 299/Mt., planbare Kosten, laufende Betreuung'},
+        {id:'einmalig', t:'Einmalig (Kauf)', d:'Ab CHF 899, volle Eigentumsrechte'}
+      ]
+    }
+  ];
+
+  let kCur = 0;
+  let kSel = {};
+  let kOptional = {};
+
+  function kFmt(n) {
+    return n.toLocaleString('de-CH');
+  }
+
+  function kRender() {
+    // Progress bar
+    const bar = document.getElementById('konfigBar');
+    const totalDots = kSteps.length + 1;
+    bar.innerHTML = '';
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'konfig-progress-dot' + (i < kCur ? ' done' : (i === kCur ? ' active' : ''));
+      bar.appendChild(dot);
+    }
+
+    const content = document.getElementById('konfigContent');
+    const nav = document.getElementById('konfigNav');
+
+    if (kCur < kSteps.length) {
+      const s = kSteps[kCur];
+      const chosen = kSel[kCur] || [];
+
+      let html = '<div class="konfig-step-label">' + s.label + '</div>';
+      html += '<div class="konfig-title">' + s.title + '</div>';
+      html += '<div class="konfig-sub">' + s.sub + '</div>';
+      html += '<div class="konfig-options">';
+      s.options.forEach(function(o) {
+        const isSel = chosen.indexOf(o.id) >= 0;
+        html += '<div class="konfig-opt' + (isSel ? ' selected' : '') + '" data-step="' + kCur + '" data-id="' + o.id + '" data-multi="' + s.multi + '">';
+        html += '<div class="konfig-opt-title">' + o.t + '</div>';
+        html += '<div class="konfig-opt-desc">' + o.d + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+      content.innerHTML = html;
+
+      // Click handlers
+      content.querySelectorAll('.konfig-opt').forEach(function(el) {
+        el.addEventListener('click', function() {
+          const step = parseInt(this.dataset.step);
+          const id = this.dataset.id;
+          const multi = this.dataset.multi === 'true';
+          if (!kSel[step]) kSel[step] = [];
+          if (multi) {
+            const idx = kSel[step].indexOf(id);
+            if (idx >= 0) kSel[step].splice(idx, 1);
+            else kSel[step].push(id);
+          } else {
+            kSel[step] = [id];
+          }
+          kRender();
+        });
+      });
+
+      // Navigation
+      let navHtml = '';
+      if (kCur > 0) {
+        navHtml += '<button class="konfig-btn konfig-btn-back" id="konfigBack">Zurueck</button>';
+      } else {
+        navHtml += '<span></span>';
+      }
+      navHtml += '<button class="konfig-btn konfig-btn-next" id="konfigNext"' + (chosen.length === 0 ? ' disabled' : '') + '>Weiter</button>';
+      nav.innerHTML = navHtml;
+
+      if (kCur > 0) {
+        document.getElementById('konfigBack').addEventListener('click', function() { kCur--; kRender(); });
+      }
+      var nextBtn = document.getElementById('konfigNext');
+      nextBtn.addEventListener('click', function() {
+        if ((kSel[kCur] || []).length > 0) { kCur++; kRender(); }
+      });
+
+    } else {
+      kShowResult();
+    }
+  }
+
+  function kShowResult() {
+    const ch = kSel[0] || [];
+    const size = (kSel[1] || [])[0] || 'small';
+    const care = (kSel[2] || [])[0] || 'some-help';
+    const model = (kSel[3] || [])[0] || 'leasing';
+    const isL = model === 'leasing';
+
+    // Determine base package
+    var baseName, basePrice;
+    if (isL) {
+      if (size === 'solo') { baseName = 'Starter Webseite'; basePrice = 299; }
+      else if (size === 'large' || care === 'growth') { baseName = 'Premium Webseite'; basePrice = 799; }
+      else { baseName = 'Business Webseite'; basePrice = 499; }
+    } else {
+      if (size === 'solo') { baseName = '1 Pager'; basePrice = 899; }
+      else if (size === 'large' || care === 'growth') { baseName = 'Enterprise Webseite'; basePrice = 5000; }
+      else if (care === 'full-service') { baseName = 'Professional Webseite'; basePrice = 2899; }
+      else { baseName = 'Essential Webseite'; basePrice = 1499; }
+    }
+
+    // Determine recommended modules
+    var recMods = [];
+    var optMods = [];
+
+    if (ch.indexOf('not-found') >= 0 || ch.indexOf('no-leads') >= 0) {
+      if (size === 'large' || care === 'full-service' || care === 'growth') {
+        recMods.push(isL
+          ? {n:'SEO Professional', p:799, u:'/Mt.', d:'10 Keywords, Content & Link-Building'}
+          : {n:'SEO Kickstart', p:2490, u:' einmalig', d:'10 Keywords + On-Page + technisches Audit'});
+      } else {
+        recMods.push(isL
+          ? {n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'}
+          : {n:'SEO Kickstart', p:2490, u:' einmalig', d:'Keyword-Recherche + On-Page Optimierung'});
+      }
+    }
+
+    if (ch.indexOf('bad-ads') >= 0) {
+      if (size === 'large' || care === 'growth') {
+        recMods.push(isL
+          ? {n:'SEA Professional', p:599, u:'/Mt.', d:'8 Kampagnen + Remarketing (exkl. Media)'}
+          : {n:'SEA Kickstart', p:1990, u:' einmalig', d:'3 Kampagnen + 30 Tage Optimierung'});
+      } else {
+        recMods.push(isL
+          ? {n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'}
+          : {n:'SEA Kickstart', p:1990, u:' einmalig', d:'3 Kampagnen Setup + Tracking'});
+      }
+    }
+
+    if (ch.indexOf('ai-invisible') >= 0) {
+      recMods.push(isL
+        ? {n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in ChatGPT, Perplexity & Co.'}
+        : {n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippet Optimierung'});
+    }
+
+    // Optional modules (not recommended but available)
+    if (isL) {
+      if (!recMods.find(function(m){ return m.n.indexOf('SEO') >= 0; })) {
+        optMods.push({n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('SEA') >= 0; })) {
+        optMods.push({n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('GEO') >= 0; })) {
+        optMods.push({n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in KI-Suchmaschinen'});
+      }
+      if (care === 'full-service' || care === 'growth') {
+        recMods.push({n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
+      } else {
+        optMods.push({n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
+      }
+    } else {
+      if (!recMods.find(function(m){ return m.n.indexOf('SEO') >= 0; })) {
+        optMods.push({n:'SEO Kickstart', p:2490, u:' einmalig', d:'Keyword-Recherche + On-Page Optimierung'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('SEA') >= 0; })) {
+        optMods.push({n:'SEA Kickstart', p:1990, u:' einmalig', d:'3 Kampagnen Setup + Tracking'});
+      }
+      if (!recMods.find(function(m){ return m.n.indexOf('GEO') >= 0; })) {
+        optMods.push({n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippets'});
+      }
+    }
+
+    kOptional = {};
+
+    var pUnit = isL ? '/Mt.' : ' einmalig';
+
+    function calcTotal() {
+      var t = basePrice;
+      recMods.forEach(function(m) { t += m.p; });
+      optMods.forEach(function(m, i) { if (kOptional[i]) t += m.p; });
+      return t;
+    }
+
+    function renderResult() {
+      var total = calcTotal();
+      var html = '<div class="konfig-step-label">Deine persönliche Empfehlung</div>';
+      html += '<div class="konfig-title">Das passt zu Dir</div>';
+      html += '<div class="konfig-sub">Basierend auf Deinen Angaben empfehlen wir diese Kombination. Klicke auf optionale Module, um sie hinzuzufuegen.</div>';
+
+      // Base
+      html += '<div class="konfig-result-item recommended">';
+      html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + baseName + ' <span class="konfig-tag">Basis</span></div>';
+      html += '<div class="konfig-ri-desc">CR-optimiertes Design + Hosting + Pflege</div></div>';
+      html += '<div class="konfig-ri-price">CHF ' + kFmt(basePrice) + pUnit + '</div></div>';
+
+      // Recommended
+      recMods.forEach(function(m) {
+        html += '<div class="konfig-result-item recommended">';
+        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + m.n + ' <span class="konfig-tag">Empfohlen</span></div>';
+        html += '<div class="konfig-ri-desc">' + m.d + '</div></div>';
+        html += '<div class="konfig-ri-price">CHF ' + kFmt(m.p) + m.u + '</div></div>';
+      });
+
+      // Optional
+      optMods.forEach(function(m, i) {
+        var added = kOptional[i];
+        html += '<div class="konfig-result-item optional' + (added ? ' added' : '') + '" data-opt-idx="' + i + '">';
+        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + m.n + ' <span class="konfig-tag-opt">' + (added ? 'Hinzugefügt' : 'Optional') + '</span></div>';
+        html += '<div class="konfig-ri-desc">' + m.d + '</div></div>';
+        html += '<div class="konfig-ri-price">+ CHF ' + kFmt(m.p) + m.u + '</div></div>';
+      });
+
+      // Total
+      html += '<div class="konfig-total"><div class="konfig-total-label">Gesamt' + (isL ? ' monatlich' : '') + '</div>';
+      html += '<div class="konfig-total-price">CHF ' + kFmt(total) + ' <span>' + pUnit + '</span></div></div>';
+
+      // Social proof & urgency
+      html += '<div class="konfig-proof">87% unserer Kunden mit ähnlichem Profil haben sich fuer diese Kombination entschieden.</div>';
+      html += '<div class="konfig-urgency">Noch 3 Plätze fuer kostenlose Erstberatung im Mai verfügbar.</div>';
+
+      // CTA
+      html += '<button class="konfig-btn-cta" onclick="document.getElementById(\'kontakt\').scrollIntoView({behavior:\'smooth\'})">Kostenloses Beratungsgespraech buchen</button>';
+      html += '<div class="konfig-savings">Unverbindlich und kostenlos -- in 15 Minuten weisst Du, was möglich ist.</div>';
+
+      content.innerHTML = html;
+
+      // Optional toggle handlers
+      content.querySelectorAll('.konfig-result-item.optional').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var idx = parseInt(this.dataset.optIdx);
+          kOptional[idx] = !kOptional[idx];
+          renderResult();
+        });
+      });
+    }
+
+    var content = document.getElementById('konfigContent');
+    renderResult();
+
+    // Nav
+    var nav = document.getElementById('konfigNav');
+    nav.innerHTML = '<button class="konfig-btn konfig-btn-back" id="konfigBackResult">Zurueck</button><button class="konfig-btn konfig-btn-back" id="konfigReset">Neu starten</button>';
+    document.getElementById('konfigBackResult').addEventListener('click', function() { kCur--; kRender(); });
+    document.getElementById('konfigReset').addEventListener('click', function() { kCur = 0; kSel = {}; kOptional = {}; kRender(); });
+  }
+
+  // Init
+  kRender();
+})();
+
+// ========== CHATBOT ==========
+(function(){
+  var fab = document.getElementById('chatFab');
+  var win = document.getElementById('chatWindow');
+  var msgs = document.getElementById('chatMessages');
+  var input = document.getElementById('chatInput');
+  var sendBtn = document.getElementById('chatSend');
+  var hint = document.getElementById('chatHint');
+  var pulse = document.getElementById('chatPulse');
+  var isOpen = false;
+  var conversationState = 'init';
+
+  // Show hint after 5 seconds
+  setTimeout(function() {
+    if (!isOpen) { hint.classList.add('visible'); }
+  }, 5000);
+  // Hide hint after 12 seconds
+  setTimeout(function() {
+    hint.classList.remove('visible');
+  }, 12000);
+
+  fab.addEventListener('click', function() {
+    isOpen = !isOpen;
+    fab.classList.toggle('open', isOpen);
+    win.classList.toggle('open', isOpen);
+    hint.classList.remove('visible');
+    pulse.style.display = isOpen ? 'none' : '';
+    if (isOpen && msgs.children.length === 0) {
+      startConversation();
+    }
+    if (isOpen) input.focus();
+  });
+
+  function addMsg(text, type, quickReplies) {
+    var div = document.createElement('div');
+    div.className = 'chatbot-msg ' + type;
+    div.innerHTML = text;
+    if (quickReplies && quickReplies.length) {
+      var qr = document.createElement('div');
+      qr.className = 'chatbot-quick-replies';
+      quickReplies.forEach(function(r) {
+        var btn = document.createElement('button');
+        btn.className = 'chatbot-quick-btn';
+        btn.textContent = r.label;
+        btn.addEventListener('click', function() {
+          addMsg(r.label, 'user');
+          qr.remove();
+          if (r.action) r.action();
+        });
+        qr.appendChild(btn);
+      });
+      div.appendChild(qr);
+    }
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function showTyping() {
+    var div = document.createElement('div');
+    div.className = 'chatbot-msg bot typing';
+    div.id = 'typingIndicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function hideTyping() {
+    var t = document.getElementById('typingIndicator');
+    if (t) t.remove();
+  }
+
+  function botReply(text, quickReplies, delay) {
+    showTyping();
+    setTimeout(function() {
+      hideTyping();
+      addMsg(text, 'bot', quickReplies);
+    }, delay || 1200);
+  }
+
+  function startConversation() {
+    conversationState = 'greeting';
+    botReply('Hallo! Ich bin der SEOX Berater. Ich helfe Dir, das passende Paket zu finden. Was beschreibt Deine Situation am besten?', [
+      {label: 'Ich brauche eine neue Webseite', action: function(){ handleNeed('new'); }},
+      {label: 'Meine Webseite bringt keine Kunden', action: function(){ handleNeed('noconv'); }},
+      {label: 'Ich will online sichtbarer werden', action: function(){ handleNeed('seo'); }},
+      {label: 'Ich will einfach mal schauen', action: function(){ handleNeed('browse'); }}
+    ], 600);
+  }
+
+  function handleNeed(need) {
+    conversationState = 'need-' + need;
+    var responses = {
+      'new': 'Eine neue Webseite -- gute Entscheidung! Wir bauen keine normalen Webseiten, sondern <strong>Umsatzmaschinen</strong>, die auf Basis von 1\'000+ Datenpunkten optimiert sind.',
+      'noconv': 'Das hören wir oft. Die meisten Webseiten sind hübsch, aber nicht auf Conversion optimiert. Genau da setzen wir an -- mit <strong>datenbasierter CR-Optimierung</strong>.',
+      'seo': 'Sichtbarkeit ist der Schlüssel! Wir kombinieren <strong>SEO, GEO (KI-Suche)</strong> und <strong>SEA</strong> zu einer Strategie, die Dich überall sichtbar macht.',
+      'browse': 'Kein Problem! Schau Dich in Ruhe um. Ich bin hier, wenn Du Fragen hast.'
+    };
+    botReply(responses[need], null, 1000);
+
+    if (need === 'browse') {
+      setTimeout(function() {
+        botReply('Ein paar Optionen, falls Du doch neugierig bist:', [
+          {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+          {label: 'Was macht SEOX anders?', action: function(){ handleUSP(); }},
+          {label: 'Zum Konfigurator', action: function(){ scrollToKonfig(); }}
+        ]);
+      }, 2000);
+      return;
+    }
+
+    setTimeout(function() {
+      botReply('Wie möchtest Du am liebsten arbeiten?', [
+        {label: 'Monatliches Leasing ab 299.-', action: function(){ handleModel('leasing'); }},
+        {label: 'Einmalig kaufen ab 3\'990.-', action: function(){ handleModel('einmalig'); }},
+        {label: 'Bin mir unsicher', action: function(){ handleModel('unsure'); }}
+      ]);
+    }, 2800);
+  }
+
+  function handleModel(model) {
+    conversationState = 'model-' + model;
+    if (model === 'unsure') {
+      botReply('Kein Problem! Unser <strong>Konfigurator</strong> hilft Dir in 60 Sekunden die perfekte Kombination zu finden. Oder ich kann Dir die Unterschiede erklären.', [
+        {label: 'Zum Konfigurator', action: function(){ scrollToKonfig(); }},
+        {label: 'Erkläre die Unterschiede', action: function(){ handleCompare(); }},
+        {label: 'Lieber persönlich beraten', action: function(){ handleContact(); }}
+      ]);
+    } else {
+      var text = model === 'leasing'
+        ? '<strong>Leasing</strong> ist ideal, wenn Du planbare Kosten willst und laufende Betreuung schätzt. Ab CHF 299/Mt. bekommst Du eine CR-optimierte Webseite mit Hosting und Pflege. Dazu kannst Du Module wie SEO (ab 399/Mt.) oder SEA (ab 299/Mt.) buchen.'
+        : '<strong>Einmalig</strong> ist perfekt, wenn Du volle Eigentumsrechte willst. Ab CHF 3\'990 bekommst Du eine CR-optimierte Webseite mit allen Source Files. SEO- und SEA-Kickstart-Pakete gibt es als Einmal-Setup dazu.';
+      botReply(text, [
+        {label: 'Pakete anschauen', action: function(){ scrollToPricing(); }},
+        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }},
+        {label: 'Kostenlose Beratung buchen', action: function(){ handleContact(); }}
+      ]);
+    }
+  }
+
+  function handlePricing() {
+    botReply('Unsere Webseiten starten ab <strong>CHF 299/Mt.</strong> im Leasing oder <strong>CHF 899 einmalig</strong>. Dazu gibt es optionale Module wie SEO (ab 399/Mt.), SEA (ab 299/Mt.) und GEO-Optimierung (349/Mt.).', [
+      {label: 'Pakete vergleichen', action: function(){ scrollToPricing(); }},
+      {label: 'Konfigurator nutzen', action: function(){ scrollToKonfig(); }},
+      {label: 'Was ist GEO?', action: function(){ handleGEO(); }}
+    ]);
+  }
+
+  function handleUSP() {
+    botReply('Was uns unterscheidet:<br><br><strong>1. Datenbasiert:</strong> Jede Webseite wird auf Basis von 1\'000+ Datenpunkten CR-optimiert.<br><strong>2. Full-Stack:</strong> SEO + GEO + SEA aus einer Hand.<br><strong>3. Geschwindigkeit:</strong> Go-Live in Rekordzeit.<br><strong>4. Modularer Ansatz:</strong> Du zahlst nur, was Du brauchst.', [
+      {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+      {label: 'Kostenlose Demo anfordern', action: function(){ handleContact(); }}
+    ]);
+  }
+
+  function handleGEO() {
+    botReply('<strong>GEO (Generative Engine Optimization)</strong> sorgt dafür, dass KI-Suchmaschinen wie ChatGPT, Perplexity und Gemini Dein Unternehmen empfehlen. Das ist die Zukunft der Sichtbarkeit -- und wir sind einer der wenigen Anbieter in der Schweiz, die das anbieten.', [
+      {label: 'GEO-Modul buchen', action: function(){ scrollToPricing(); }},
+      {label: 'Kostenlose Beratung', action: function(){ handleContact(); }}
+    ]);
+  }
+
+  function handleCompare() {
+    botReply('<strong>Leasing:</strong> Planbare Kosten, laufende Betreuung, Hosting inkl., ideal wenn Du Dich nicht um Technik kümmern willst.<br><br><strong>Einmalig:</strong> Volle Eigentumsrechte, Source Code gehört Dir, ideal wenn Du ein eigenes Team hast oder unabhängig sein willst.', [
+      {label: 'Leasing wählen', action: function(){ handleModel('leasing'); }},
+      {label: 'Einmalig wählen', action: function(){ handleModel('einmalig'); }},
+      {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }}
+    ]);
+  }
+
+  function handleContact() {
+    botReply('Sehr gerne! Scroll zum Formular und fordere eine <strong>kostenlose Demo</strong> an -- oder ruf uns direkt an unter <strong>+41 44 244 18 88</strong>. Wir melden uns innerhalb von 24 Stunden.', [
+      {label: 'Zum Formular', action: function(){ scrollToContact(); }},
+      {label: 'Noch eine Frage', action: function(){ handleMoreQ(); }}
+    ]);
+  }
+
+  function handleMoreQ() {
+    botReply('Klar, frag einfach! Du kannst auch gerne unten eine Nachricht eintippen.', null);
+  }
+
+  function scrollToKonfig() {
+    addMsg('Ich öffne den Konfigurator für Dich!', 'bot');
+    setTimeout(function() {
+      document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'});
+    }, 500);
+  }
+
+  function scrollToPricing() {
+    addMsg('Hier sind unsere Pakete:', 'bot');
+    setTimeout(function() {
+      document.getElementById('pakete').scrollIntoView({behavior:'smooth'});
+    }, 500);
+  }
+
+  function scrollToContact() {
+    addMsg('Ich bringe Dich zum Formular!', 'bot');
+    setTimeout(function() {
+      document.getElementById('kontakt').scrollIntoView({behavior:'smooth'});
+    }, 500);
+  }
+
+  // Free text input handling
+  function handleFreeText(text) {
+    var t = text.toLowerCase();
+    if (t.indexOf('preis') >= 0 || t.indexOf('kost') >= 0 || t.indexOf('budget') >= 0 || t.indexOf('chf') >= 0 || t.indexOf('geld') >= 0) {
+      handlePricing();
+    } else if (t.indexOf('seo') >= 0 || t.indexOf('google') >= 0 || t.indexOf('ranking') >= 0 || t.indexOf('sichtbar') >= 0) {
+      botReply('SEO ist eines unserer Kerngebiete! Wir bieten SEO Starter (3 Keywords, CHF 399/Mt.) und SEO Professional (10 Keywords, CHF 799/Mt.) als optionale Module an.', [
+        {label: 'SEO-Modul buchen', action: function(){ scrollToPricing(); }},
+        {label: 'Mehr zu SEO erfahren', action: function(){ handleUSP(); }}
+      ]);
+    } else if (t.indexOf('sea') >= 0 || t.indexOf('ads') >= 0 || t.indexOf('werbung') >= 0 || t.indexOf('kampagne') >= 0) {
+      botReply('Google Ads Management gibt es als SEA Starter (3 Kampagnen, CHF 299/Mt.) oder SEA Professional (8 Kampagnen + Remarketing, CHF 599/Mt.). Media Budget ist exkl.', [
+        {label: 'SEA-Modul anschauen', action: function(){ scrollToPricing(); }},
+        {label: 'Kostenlose Beratung', action: function(){ handleContact(); }}
+      ]);
+    } else if (t.indexOf('geo') >= 0 || t.indexOf('chatgpt') >= 0 || t.indexOf('ki') >= 0 || t.indexOf('perplexity') >= 0 || t.indexOf('gemini') >= 0) {
+      handleGEO();
+    } else if (t.indexOf('kontakt') >= 0 || t.indexOf('termin') >= 0 || t.indexOf('anruf') >= 0 || t.indexOf('beraten') >= 0 || t.indexOf('demo') >= 0) {
+      handleContact();
+    } else if (t.indexOf('leasing') >= 0 || t.indexOf('monatl') >= 0 || t.indexOf('miete') >= 0) {
+      handleModel('leasing');
+    } else if (t.indexOf('einmal') >= 0 || t.indexOf('kauf') >= 0 || t.indexOf('eigen') >= 0) {
+      handleModel('einmalig');
+    } else if (t.indexOf('unterschied') >= 0 || t.indexOf('vergleich') >= 0) {
+      handleCompare();
+    } else if (t.indexOf('hallo') >= 0 || t.indexOf('hi') >= 0 || t.indexOf('hey') >= 0 || t.indexOf('grüss') >= 0) {
+      botReply('Hallo! Schön, dass Du da bist. Wie kann ich Dir helfen?', [
+        {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+        {label: 'Was macht SEOX anders?', action: function(){ handleUSP(); }},
+        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }}
+      ]);
+    } else {
+      botReply('Gute Frage! Für eine detaillierte Antwort empfehle ich Dir ein kostenloses Beratungsgespräch. Oder versuch es mit dem Konfigurator -- der findet in 60 Sekunden Dein ideales Paket.', [
+        {label: 'Kostenlose Beratung', action: function(){ handleContact(); }},
+        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }},
+        {label: 'Pakete anschauen', action: function(){ scrollToPricing(); }}
+      ]);
+    }
+  }
+
+  function sendMessage() {
+    var text = input.value.trim();
+    if (!text) return;
+    addMsg(text, 'user');
+    input.value = '';
+    handleFreeText(text);
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') sendMessage();
+  });
+})();
+
+// ========== ADVANCED ANIMATIONS ==========
+
+// --- Particle Background ---
+(function() {
+  const canvas = document.getElementById('heroParticles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [], animId;
+  const PARTICLE_COUNT = 45;
+  const CONNECT_DIST = 120;
+  const pink = [212, 35, 138];
+  const white = [249, 250, 252];
+
+  function resize() {
+    const hero = document.getElementById('hero');
+    w = canvas.width = hero.offsetWidth;
+    h = canvas.height = hero.offsetHeight;
+  }
+
+  function createParticle() {
+    const useWhite = Math.random() > 0.5;
+    const c = useWhite ? white : pink;
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r: Math.random() * 2 + 0.5,
+      color: c,
+      alpha: Math.random() * 0.4 + 0.1
+    };
+  }
+
+  function init() {
+    resize();
+    particles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(createParticle());
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    // Connections
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECT_DIST) {
+          const opacity = (1 - dist / CONNECT_DIST) * 0.12;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(' + pink.join(',') + ',' + opacity + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    // Particles
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + p.color.join(',') + ',' + p.alpha + ')';
+      ctx.fill();
+    });
+    animId = requestAnimationFrame(draw);
+  }
+
+  // Only run when hero is visible
+  const heroObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      if (!animId) draw();
+    } else {
+      cancelAnimationFrame(animId);
+      animId = null;
+    }
+  }, { threshold: 0 });
+  heroObs.observe(document.getElementById('hero'));
+
+  init();
+  window.addEventListener('resize', function() {
+    resize();
+    particles.forEach(p => {
+      if (p.x > w) p.x = w - 10;
+      if (p.y > h) p.y = h - 10;
+    });
+  });
+})();
+
+// --- Hero Cursor Glow ---
+(function() {
+  const hero = document.getElementById('hero');
+  const glow = document.getElementById('heroGlow');
+  if (!hero || !glow) return;
+  hero.addEventListener('mousemove', function(e) {
+    const rect = hero.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left - 175) + 'px';
+    glow.style.top = (e.clientY - rect.top - 175) + 'px';
+  });
+})();
+
+// --- 3D Tilt on Cards ---
+(function() {
+  const cards = document.querySelectorAll('.pricing-card, .addon-card, .process-step, .alps-phase-content');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotateX = ((y - cy) / cy) * -5;
+      const rotateY = ((x - cx) / cx) * 5;
+      card.style.transform = 'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.02)';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+})();
+
+// --- Magnetic Button Effect ---
+(function() {
+  var btns = document.querySelectorAll('.btn-primary, .btn-outline');
+  btns.forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = 'translate(' + (x * 0.15) + 'px, ' + (y * 0.15) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function() {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+})();
+
+// --- Glow Dividers between sections ---
+(function() {
+  var sections = document.querySelectorAll('.section, .section-alt');
+  sections.forEach(function(sec) {
+    if (!sec.previousElementSibling || !sec.previousElementSibling.classList.contains('section') && !sec.previousElementSibling.classList.contains('section-alt')) return;
+    var divider = document.createElement('div');
+    divider.className = 'glow-divider';
+    sec.parentNode.insertBefore(divider, sec);
+  });
+})();
