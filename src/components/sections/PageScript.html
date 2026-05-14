@@ -775,10 +775,18 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
 // ========== ADVANCED ANIMATIONS ==========
 
-// --- Particle Background ---
+// --- Particle Background (deferred until idle to protect LCP) ---
 (function() {
   const canvas = document.getElementById('heroParticles');
   if (!canvas) return;
+  const boot = () => initParticles(canvas);
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(boot, { timeout: 2500 });
+  } else {
+    setTimeout(boot, 800);
+  }
+})();
+function initParticles(canvas) {
   const ctx = canvas.getContext('2d');
   let w, h, particles = [], animId;
   const PARTICLE_COUNT = 45;
@@ -864,7 +872,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       if (p.y > h) p.y = h - 10;
     });
   });
-})();
+}
 
 // --- Hero Cursor Glow ---
 (function() {

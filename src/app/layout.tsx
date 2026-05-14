@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
 const SITE_URL = "https://www.myonepager.ch";
@@ -8,6 +9,22 @@ const DESCRIPTION =
   "CR-optimierte Webseite für KMU: ab CHF 299/Mt. oder einmalig CHF 899. Mit SEO/GEO/SEA-Modulen — datenbasiert auf 1'000+ Datenpunkten. Schweizer Webdesigner.";
 const OG_IMAGE = "/og-image.jpg";
 const GTM_ID = "GTM-K7P9WXMP";
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+  display: "swap",
+  preload: true,
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
+  display: "swap",
+  preload: false,
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -50,18 +67,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de-CH">
+    <html lang="de-CH" className={`${jakarta.variable} ${inter.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

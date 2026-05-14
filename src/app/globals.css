@@ -39,7 +39,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-jakarta), var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-primary);
   line-height: 1.6;
   background: var(--bg-body);
