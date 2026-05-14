@@ -149,7 +149,7 @@ const advLoop = startLoop(
   10000, 1500, 2000,
   () => {
     // Bars wachsen lassen nach Einblenden
-    barTimers = advantages.map((adv, i) =>
+    barTimers = Array.from(advantages).map((adv, i) =>
       setTimeout(() => adv.classList.add('animated'), 500 + i * 200)
     );
   },
