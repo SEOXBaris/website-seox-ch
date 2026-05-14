@@ -7,8 +7,6 @@ export default function HomePage() {
       <a href="#hero" className="skip-nav">Zum Inhalt springen</a>
       <Section name="Header" />
       <Section name="Hero" />
-      <Section name="StatsBar" />
-      <Section name="TrustedBy" />
       <Section name="Problem" />
       <Section name="Loesung" />
       <Section name="Features" />
@@ -19,10 +17,10 @@ export default function HomePage() {
       <Section name="Process" />
       <Section name="Portfolio" />
       <Section name="Testimonials" />
-      <Section name="Guarantee" />
       <Section name="FAQ" />
       <Section name="CTA" />
       <Section name="ChatbotFab" />
+      <Section name="ChatbotWindow" />
       <Section name="Footer" />
       <PageScripts />
     </>
