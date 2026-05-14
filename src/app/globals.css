@@ -2888,3 +2888,19 @@ img { max-width: 100%; display: block; }
   .alps-letter-char { width: 28px; height: 28px; font-size: 0.9rem; }
   .alps-letter-item { font-size: 0.85rem; }
 }
+
+/* Legal pages (impressum / datenschutz / agb) */
+.legal-page { padding: 140px 0 80px; min-height: 70vh; }
+.legal-page .container { max-width: 760px; }
+.legal-page h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 32px; color: var(--text-primary); }
+.legal-page h2 { font-size: 1.25rem; font-weight: 700; margin: 32px 0 12px; color: var(--text-primary); }
+.legal-page p, .legal-page ul, .legal-page li { color: var(--text-secondary, #a8a7b3); line-height: 1.7; margin-bottom: 14px; font-size: 1rem; }
+.legal-page ul { padding-left: 1.4em; }
+.legal-page a { color: var(--pink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.legal-page a:hover { color: var(--pink-mid); }
+.legal-page code { background: rgba(255,255,255,0.08); padding: 1px 6px; border-radius: 4px; font-family: var(--font-mono, monospace); font-size: 0.9em; }
+.legal-page .legal-meta { margin-top: 48px; font-size: 0.85rem; opacity: 0.6; }
+@media (max-width: 768px) {
+  .legal-page { padding: 100px 0 60px; }
+  .legal-page h1 { font-size: 1.8rem; }
+}
