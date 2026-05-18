@@ -205,23 +205,80 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 statsObserver.observe(statsBar);
 
-// Form handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Form handling — submit to HubSpot Forms API
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
+  const form = this;
+  const btn = form.querySelector('button[type="submit"]');
   const originalText = btn.textContent;
+  const portalId = form.dataset.hsPortal;
+  const formGuid = form.dataset.hsForm;
+
+  if (!portalId || !formGuid || formGuid === 'REPLACE_WITH_FORM_GUID') {
+    btn.textContent = 'Formular noch nicht konfiguriert';
+    btn.style.background = '#ef4444';
+    console.error('[contactForm] HubSpot data-hs-form is not set');
+    return;
+  }
+
   btn.textContent = 'Wird gesendet...';
   btn.disabled = true;
+
+  // HubSpot expects firstname + lastname separately
+  const fullName = (form.name.value || '').trim();
+  const sp = fullName.indexOf(' ');
+  const firstname = sp > 0 ? fullName.slice(0, sp) : fullName;
+  const lastname = sp > 0 ? fullName.slice(sp + 1) : '';
+
+  const fields = [
+    { name: 'firstname', value: firstname },
+    { name: 'lastname',  value: lastname },
+    { name: 'email',     value: form.email.value },
+    { name: 'company',   value: form.firma.value },
+    { name: 'phone',     value: form.telefon.value },
+    { name: 'industry',  value: form.branche.value },
+    { name: 'website',   value: form.website.value },
+    { name: 'message',   value: form.message ? form.message.value : '' },
+  ].filter(f => f.value);
+
+  try {
+    const res = await fetch(
+      'https://api.hsforms.com/submissions/v3/integration/submit/' + portalId + '/' + formGuid,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields,
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title,
+          },
+        }),
+      }
+    );
+
+    if (res.ok) {
+      btn.textContent = 'Erfolgreich gesendet!';
+      btn.style.background = '#34d399';
+      form.reset();
+      if (window.dataLayer) window.dataLayer.push({ event: 'form_submit_success', form_id: 'contactForm' });
+    } else {
+      const err = await res.text();
+      console.error('[contactForm] HubSpot error', res.status, err);
+      btn.textContent = 'Fehler — bitte erneut versuchen';
+      btn.style.background = '#ef4444';
+    }
+  } catch (err) {
+    console.error('[contactForm] Network error', err);
+    btn.textContent = 'Netzwerkfehler';
+    btn.style.background = '#ef4444';
+  }
+
   setTimeout(() => {
-    btn.textContent = 'Erfolgreich gesendet!';
-    btn.style.background = '#34d399';
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-      this.reset();
-    }, 3000);
-  }, 1500);
+    btn.textContent = originalText;
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 4000);
 });
 
 // ========== KONFIGURATOR ==========
