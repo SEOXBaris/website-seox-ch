@@ -242,8 +242,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
     if (res.ok) {
       btn.textContent = 'Erfolgreich gesendet!';
       btn.style.background = '#34d399';
-      form.reset();
       if (window.dataLayer) window.dataLayer.push({ event: 'form_submit_success', form_id: 'contactForm' });
+      // Redirect to thank-you page for conversion tracking
+      setTimeout(() => { window.location.href = '/danke'; }, 600);
+      return;
     } else {
       const err = await res.json().catch(() => ({}));
       console.error('[contactForm] API error', res.status, err);

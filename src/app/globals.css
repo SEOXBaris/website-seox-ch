@@ -2889,6 +2889,32 @@ img { max-width: 100%; display: block; }
   .alps-letter-item { font-size: 0.85rem; }
 }
 
+/* Thanks / conversion landing */
+.thanks-page { padding: 140px 0 100px; min-height: 80vh; }
+.thanks-page .container { max-width: 880px; }
+.thanks-hero { text-align: center; padding: 40px 0 60px; }
+.thanks-check { width: 96px; height: 96px; border-radius: 50%; background: rgba(52,211,153,0.12); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+.thanks-tag { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(212,35,138,0.12); color: var(--pink, #d4238a); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 24px; }
+.thanks-hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 24px; color: var(--text-primary); }
+.thanks-hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--pink, #d4238a), var(--pink-mid, #e83da0)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.thanks-lead { font-size: 1.15rem; line-height: 1.6; color: var(--text-secondary, #a8a7b3); max-width: 640px; margin: 0 auto 40px; }
+.thanks-lead strong { color: var(--text-primary); }
+.thanks-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.thanks-next { padding: 60px 0 20px; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 40px; }
+.thanks-next h2 { font-size: 1.6rem; font-weight: 700; text-align: center; margin-bottom: 40px; color: var(--text-primary); }
+.thanks-steps { list-style: none; padding: 0; display: grid; gap: 24px; }
+.thanks-steps li { display: flex; gap: 20px; align-items: flex-start; padding: 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; }
+.thanks-step-num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--pink, #d4238a), var(--pink-mid, #e83da0)); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 1.05rem; }
+.thanks-steps h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+.thanks-steps p { color: var(--text-secondary, #a8a7b3); line-height: 1.55; margin: 0; }
+@media (max-width: 768px) {
+  .thanks-page { padding: 100px 0 60px; }
+  .thanks-hero h1 { font-size: 2rem; }
+  .thanks-lead { font-size: 1rem; }
+  .thanks-steps li { padding: 18px; gap: 14px; }
+  .thanks-step-num { width: 34px; height: 34px; font-size: 0.95rem; }
+}
+
 /* Legal pages (impressum / datenschutz / agb) */
 .legal-page { padding: 140px 0 80px; min-height: 70vh; }
 .legal-page .container { max-width: 760px; }
