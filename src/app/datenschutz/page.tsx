@@ -22,7 +22,7 @@ export default function DatenschutzPage() {
           </p>
           <p>
             SEOX GmbH<br />
-            Badenerstrasse 549, 8048 Zürich<br />
+            Thurgauerstrasse 132, 8152 Opfikon<br />
             <a href="mailto:info@seox.ch">info@seox.ch</a>
           </p>
 

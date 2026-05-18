@@ -19,15 +19,15 @@ export default function ImpressumPage() {
           <h2>Anbieterin</h2>
           <p>
             SEOX GmbH<br />
-            Badenerstrasse 549<br />
-            8048 Zürich<br />
+            Thurgauerstrasse 132<br />
+            8152 Opfikon<br />
             Schweiz
           </p>
 
           <h2>Kontakt</h2>
           <p>
             E-Mail: <a href="mailto:info@seox.ch">info@seox.ch</a><br />
-            Telefon: <a href="tel:+41442441888">+41 44 244 18 88</a><br />
+            Telefon: <a href="tel:+41798605165">+41 79 860 51 65</a><br />
             Website: <a href="https://seox.ch" target="_blank" rel="noopener noreferrer">seox.ch</a>
           </p>
 
@@ -66,7 +66,7 @@ export default function ImpressumPage() {
           <h2>Anwendbares Recht und Gerichtsstand</h2>
           <p>
             Es gilt ausschliesslich schweizerisches Recht unter Ausschluss der Kollisionsnormen.
-            Gerichtsstand ist Zürich, Schweiz.
+            Gerichtsstand ist der Sitz der Anbieterin in Opfikon, Schweiz.
           </p>
 
           <p className="legal-meta">Stand: Mai 2026</p>

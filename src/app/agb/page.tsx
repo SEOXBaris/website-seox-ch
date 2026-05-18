@@ -82,7 +82,8 @@ export default function AGBPage() {
           <h2>10. Anwendbares Recht und Gerichtsstand</h2>
           <p>
             Es gilt ausschliesslich schweizerisches Recht unter Ausschluss der Kollisionsnormen
-            und des UN-Kaufrechts. Ausschliesslicher Gerichtsstand ist Zürich, Schweiz.
+            und des UN-Kaufrechts. Ausschliesslicher Gerichtsstand ist der Sitz der
+            Anbieterin in Opfikon, Schweiz.
           </p>
 
           <p className="legal-meta">Stand: Mai 2026</p>
