@@ -1231,10 +1231,11 @@ img { max-width: 100%; display: block; }
 /* ========== PRICING ========== */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  align-items: stretch;
 }
+#pricingEinmalig .pricing-grid { grid-template-columns: repeat(4, 1fr); }
 
 .pricing-card {
   background: var(--card-bg);
@@ -2472,7 +2473,7 @@ img { max-width: 100%; display: block; }
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .hero h1 { font-size: 2.4rem; }
-  .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .fbadge-2, .fbadge-5 { display: none; }
 }
 
