@@ -1236,6 +1236,7 @@ img { max-width: 100%; display: block; }
   align-items: stretch;
   overflow: visible;
 }
+#pricingLeasing .pricing-grid,
 #pricingEinmalig .pricing-grid { grid-template-columns: repeat(4, 1fr); }
 
 /* Inclusion banner ("Alles aus X + zusätzlich:") */
