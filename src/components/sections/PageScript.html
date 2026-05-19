@@ -30,7 +30,7 @@ mobileToggle.addEventListener('click', () => {
   navMenu.classList.toggle('open');
   const isOpen = navMenu.classList.contains('open');
   mobileToggle.setAttribute('aria-expanded', isOpen);
-  mobileToggle.setAttribute('aria-label', isOpen ? 'Navigation schliessen' : 'Navigation oeffnen');
+  mobileToggle.setAttribute('aria-label', isOpen ? 'Navigation schliessen' : 'Navigation öffnen');
 });
 navMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navMenu.classList.remove('open'));
@@ -88,7 +88,7 @@ let floatTimer = null;
 const badgeLoop = startLoop(
   floatingBadges, 'show',
   10000,  // 10s sichtbar
-  1500,   // 1.5s fuer Ausblend-Transition
+  1500,   // 1.5s für Ausblend-Transition
   2000,   // 2s Pause
   () => {
     // Float-Effekt nach dem Einblenden
@@ -271,12 +271,12 @@ document.getElementById('contactForm').addEventListener('submit', async function
     {
       label: 'Schritt 1 von 4',
       title: 'Was ist Deine grösste Herausforderung?',
-      sub: 'Waehle alles, was auf Dich zutrifft.',
+      sub: 'Wähle alles, was auf Dich zutrifft.',
       multi: true,
       options: [
         {id:'no-leads', t:'Zu wenig Anfragen', d:'Webseite bringt kaum Leads oder Anrufe'},
         {id:'not-found', t:'Online nicht sichtbar', d:'Kunden finden Dich nicht bei Google'},
-        {id:'old-site', t:'Veraltete Webseite', d:'Design und Technik nicht mehr zeitgemaess'},
+        {id:'old-site', t:'Veraltete Webseite', d:'Design und Technik nicht mehr zeitgemäss'},
         {id:'no-time', t:'Keine Zeit / kein Know-how', d:'Du willst Dich auf Dein Business konzentrieren'},
         {id:'bad-ads', t:'Werbung bringt nichts', d:'Google Ads laufen, aber ohne messbaren Erfolg'},
         {id:'ai-invisible', t:'KI-Suche ignoriert mich', d:'ChatGPT & Co. empfehlen die Konkurrenz'}
@@ -297,11 +297,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
     {
       label: 'Schritt 3 von 4',
       title: 'Wie wichtig ist Dir laufende Betreuung?',
-      sub: 'Damit wir das richtige Modell fuer Dich finden.',
+      sub: 'Damit wir das richtige Modell für Dich finden.',
       multi: false,
       options: [
         {id:'diy', t:'Ich mach es selbst', d:'Einmalige Webseite, danach übernehme ich'},
-        {id:'some-help', t:'Etwas Unterstuetzung', d:'Ab und zu Änderungen und Updates'},
+        {id:'some-help', t:'Etwas Unterstützung', d:'Ab und zu Änderungen und Updates'},
         {id:'full-service', t:'Rundum-sorglos', d:'Webseite + Marketing komplett betreut'},
         {id:'growth', t:'Wachstumspartner', d:'Ich will aktiv skalieren'}
       ]
@@ -379,7 +379,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
       // Navigation
       let navHtml = '';
       if (kCur > 0) {
-        navHtml += '<button class="konfig-btn konfig-btn-back" id="konfigBack">Zurueck</button>';
+        navHtml += '<button class="konfig-btn konfig-btn-back" id="konfigBack">Zurück</button>';
       } else {
         navHtml += '<span></span>';
       }
@@ -526,8 +526,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
       html += '<div class="konfig-total-price">CHF ' + kFmt(total) + ' <span>' + pUnit + '</span></div></div>';
 
       // Social proof & urgency
-      html += '<div class="konfig-proof">87% unserer Kunden mit ähnlichem Profil haben sich fuer diese Kombination entschieden.</div>';
-      html += '<div class="konfig-urgency">Noch 3 Plätze fuer kostenlose Erstberatung im Mai verfügbar.</div>';
+      html += '<div class="konfig-proof">87% unserer Kunden mit ähnlichem Profil haben sich für diese Kombination entschieden.</div>';
+      html += '<div class="konfig-urgency">Noch 3 Plätze für kostenlose Erstberatung im Mai verfügbar.</div>';
 
       // CTA
       html += '<button class="konfig-btn-cta" onclick="document.getElementById(\'kontakt\').scrollIntoView({behavior:\'smooth\'})">Kostenloses Beratungsgespraech buchen</button>';
@@ -550,7 +550,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
     // Nav
     var nav = document.getElementById('konfigNav');
-    nav.innerHTML = '<button class="konfig-btn konfig-btn-back" id="konfigBackResult">Zurueck</button><button class="konfig-btn konfig-btn-back" id="konfigReset">Neu starten</button>';
+    nav.innerHTML = '<button class="konfig-btn konfig-btn-back" id="konfigBackResult">Zurück</button><button class="konfig-btn konfig-btn-back" id="konfigReset">Neu starten</button>';
     document.getElementById('konfigBackResult').addEventListener('click', function() { kCur--; kRender(); });
     document.getElementById('konfigReset').addEventListener('click', function() { kCur = 0; kSel = {}; kOptional = {}; kRender(); });
   }
