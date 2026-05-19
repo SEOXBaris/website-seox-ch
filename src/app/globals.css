@@ -1661,6 +1661,19 @@ img { max-width: 100%; display: block; }
   background: var(--pink);
 }
 
+.addon-card .addon-fit {
+  margin-top: 14px;
+  padding: 8px 12px;
+  background: rgba(212, 35, 138, 0.08);
+  border: 1px solid rgba(212, 35, 138, 0.22);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #a8a7b3);
+  text-align: center;
+  line-height: 1.4;
+}
+.addon-card .addon-fit strong { color: var(--pink, #d4238a); font-weight: 700; }
+
 @media (max-width: 768px) {
   .addon-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto 16px; }
 }

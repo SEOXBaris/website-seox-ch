@@ -35,11 +35,11 @@ const ADDONS_LEASING: Addon[] = [
   { id: "content_social", name: "Content & Social", price: 499, unit: "/Mt.", desc: "4 Blog-Beiträge + 8 Social-Media-Posts/Monat." },
 ];
 const ADDONS_EINMALIG: Addon[] = [
-  { id: "seo_kickstart_light", name: "SEO Kickstart Light", price: 1599, unit: " einmalig", desc: "Einsteiger-SEO: 5 Keywords + Top-Seiten On-Page + Basis-Audit." },
-  { id: "seo_kickstart_pro",   name: "SEO Kickstart Pro",   price: 2490, unit: " einmalig", desc: "Vollständig: 10 Keywords + alle Seiten On-Page + technisches Audit." },
-  { id: "sea_kickstart_light", name: "SEA Kickstart Light", price: 1699, unit: " einmalig", desc: "1 Google-Ads-Kampagne + Basis-Conversion-Tracking. Media exkl." },
-  { id: "sea_kickstart_pro",   name: "SEA Kickstart Pro",   price: 2590, unit: " einmalig", desc: "3 Kampagnen + erweitertes Tracking + Remarketing. Media exkl." },
-  { id: "geo_setup",           name: "GEO-Setup",           price: 1490, unit: " einmalig", desc: "Schema Markup, strukturierte Daten, AI-Snippets." },
+  { id: "seo_kickstart_light", name: "SEO Kickstart Light", price: 1599, unit: " einmalig", desc: "Bis zu 100 Keyword-Analysen + On-Page Top-Seiten + Basis-Audit. Empfohlen für 1 Pager & Essential." },
+  { id: "seo_kickstart_pro",   name: "SEO Kickstart Pro",   price: 2490, unit: " einmalig", desc: "Bis zu 1'000 Keyword-Analysen + alle Seiten On-Page + technisches Audit. Empfohlen ab Professional." },
+  { id: "sea_kickstart_light", name: "SEA Kickstart Light", price: 1699, unit: " einmalig", desc: "Bis zu 3 Kampagnen + 30 Keywords + Basis-Conversion-Tracking (Media exkl.). Empfohlen für 1 Pager & Essential." },
+  { id: "sea_kickstart_pro",   name: "SEA Kickstart Pro",   price: 2590, unit: " einmalig", desc: "Bis zu 10 Kampagnen + 100 Keywords + volles Conversion-Tracking + Remarketing (Media exkl.). Empfohlen ab Professional." },
+  { id: "geo_setup",           name: "GEO-Setup",           price: 1490, unit: " einmalig", desc: "Schema Markup, strukturierte Daten, AI-Snippets. Geeignet für alle Pakete." },
 ];
 
 interface State {
