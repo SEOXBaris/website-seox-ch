@@ -35,9 +35,11 @@ const ADDONS_LEASING: Addon[] = [
   { id: "content_social", name: "Content & Social", price: 499, unit: "/Mt.", desc: "4 Blog-Beiträge + 8 Social-Media-Posts/Monat." },
 ];
 const ADDONS_EINMALIG: Addon[] = [
-  { id: "seo_kickstart", name: "SEO Kickstart", price: 2490, unit: " einmalig", desc: "Keyword-Recherche, On-Page-Optimierung, Audit." },
-  { id: "sea_kickstart", name: "SEA Kickstart", price: 1990, unit: " einmalig", desc: "Google-Ads-Setup, Conversion-Tracking, erste Kampagnen." },
-  { id: "geo_setup",     name: "GEO-Setup",     price: 1490, unit: " einmalig", desc: "Schema Markup, strukturierte Daten, AI-Snippets." },
+  { id: "seo_kickstart_light", name: "SEO Kickstart Light", price: 1599, unit: " einmalig", desc: "Einsteiger-SEO: 5 Keywords + Top-Seiten On-Page + Basis-Audit." },
+  { id: "seo_kickstart_pro",   name: "SEO Kickstart Pro",   price: 2490, unit: " einmalig", desc: "Vollständig: 10 Keywords + alle Seiten On-Page + technisches Audit." },
+  { id: "sea_kickstart_light", name: "SEA Kickstart Light", price: 1699, unit: " einmalig", desc: "1 Google-Ads-Kampagne + Basis-Conversion-Tracking. Media exkl." },
+  { id: "sea_kickstart_pro",   name: "SEA Kickstart Pro",   price: 2590, unit: " einmalig", desc: "3 Kampagnen + erweitertes Tracking + Remarketing. Media exkl." },
+  { id: "geo_setup",           name: "GEO-Setup",           price: 1490, unit: " einmalig", desc: "Schema Markup, strukturierte Daten, AI-Snippets." },
 ];
 
 interface State {
