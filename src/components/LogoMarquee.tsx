@@ -14,7 +14,6 @@ const items: Item[] = [
   { name: "local.ch", src: "/logos/Local.ch.svg" },
   { name: "Adobe", src: "/logos/Adobe.svg" },
   { name: "bellvita", src: "/logos/Bellvita.svg" },
-  { name: "SBB CFF FFS", src: "/logos/SBB.svg" },
 ];
 
 function LogoItem({ item, ariaHidden = false }: { item: Item; ariaHidden?: boolean }) {
@@ -35,7 +34,7 @@ export function LogoMarquee() {
   return (
     <section className="logo-marquee">
       <div className="container">
-        <p className="logo-marquee-label">Vertrauen von führenden Schweizer &amp; internationalen Marken</p>
+        <p className="logo-marquee-label">Für diese Unternehmen haben wir bereits gearbeitet</p>
       </div>
       <div className="logo-marquee-track-wrap" aria-hidden="true">
         <div className="logo-marquee-track">
