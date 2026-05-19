@@ -1250,35 +1250,38 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 
-/* "Alle Vorteile einblenden" Collapsible */
+/* Key features (always visible top 3) */
+.pricing-features-key { padding: 0 24px !important; margin: 4px 0 12px !important; }
+.pricing-features-key li {
+  padding: 7px 0 !important;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.06) !important;
+}
+.pricing-features-key li:last-child { border-bottom: none !important; }
+
+/* "Alle Vorteile einblenden" Collapsible — kompakter Text-Link statt Box */
 .pricing-collapse {
-  margin: 14px 0 0;
-  padding: 0 24px;
+  margin: 0 24px 14px;
+  padding: 0;
 }
 .pricing-collapse > summary {
   list-style: none;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 10px;
-  font-size: 0.86rem;
+  gap: 8px;
+  padding: 8px 0;
+  background: transparent;
+  border: none;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--text-primary, #e0dfe6);
-  transition: background 0.15s ease, border-color 0.15s ease;
+  color: var(--pink, #d4238a);
+  transition: opacity 0.15s ease;
   user-select: none;
 }
 .pricing-collapse > summary::-webkit-details-marker { display: none; }
-.pricing-collapse > summary:hover {
-  background: rgba(212, 35, 138, 0.10);
-  border-color: rgba(212, 35, 138, 0.30);
-}
+.pricing-collapse > summary:hover { opacity: 0.8; }
 .pricing-collapse .pc-chevron {
-  width: 10px; height: 10px;
+  width: 8px; height: 8px;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg) translate(-2px, -2px);
@@ -1286,42 +1289,49 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 .pricing-collapse[open] > summary .pc-chevron {
-  transform: rotate(-135deg) translate(-2px, -2px);
-}
-.pricing-collapse[open] > summary .pc-label::before {
-  content: 'Alle Vorteile ausblenden';
+  transform: rotate(-135deg) translate(-1px, -1px);
 }
 .pricing-collapse[open] > summary .pc-label { font-size: 0; }
-.pricing-collapse[open] > summary .pc-label::before { font-size: 0.86rem; }
-.pricing-collapse > .pricing-features {
-  margin-top: 12px;
-  padding-left: 0;
+.pricing-collapse[open] > summary .pc-label::before {
+  content: attr(data-open);
+  font-size: 0.82rem;
+}
+.pricing-features-rest {
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
   list-style: none;
+  animation: fadeRest 0.2s ease;
+}
+@keyframes fadeRest { from { opacity: 0; } to { opacity: 1; } }
+.pricing-features-rest li {
+  padding: 6px 0 !important;
+  font-size: 0.88rem !important;
+  color: var(--text-secondary, #a8a7b3) !important;
 }
 
-/* Aktions-Banner "Domain & Hosting 12 Monate geschenkt" */
+/* Aktions-Banner "Domain & Hosting 12 Monate geschenkt" — kompakt + integriert */
 .pricing-domain-banner {
-  margin: 14px 24px 0;
-  padding: 10px 14px;
+  margin: 0 24px 14px;
+  padding: 10px 12px;
   background: linear-gradient(135deg, rgba(255, 195, 0, 0.10) 0%, rgba(255, 165, 0, 0.06) 100%);
-  border: 1px solid rgba(255, 195, 0, 0.30);
+  border: 1px solid rgba(255, 195, 0, 0.28);
   border-radius: 10px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   line-height: 1.45;
   color: var(--text-primary, #e0dfe6);
-  text-align: left;
+  text-align: center;
 }
 .pricing-domain-banner .pdb-icon {
   display: inline-block;
-  margin-right: 6px;
-  font-size: 1.05rem;
+  margin-right: 4px;
+  font-size: 0.95rem;
   vertical-align: -2px;
 }
-.pricing-domain-banner strong { font-weight: 700; }
+.pricing-domain-banner strong { font-weight: 700; display: block; }
 .pricing-domain-banner .pdb-note {
   display: block;
   margin-top: 2px;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   color: var(--text-secondary, #a8a7b3);
 }
 
@@ -1406,24 +1416,33 @@ img { max-width: 100%; display: block; }
 }
 
 .pricing-card {
+  display: flex;
+  flex-direction: column;
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   border: 1px solid var(--card-border);
   overflow: hidden;
   backdrop-filter: var(--blur);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  padding-bottom: 24px;
 }
+
+.pricing-card-spacer { flex: 1 0 auto; min-height: 4px; }
 
 .pricing-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  border-color: rgba(212, 35, 138, 0.35);
 }
 
 .pricing-card.featured {
   border-color: var(--pink);
   position: relative;
-  box-shadow: 0 0 40px rgba(212,35,138,0.15);
+  box-shadow: 0 0 40px rgba(212,35,138,0.18);
+  transform: scale(1.02);
+  z-index: 2;
 }
+.pricing-card.featured:hover { transform: scale(1.02) translateY(-4px); }
 
 .pricing-badge {
   position: absolute;
