@@ -137,6 +137,15 @@ function priceSummary(s: State): { paketPrice: string; addonsPrice: string; tota
   };
 }
 
+function bonusFor(s: State): { name: string; value: number } | null {
+  if (s.modus !== "leasing") return null;
+  const hasSeoModule = s.addons.some((id) => id === "seo_starter" || id === "seo_pro");
+  if (!hasSeoModule) return null;
+  if (s.paket === "essential") return { name: "SEO Kickstart Light", value: 1599 };
+  if (s.paket === "professional" || s.paket === "enterprise") return { name: "SEO Kickstart Pro", value: 2490 };
+  return null;
+}
+
 function canAdvance(s: State): boolean {
   switch (s.step) {
     case 1: return !!s.paket && !!s.modus;
@@ -172,14 +181,20 @@ export function OrderWizard({ initialPaket, initialModus }: { initialPaket?: str
     const p = selectedPaket(state);
     const addons = addonList(state).filter((a) => state.addons.includes(a.id));
 
+    const bonus = bonusFor(state);
+
     const messageLines = [
       "Bestellung über myonepager.ch/bestellen",
       "",
       `Paket: ${p.name} (${state.modus})`,
       `Preis Basispaket: ${summary.paketPrice}`,
       addons.length ? `Zusatzleistungen: ${addons.map((a) => `${a.name} (${chfFormat(a.price)}${a.unit})`).join(", ")}` : "Zusatzleistungen: keine",
+      bonus ? `Gratis-Bonus: ${bonus.name} (Wert ${chfFormat(bonus.value)})` : null,
       `Gesamt: ${summary.total}`,
       "",
+    ].filter((l): l is string => l !== null);
+
+    const tailLines = [
       `Branche: ${state.industry || "—"}`,
       `Aktuelle Website: ${state.websiteUrl || "—"}`,
       `Inhalte vorhanden: ${state.hasContent || "—"}`,
@@ -189,6 +204,7 @@ export function OrderWizard({ initialPaket, initialModus }: { initialPaket?: str
       "Briefing:",
       state.briefing || "—",
     ];
+    messageLines.push(...tailLines);
 
     try {
       const res = await fetch("/api/contact", {
@@ -281,6 +297,18 @@ export function OrderWizard({ initialPaket, initialModus }: { initialPaket?: str
               <h2>Optionale Zusatzleistungen</h2>
               <p>Erweitere dein Paket gezielt um SEO, Ads oder Content. Komplett optional — du kannst alles auch später dazubuchen.</p>
             </div>
+
+            {state.modus === "leasing" && (selectedPaket(state).id === "essential" || selectedPaket(state).id === "professional" || selectedPaket(state).id === "enterprise") && (
+              <div className="ow-bonus-hint">
+                <span className="ow-bonus-icon">🎁</span>
+                {(() => {
+                  const b = bonusFor(state);
+                  if (b) return <><strong>{b.name} gratis inklusive</strong> (Wert {chfFormat(b.value)}) — bei Buchung eines SEO-Moduls aktiv.</>;
+                  const expected = selectedPaket(state).id === "essential" ? "SEO Kickstart Light (Wert CHF 1'599)" : "SEO Kickstart Pro (Wert CHF 2'490)";
+                  return <>Bei Buchung eines SEO-Moduls erhältst du {expected} <strong>gratis dazu</strong>.</>;
+                })()}
+              </div>
+            )}
 
             <div className="ow-addons-list">
               {addonList(state).map((a) => {
@@ -430,6 +458,9 @@ export function OrderWizard({ initialPaket, initialModus }: { initialPaket?: str
               <SummaryRow label="Paket" value={`${selectedPaket(state).name} · ${state.modus === "leasing" ? "Leasing" : "Einmaliger Kauf"}`} />
               <SummaryRow label="Preis Paket" value={summary.paketPrice} />
               <SummaryRow label="Zusatzleistungen" value={summary.addonsPrice} />
+              {bonusFor(state) && (
+                <SummaryRow label="🎁 Gratis-Bonus" value={`${bonusFor(state)!.name} (Wert ${chfFormat(bonusFor(state)!.value)})`} />
+              )}
               <SummaryRow label="Gesamt" value={summary.total} highlight />
               <SummaryRow label="Branche" value={state.industry || "—"} />
               <SummaryRow label="Inhalte" value={state.hasContent || "—"} />
