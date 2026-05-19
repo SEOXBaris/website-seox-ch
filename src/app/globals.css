@@ -2913,19 +2913,18 @@ img { max-width: 100%; display: block; }
   animation: logo-marquee-scroll 60s linear infinite;
 }
 .logo-marquee:hover .logo-marquee-track { animation-play-state: paused; }
-.logo-marquee-item {
+.logo-marquee-cell {
   flex-shrink: 0;
-  font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em;
-  color: rgba(224, 223, 230, 0.55);
-  white-space: nowrap;
-  transition: color 0.2s ease;
-  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  height: 48px; min-width: 120px; padding: 0 12px;
+  opacity: 0.7;
+  filter: grayscale(0.2) brightness(1.15);
+  transition: opacity 0.2s ease, filter 0.2s ease;
 }
-.logo-marquee-item:hover { color: var(--text-primary, #e0dfe6); }
-.logo-marquee-item:not(:last-child)::after {
-  content: '•';
-  position: absolute; right: -32px; top: 50%; transform: translateY(-50%);
-  color: rgba(255,255,255,0.12); font-size: 0.9rem;
+.logo-marquee-cell:hover { opacity: 1; filter: grayscale(0) brightness(1.2); }
+.logo-marquee-cell img {
+  max-height: 100%; max-width: 100%; width: auto; height: auto;
+  object-fit: contain;
 }
 @keyframes logo-marquee-scroll {
   from { transform: translateX(0); }
