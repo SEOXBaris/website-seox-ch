@@ -1234,8 +1234,89 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
   align-items: stretch;
+  overflow: visible;
 }
 #pricingEinmalig .pricing-grid { grid-template-columns: repeat(4, 1fr); }
+
+/* Inclusion banner ("Alles aus X + zusätzlich:") */
+.pricing-included {
+  margin: 0 24px 12px;
+  padding: 10px 14px;
+  background: rgba(212, 35, 138, 0.08);
+  border: 1px solid rgba(212, 35, 138, 0.18);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text-secondary, #a8a7b3);
+  text-align: center;
+  line-height: 1.4;
+}
+.pricing-included strong { color: var(--text-primary, #e0dfe6); font-weight: 700; }
+
+/* Feature info icon + tooltip on hover/focus */
+.feat-info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 15px; height: 15px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(224, 223, 230, 0.55);
+  font-family: Georgia, serif; font-size: 11px; font-weight: 700; font-style: italic;
+  margin-left: 6px;
+  cursor: help;
+  flex-shrink: 0;
+  position: relative;
+  transition: background 0.15s ease, color 0.15s ease;
+  outline: none;
+  vertical-align: middle;
+}
+.feat-info:hover, .feat-info:focus {
+  background: var(--pink, #d4238a);
+  color: #fff;
+}
+.feat-info::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  max-width: 80vw;
+  padding: 12px 14px;
+  background: #0b0b0b;
+  color: rgba(224, 223, 230, 0.92);
+  font-family: var(--font-jakarta), -apple-system, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 50;
+  white-space: normal;
+}
+.feat-info::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #0b0b0b;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 51;
+}
+.feat-info:hover::after, .feat-info:focus::after,
+.feat-info:hover::before, .feat-info:focus::before { opacity: 1; }
+
+@media (max-width: 768px) {
+  .feat-info::after { width: 220px; font-size: 0.76rem; }
+}
 
 .pricing-card {
   background: var(--card-bg);
