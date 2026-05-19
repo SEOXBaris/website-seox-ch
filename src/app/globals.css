@@ -2916,20 +2916,19 @@ img { max-width: 100%; display: block; }
 .logo-marquee-cell {
   flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  height: 56px; padding: 0 14px;
-  opacity: 0.75;
-  transition: opacity 0.25s ease;
+  height: 64px; min-width: 150px; padding: 14px 22px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.logo-marquee-cell:hover { opacity: 1; }
+.logo-marquee-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px -8px rgba(212, 35, 138, 0.25);
+}
 .logo-marquee-cell img {
-  height: 36px; width: auto; max-width: 180px;
+  max-height: 100%; width: auto; max-width: 140px;
   object-fit: contain;
-  /* light filter to harmonize coloured logos with dark background */
-  filter: brightness(0) invert(1) brightness(0.92);
-  transition: filter 0.25s ease;
-}
-.logo-marquee-cell:hover img {
-  filter: brightness(0) invert(1) brightness(1);
 }
 @keyframes logo-marquee-scroll {
   from { transform: translateX(0); }

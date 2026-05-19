@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
 import { PageScripts } from "@/components/PageScripts";
+import { LogoMarquee } from "@/components/LogoMarquee";
 
 export default function HomePage() {
   return (
@@ -7,6 +8,7 @@ export default function HomePage() {
       <a href="#hero" className="skip-nav">Zum Inhalt springen</a>
       <Section name="Header" />
       <Section name="Hero" />
+      <LogoMarquee />
       <Section name="StatsBar" />
       <Section name="TrustedBy" />
       <Section name="Problem" />
