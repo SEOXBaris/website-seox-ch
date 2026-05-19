@@ -1239,6 +1239,92 @@ img { max-width: 100%; display: block; }
 #pricingLeasing .pricing-grid,
 #pricingEinmalig .pricing-grid { grid-template-columns: repeat(4, 1fr); }
 
+/* Strike-through "statt CHF X" über dem Aktionspreis */
+.pricing-strike {
+  font-size: 0.95rem;
+  color: #ff6b6b;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+/* "Alle Vorteile einblenden" Collapsible */
+.pricing-collapse {
+  margin: 14px 0 0;
+  padding: 0 24px;
+}
+.pricing-collapse > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary, #e0dfe6);
+  transition: background 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+}
+.pricing-collapse > summary::-webkit-details-marker { display: none; }
+.pricing-collapse > summary:hover {
+  background: rgba(212, 35, 138, 0.10);
+  border-color: rgba(212, 35, 138, 0.30);
+}
+.pricing-collapse .pc-chevron {
+  width: 10px; height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.pricing-collapse[open] > summary .pc-chevron {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+.pricing-collapse[open] > summary .pc-label::before {
+  content: 'Alle Vorteile ausblenden';
+}
+.pricing-collapse[open] > summary .pc-label { font-size: 0; }
+.pricing-collapse[open] > summary .pc-label::before { font-size: 0.86rem; }
+.pricing-collapse > .pricing-features {
+  margin-top: 12px;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Aktions-Banner "Domain & Hosting 12 Monate geschenkt" */
+.pricing-domain-banner {
+  margin: 14px 24px 0;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(255, 195, 0, 0.10) 0%, rgba(255, 165, 0, 0.06) 100%);
+  border: 1px solid rgba(255, 195, 0, 0.30);
+  border-radius: 10px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-primary, #e0dfe6);
+  text-align: left;
+}
+.pricing-domain-banner .pdb-icon {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 1.05rem;
+  vertical-align: -2px;
+}
+.pricing-domain-banner strong { font-weight: 700; }
+.pricing-domain-banner .pdb-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.74rem;
+  color: var(--text-secondary, #a8a7b3);
+}
+
 /* Inclusion banner ("Alles aus X + zusätzlich:") */
 .pricing-included {
   margin: 0 24px 12px;
