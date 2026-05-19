@@ -20,6 +20,7 @@ export default function HomePage() {
       <Section name="Portfolio" />
       <Section name="Testimonials" />
       <Section name="Guarantee" />
+      <Section name="CustomerSuccess" />
       <Section name="FAQ" />
       <Section name="CTA" />
       <Section name="ChatbotFab" />
