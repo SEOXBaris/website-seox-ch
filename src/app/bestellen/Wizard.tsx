@@ -68,11 +68,15 @@ type Action =
   | { type: "NEXT" }
   | { type: "PREV" };
 
-const init = (paket?: string, modus?: string): State => ({
+const init = (paket?: string, modus?: string, addons?: string): State => {
+  const modusVal = (["leasing", "einmalig"].includes(modus ?? "") ? modus : "leasing") as Modus;
+  const validIds = (modusVal === "leasing" ? ADDONS_LEASING : ADDONS_EINMALIG).map((a) => a.id);
+  const preAddons = (addons ?? "").split(",").map((s) => s.trim()).filter((id) => validIds.includes(id));
+  return {
   step: 1,
   paket: (["1pager", "essential", "professional", "enterprise"].includes(paket ?? "") ? paket : "essential") as PaketId,
-  modus: (["leasing", "einmalig"].includes(modus ?? "") ? modus : "leasing") as Modus,
-  addons: [],
+  modus: modusVal,
+  addons: preAddons,
   industry: "",
   websiteUrl: "",
   hasContent: "",
@@ -86,7 +90,8 @@ const init = (paket?: string, modus?: string): State => ({
   email: "",
   phone: "",
   agbAccepted: false,
-});
+  };
+};
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -173,8 +178,8 @@ const STEP_LABELS = [
   "Bestätigen",
 ];
 
-export function OrderWizard({ initialPaket, initialModus }: { initialPaket?: string; initialModus?: string }) {
-  const [state, dispatch] = useReducer(reducer, init(initialPaket, initialModus));
+export function OrderWizard({ initialPaket, initialModus, initialAddons }: { initialPaket?: string; initialModus?: string; initialAddons?: string }) {
+  const [state, dispatch] = useReducer(reducer, init(initialPaket, initialModus, initialAddons));
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function BestellenPage({ searchParams }: { searchParams: Promise<{ paket?: string; modus?: string }> }) {
+export default function BestellenPage({ searchParams }: { searchParams: Promise<{ paket?: string; modus?: string; addons?: string }> }) {
   return (
     <>
       <Section name="Header" />
@@ -24,7 +24,7 @@ export default function BestellenPage({ searchParams }: { searchParams: Promise<
   );
 }
 
-async function OrderWizardWrapper({ searchParams }: { searchParams: Promise<{ paket?: string; modus?: string }> }) {
+async function OrderWizardWrapper({ searchParams }: { searchParams: Promise<{ paket?: string; modus?: string; addons?: string }> }) {
   const sp = await searchParams;
-  return <OrderWizard initialPaket={sp.paket} initialModus={sp.modus} />;
+  return <OrderWizard initialPaket={sp.paket} initialModus={sp.modus} initialAddons={sp.addons} />;
 }

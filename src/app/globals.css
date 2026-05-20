@@ -2144,6 +2144,24 @@ img { max-width: 100%; display: block; }
 .konfig-btn-cta:active {
   transform: scale(0.98);
 }
+.konfig-btn-advise {
+  background: transparent;
+  color: var(--text-primary, #e0dfe6);
+  padding: 12px 28px;
+  font-size: 0.92rem;
+  border-radius: var(--radius);
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  font-family: inherit;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+}
+.konfig-btn-advise:hover {
+  border-color: var(--pink, #d4238a);
+  background: rgba(212, 35, 138, 0.08);
+}
 .konfig-result-item {
   display: flex;
   justify-content: space-between;

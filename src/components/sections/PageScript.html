@@ -427,11 +427,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const isL = model === 'leasing';
 
     // Determine base package (neue 4-Paket-Struktur)
-    var baseName, basePrice, baseInquiry = false;
-    if (size === 'large' || care === 'growth') { baseName = 'Enterprise'; basePrice = null; baseInquiry = true; }
-    else if (size === 'medium' || care === 'full-service') { baseName = 'Professional'; basePrice = isL ? 599 : 2899; }
-    else if (size === 'small') { baseName = 'Essential'; basePrice = isL ? 399 : 1499; }
-    else { baseName = '1 Pager'; basePrice = isL ? 199 : 899; } // solo
+    var baseName, basePrice, baseInquiry = false, baseSlug, baseValue;
+    if (size === 'large' || care === 'growth') { baseName = 'Enterprise'; basePrice = null; baseInquiry = true; baseSlug = 'enterprise'; baseValue = null; }
+    else if (size === 'medium' || care === 'full-service') { baseName = 'Professional'; basePrice = isL ? 599 : 2899; baseSlug = 'professional'; baseValue = '2\'899'; }
+    else if (size === 'small') { baseName = 'Essential'; basePrice = isL ? 399 : 1499; baseSlug = 'essential'; baseValue = '1\'499'; }
+    else { baseName = '1 Pager'; basePrice = isL ? 199 : 899; baseSlug = '1pager'; baseValue = '899'; } // solo
 
     // Pro- vs Light-Variante der Einmal-Kickstarts je nach Grösse/Betreuung
     var kickPro = (size === 'medium' || size === 'large' || care === 'full-service' || care === 'growth');
@@ -443,128 +443,128 @@ document.getElementById('contactForm').addEventListener('submit', async function
     if (ch.indexOf('not-found') >= 0 || ch.indexOf('no-leads') >= 0) {
       if (size === 'large' || care === 'full-service' || care === 'growth') {
         recMods.push(isL
-          ? {n:'SEO Professional', p:799, u:'/Mt.', d:'10 Keywords, Content & Link-Building'}
-          : {n:'SEO Kickstart Pro', p:2490, u:' einmalig', d:'Bis 1\'000 Keyword-Analysen + alle Seiten + Audit'});
+          ? {id:'seo_pro', n:'SEO Professional', p:799, u:'/Mt.', d:'10 Keywords, Content & Link-Building'}
+          : {id:'seo_kickstart_pro', n:'SEO Kickstart Pro', p:2490, u:' einmalig', d:'Bis 1\'000 Keyword-Analysen + alle Seiten + Audit'});
       } else {
         recMods.push(isL
-          ? {n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'}
-          : {n:'SEO Kickstart Light', p:1599, u:' einmalig', d:'Bis 100 Keyword-Analysen + On-Page Top-Seiten'});
+          ? {id:'seo_starter', n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'}
+          : {id:'seo_kickstart_light', n:'SEO Kickstart Light', p:1599, u:' einmalig', d:'Bis 100 Keyword-Analysen + On-Page Top-Seiten'});
       }
     }
 
     if (ch.indexOf('bad-ads') >= 0) {
       if (size === 'large' || care === 'growth') {
         recMods.push(isL
-          ? {n:'SEA Professional', p:599, u:'/Mt.', d:'8 Kampagnen + Remarketing (exkl. Media)'}
-          : {n:'SEA Kickstart Pro', p:2590, u:' einmalig', d:'Bis 10 Kampagnen + 100 Keywords + Remarketing'});
+          ? {id:'sea_pro', n:'SEA Professional', p:599, u:'/Mt.', d:'8 Kampagnen + Remarketing (exkl. Media)'}
+          : {id:'sea_kickstart_pro', n:'SEA Kickstart Pro', p:2590, u:' einmalig', d:'Bis 10 Kampagnen + 100 Keywords + Remarketing'});
       } else {
         recMods.push(isL
-          ? {n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'}
-          : {n:'SEA Kickstart Light', p:1699, u:' einmalig', d:'Bis 3 Kampagnen + 30 Keywords + Tracking'});
+          ? {id:'sea_starter', n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'}
+          : {id:'sea_kickstart_light', n:'SEA Kickstart Light', p:1699, u:' einmalig', d:'Bis 3 Kampagnen + 30 Keywords + Tracking'});
       }
     }
 
     if (ch.indexOf('ai-invisible') >= 0) {
       recMods.push(isL
-        ? {n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in ChatGPT, Perplexity & Co.'}
-        : {n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippet Optimierung'});
+        ? {id:'geo', n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in ChatGPT, Perplexity & Co.'}
+        : {id:'geo_setup', n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippet Optimierung'});
     }
 
     // Optional modules (not recommended but available)
     if (isL) {
       if (!recMods.find(function(m){ return m.n.indexOf('SEO') >= 0; })) {
-        optMods.push({n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'});
+        optMods.push({id:'seo_starter', n:'SEO Starter', p:399, u:'/Mt.', d:'3 Keywords mit Ranking-Report'});
       }
       if (!recMods.find(function(m){ return m.n.indexOf('SEA') >= 0; })) {
-        optMods.push({n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'});
+        optMods.push({id:'sea_starter', n:'SEA Starter', p:299, u:'/Mt.', d:'3 Kampagnen (exkl. Media Budget)'});
       }
       if (!recMods.find(function(m){ return m.n.indexOf('GEO') >= 0; })) {
-        optMods.push({n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in KI-Suchmaschinen'});
+        optMods.push({id:'geo', n:'GEO-Optimierung', p:349, u:'/Mt.', d:'Sichtbarkeit in KI-Suchmaschinen'});
       }
       if (care === 'full-service' || care === 'growth') {
-        recMods.push({n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
+        recMods.push({id:'content_social', n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
       } else {
-        optMods.push({n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
+        optMods.push({id:'content_social', n:'Content & Social', p:499, u:'/Mt.', d:'4 Blog-Beiträge + 8 Social Posts/Mt.'});
       }
     } else {
       if (!recMods.find(function(m){ return m.n.indexOf('SEO') >= 0; })) {
         optMods.push(kickPro
-          ? {n:'SEO Kickstart Pro', p:2490, u:' einmalig', d:'Bis 1\'000 Keyword-Analysen + alle Seiten + Audit'}
-          : {n:'SEO Kickstart Light', p:1599, u:' einmalig', d:'Bis 100 Keyword-Analysen + On-Page Top-Seiten'});
+          ? {id:'seo_kickstart_pro', n:'SEO Kickstart Pro', p:2490, u:' einmalig', d:'Bis 1\'000 Keyword-Analysen + alle Seiten + Audit'}
+          : {id:'seo_kickstart_light', n:'SEO Kickstart Light', p:1599, u:' einmalig', d:'Bis 100 Keyword-Analysen + On-Page Top-Seiten'});
       }
       if (!recMods.find(function(m){ return m.n.indexOf('SEA') >= 0; })) {
         optMods.push(kickPro
-          ? {n:'SEA Kickstart Pro', p:2590, u:' einmalig', d:'Bis 10 Kampagnen + 100 Keywords + Remarketing'}
-          : {n:'SEA Kickstart Light', p:1699, u:' einmalig', d:'Bis 3 Kampagnen + 30 Keywords + Tracking'});
+          ? {id:'sea_kickstart_pro', n:'SEA Kickstart Pro', p:2590, u:' einmalig', d:'Bis 10 Kampagnen + 100 Keywords + Remarketing'}
+          : {id:'sea_kickstart_light', n:'SEA Kickstart Light', p:1699, u:' einmalig', d:'Bis 3 Kampagnen + 30 Keywords + Tracking'});
       }
       if (!recMods.find(function(m){ return m.n.indexOf('GEO') >= 0; })) {
-        optMods.push({n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippets'});
+        optMods.push({id:'geo_setup', n:'GEO-Setup', p:1490, u:' einmalig', d:'Schema Markup + AI-Snippets'});
       }
     }
 
-    kOptional = {};
+    // Alle Module in eine wählbare Liste: empfohlene sind vorausgewählt,
+    // optionale nicht. Der Kunde kann alle an-/abwählen.
+    var allMods = recMods.map(function(m){ return Object.assign({}, m, {rec:true}); })
+      .concat(optMods.map(function(m){ return Object.assign({}, m, {rec:false}); }));
+    var kModSel = {};
+    allMods.forEach(function(m, i){ kModSel[i] = m.rec; });
 
     var pUnit = isL ? '/Mt.' : ' einmalig';
 
     function calcTotal() {
       if (baseInquiry) return null;
       var t = basePrice;
-      recMods.forEach(function(m) { t += m.p; });
-      optMods.forEach(function(m, i) { if (kOptional[i]) t += m.p; });
+      allMods.forEach(function(m, i) { if (kModSel[i]) t += m.p; });
       return t;
     }
 
-    function activeMods() {
-      var list = recMods.slice();
-      optMods.forEach(function(m, i) { if (kOptional[i]) list.push(m); });
-      return list;
+    function selectedMods() {
+      return allMods.filter(function(m, i){ return kModSel[i]; });
     }
 
     function renderResult() {
       var total = calcTotal();
       var html = '<div class="konfig-step-label">Deine persönliche Empfehlung</div>';
       html += '<div class="konfig-title">Das passt zu Dir</div>';
-      html += '<div class="konfig-sub">Basierend auf Deinen Angaben empfehlen wir diese Kombination. Klicke auf optionale Module, um sie hinzuzufügen.</div>';
+      html += '<div class="konfig-sub">Basierend auf Deinen Angaben haben wir Module vorausgewählt. Du kannst sie jederzeit an- oder abwählen.</div>';
 
       // Base
-      var baseDesc = isL ? 'CR-optimiertes Design -- Webseite gratis im Paket, inkl. Hosting & Pflege' : 'CR-optimiertes Design -- Domain & Hosting 12 Monate geschenkt';
+      var baseDesc = isL ? 'CR-optimiertes Design, inkl. Hosting & Pflege' : 'CR-optimiertes Design -- volle Eigentumsrechte';
       var basePriceLabel = baseInquiry ? 'Preis auf Anfrage' : ('CHF ' + kFmt(basePrice) + pUnit);
       html += '<div class="konfig-result-item recommended">';
       html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + baseName + ' <span class="konfig-tag">Basis</span></div>';
       html += '<div class="konfig-ri-desc">' + baseDesc + '</div></div>';
       html += '<div class="konfig-ri-price">' + basePriceLabel + '</div></div>';
 
-      // Recommended
-      recMods.forEach(function(m) {
-        html += '<div class="konfig-result-item recommended">';
-        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + m.n + ' <span class="konfig-tag">Empfohlen</span></div>';
+      // Module (alle wählbar)
+      allMods.forEach(function(m, i) {
+        var on = kModSel[i];
+        var tag = m.rec
+          ? '<span class="konfig-tag">' + (on ? 'Empfohlen' : 'Abgewählt') + '</span>'
+          : '<span class="konfig-tag-opt">' + (on ? 'Hinzugefügt' : 'Optional') + '</span>';
+        html += '<div class="konfig-result-item ' + (on ? 'added' : 'optional') + '" data-mod-idx="' + i + '">';
+        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + (on ? '✓ ' : '+ ') + m.n + ' ' + tag + '</div>';
         html += '<div class="konfig-ri-desc">' + m.d + '</div></div>';
         html += '<div class="konfig-ri-price">CHF ' + kFmt(m.p) + m.u + '</div></div>';
       });
 
-      // Optional
-      optMods.forEach(function(m, i) {
-        var added = kOptional[i];
-        html += '<div class="konfig-result-item optional' + (added ? ' added' : '') + '" data-opt-idx="' + i + '">';
-        html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + m.n + ' <span class="konfig-tag-opt">' + (added ? 'Hinzugefügt' : 'Optional') + '</span></div>';
-        html += '<div class="konfig-ri-desc">' + m.d + '</div></div>';
-        html += '<div class="konfig-ri-price">+ CHF ' + kFmt(m.p) + m.u + '</div></div>';
-      });
-
-      // Gratis-Boni-Hinweis (nur Leasing, bei SEO/SEA-Modul)
+      // Gratis-Boni-Hinweis
+      var gifts = [];
       if (isL) {
-        var mods = activeMods();
+        gifts.push('Webseite GRATIS im Paket' + (baseValue ? ' (Wert CHF ' + baseValue + ')' : ''));
+        var mods = selectedMods();
         var hasSeo = mods.some(function(m){ return m.n.indexOf('SEO') >= 0; });
         var hasSea = mods.some(function(m){ return m.n.indexOf('SEA') >= 0; });
-        var gifts = [];
         var kickLabel = kickPro ? 'Pro' : 'Light';
         var seoVal = kickPro ? '2\'490' : '1\'599';
         var seaVal = kickPro ? '2\'590' : '1\'699';
         if (hasSeo) gifts.push('SEO Kickstart ' + kickLabel + ' (Wert CHF ' + seoVal + ')');
         if (hasSea) gifts.push('SEA Kickstart ' + kickLabel + ' (Wert CHF ' + seaVal + ')');
-        if (gifts.length) {
-          html += '<div class="konfig-gift">🎁 <strong>Gratis dazu:</strong> ' + gifts.join(' + ') + ' -- als einmaliges Setup geschenkt.</div>';
-        }
+      } else {
+        gifts.push('Domain & Hosting 12 Monate geschenkt');
+      }
+      if (gifts.length) {
+        html += '<div class="konfig-gift">🎁 <strong>Gratis dazu:</strong> ' + gifts.join(' + ') + '.</div>';
       }
 
       // Total
@@ -575,19 +575,33 @@ document.getElementById('contactForm').addEventListener('submit', async function
       html += '<div class="konfig-proof">87% unserer Kunden mit ähnlichem Profil haben sich für diese Kombination entschieden.</div>';
       html += '<div class="konfig-urgency">Noch 3 Plätze für kostenlose Erstberatung im Mai verfügbar.</div>';
 
-      // CTA
-      html += '<button class="konfig-btn-cta" onclick="window.location.href=\'/bestellen?modus=' + (isL ? 'leasing' : 'einmalig') + '\'">Jetzt bestellen</button>';
+      // CTA: bestellen mit vorausgewählten Paketen
+      var addonIds = selectedMods().map(function(m){ return m.id; }).filter(Boolean).join(',');
+      var orderUrl = '/bestellen?paket=' + baseSlug + '&modus=' + (isL ? 'leasing' : 'einmalig') + (addonIds ? '&addons=' + addonIds : '');
+      html += '<button class="konfig-btn-cta" data-order-url="' + orderUrl + '">Jetzt bestellen</button>';
+      html += '<button class="konfig-btn-advise" type="button">Nicht sicher? Jetzt beraten lassen</button>';
       html += '<div class="konfig-savings">Unverbindlich und kostenlos -- in 15 Minuten weisst Du, was möglich ist.</div>';
 
       content.innerHTML = html;
 
-      // Optional toggle handlers
-      content.querySelectorAll('.konfig-result-item.optional').forEach(function(el) {
+      // Modul an-/abwählen
+      content.querySelectorAll('.konfig-result-item[data-mod-idx]').forEach(function(el) {
         el.addEventListener('click', function() {
-          var idx = parseInt(this.dataset.optIdx);
-          kOptional[idx] = !kOptional[idx];
+          var idx = parseInt(this.dataset.modIdx);
+          kModSel[idx] = !kModSel[idx];
           renderResult();
         });
+      });
+
+      // Bestellen -> mit Vorauswahl
+      var orderBtn = content.querySelector('.konfig-btn-cta');
+      if (orderBtn) orderBtn.addEventListener('click', function(){ window.location.href = this.dataset.orderUrl; });
+
+      // Beraten lassen -> Chatbot öffnen
+      var adviseBtn = content.querySelector('.konfig-btn-advise');
+      if (adviseBtn) adviseBtn.addEventListener('click', function(){
+        var fab = document.getElementById('chatFab');
+        if (fab && !document.getElementById('chatWindow').classList.contains('open')) fab.click();
       });
     }
 
