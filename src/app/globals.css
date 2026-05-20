@@ -1334,6 +1334,15 @@ img { max-width: 100%; display: block; }
   color: var(--text-secondary, #a8a7b3) !important;
 }
 
+/* Disclaimer-Footnote unter den Paketen */
+.pricing-disclaimer {
+  margin: 32px auto 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary, #a8a7b3);
+  opacity: 0.85;
+}
+
 /* Bonus-Banner "SEO Kickstart gratis bei SEO-Modul-Buchung" (Leasing) */
 .pricing-bonus-banner {
   margin: 0 24px 14px;
