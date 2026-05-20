@@ -691,8 +691,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
 
     setTimeout(function() {
       botReply('Wie möchtest Du am liebsten arbeiten?', [
-        {label: 'Monatliches Leasing ab 299.-', action: function(){ handleModel('leasing'); }},
-        {label: 'Einmalig kaufen ab 3\'990.-', action: function(){ handleModel('einmalig'); }},
+        {label: 'Monatliches Leasing ab 199.-', action: function(){ handleModel('leasing'); }},
+        {label: 'Einmalig kaufen ab 899.-', action: function(){ handleModel('einmalig'); }},
         {label: 'Bin mir unsicher', action: function(){ handleModel('unsure'); }}
       ]);
     }, 2800);
@@ -708,27 +708,33 @@ document.getElementById('contactForm').addEventListener('submit', async function
       ]);
     } else {
       var text = model === 'leasing'
-        ? '<strong>Leasing</strong> ist ideal, wenn Du planbare Kosten willst und laufende Betreuung schätzt. Ab CHF 299/Mt. bekommst Du eine CR-optimierte Webseite mit Hosting und Pflege. Dazu kannst Du Module wie SEO (ab 399/Mt.) oder SEA (ab 299/Mt.) buchen.'
-        : '<strong>Einmalig</strong> ist perfekt, wenn Du volle Eigentumsrechte willst. Ab CHF 3\'990 bekommst Du eine CR-optimierte Webseite mit allen Source Files. SEO- und SEA-Kickstart-Pakete gibt es als Einmal-Setup dazu.';
+        ? '<strong>Leasing</strong> ist ideal, wenn Du planbare Kosten willst und laufende Betreuung schätzt. Ab <strong>CHF 199/Mt.</strong> bekommst Du eine CR-optimierte Webseite -- die <strong>Webseite ist dabei gratis</strong> im Paket, inkl. Hosting und Pflege.<br><br>Mein Tipp: Buchst Du ein SEO- oder SEA-Modul dazu, bekommst Du das passende <strong>SEO/SEA Kickstart-Setup gratis</strong> (Wert bis CHF 2\'590). 🎁'
+        : '<strong>Einmalig</strong> ist perfekt, wenn Du volle Eigentumsrechte willst. Ab <strong>CHF 899</strong> bekommst Du eine CR-optimierte Webseite mit allen Source Files -- und <strong>Domain & Hosting sind 12 Monate geschenkt</strong>. 🎁 SEO- und SEA-Kickstart gibt es als Einmal-Setup dazu.';
       botReply(text, [
         {label: 'Pakete anschauen', action: function(){ scrollToPricing(); }},
-        {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }},
+        {label: 'Jetzt bestellen', action: function(){ goToBestellen(model); }},
         {label: 'Kostenlose Beratung buchen', action: function(){ handleContact(); }}
       ]);
     }
   }
 
   function handlePricing() {
-    botReply('Unsere Webseiten starten ab <strong>CHF 299/Mt.</strong> im Leasing oder <strong>CHF 899 einmalig</strong>. Dazu gibt es optionale Module wie SEO (ab 399/Mt.), SEA (ab 299/Mt.) und GEO-Optimierung (349/Mt.).', [
+    botReply('Wir haben <strong>4 Pakete</strong> -- jeweils als Leasing oder Einmalkauf:<br><br>' +
+      '<strong>1 Pager</strong> -- ab CHF 199/Mt. oder ab CHF 899 · für Freelancer<br>' +
+      '<strong>Essential</strong> -- CHF 399/Mt. oder CHF 1\'499 · kleine Unternehmen<br>' +
+      '<strong>Professional</strong> -- CHF 599/Mt. oder CHF 2\'899 · KMU (beliebteste Wahl)<br>' +
+      '<strong>Enterprise</strong> -- auf Anfrage · grössere Unternehmen<br><br>' +
+      '🎁 Im Leasing ist die Webseite gratis, beim Einmalkauf Domain & Hosting 12 Monate. Dazu Module wie SEO (ab 399/Mt.), SEA (ab 299/Mt.) und GEO (349/Mt.).', [
       {label: 'Pakete vergleichen', action: function(){ scrollToPricing(); }},
-      {label: 'Konfigurator nutzen', action: function(){ scrollToKonfig(); }},
+      {label: 'Jetzt bestellen', action: function(){ goToBestellen('leasing'); }},
       {label: 'Was ist GEO?', action: function(){ handleGEO(); }}
     ]);
   }
 
   function handleUSP() {
-    botReply('Was uns unterscheidet:<br><br><strong>1. Datenbasiert:</strong> Jede Webseite wird auf Basis von 1\'000+ Datenpunkten CR-optimiert.<br><strong>2. Full-Stack:</strong> SEO + GEO + SEA aus einer Hand.<br><strong>3. Geschwindigkeit:</strong> Go-Live in Rekordzeit.<br><strong>4. Modularer Ansatz:</strong> Du zahlst nur, was Du brauchst.', [
+    botReply('Wir sind keine Webdesign-Agentur, die Dich nach dem Launch allein lässt:<br><br><strong>1. Über 25 Jahre SEO-Know-how:</strong> Echte Suchmaschinen-Expertise -- keine Seite, die niemand findet.<br><strong>2. Für Google UND KI optimiert:</strong> Sichtbar bei Google, Bing und in KI-Suchen wie ChatGPT, Perplexity & Gemini.<br><strong>3. KI-Power + Experten-Wissen:</strong> Wir bauen mit KI schnell -- und optimieren mit Erfahrung wirklich performant.<br><strong>4. Modular & fair:</strong> Du zahlst nur, was Du brauchst.', [
       {label: 'Was kostet das?', action: function(){ handlePricing(); }},
+      {label: 'Jetzt bestellen', action: function(){ goToBestellen('leasing'); }},
       {label: 'Kostenlose Demo anfordern', action: function(){ handleContact(); }}
     ]);
   }
@@ -741,10 +747,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
   }
 
   function handleCompare() {
-    botReply('<strong>Leasing:</strong> Planbare Kosten, laufende Betreuung, Hosting inkl., ideal wenn Du Dich nicht um Technik kümmern willst.<br><br><strong>Einmalig:</strong> Volle Eigentumsrechte, Source Code gehört Dir, ideal wenn Du ein eigenes Team hast oder unabhängig sein willst.', [
+    botReply('<strong>Leasing (ab CHF 199/Mt.):</strong> Planbare Kosten, Webseite gratis im Paket, laufende Betreuung & Hosting inkl. 🎁 Bonus: SEO/SEA Kickstart gratis bei Buchung eines Moduls.<br><br><strong>Einmalig (ab CHF 899):</strong> Volle Eigentumsrechte, Source Code gehört Dir. 🎁 Domain & Hosting 12 Monate geschenkt. Ideal, wenn Du unabhängig sein willst.', [
       {label: 'Leasing wählen', action: function(){ handleModel('leasing'); }},
       {label: 'Einmalig wählen', action: function(){ handleModel('einmalig'); }},
-      {label: 'Konfigurator starten', action: function(){ scrollToKonfig(); }}
+      {label: 'Jetzt bestellen', action: function(){ goToBestellen('leasing'); }}
     ]);
   }
 
@@ -764,6 +770,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
     setTimeout(function() {
       document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'});
     }, 500);
+  }
+
+  function goToBestellen(model) {
+    addMsg('Perfekt -- ich bringe Dich direkt zur Bestellung. Dort wählst Du Paket und Module in 6 einfachen Schritten.', 'bot');
+    setTimeout(function() {
+      window.location.href = '/bestellen?modus=' + (model === 'einmalig' ? 'einmalig' : 'leasing');
+    }, 800);
   }
 
   function scrollToPricing() {
@@ -786,13 +799,13 @@ document.getElementById('contactForm').addEventListener('submit', async function
     if (t.indexOf('preis') >= 0 || t.indexOf('kost') >= 0 || t.indexOf('budget') >= 0 || t.indexOf('chf') >= 0 || t.indexOf('geld') >= 0) {
       handlePricing();
     } else if (t.indexOf('seo') >= 0 || t.indexOf('google') >= 0 || t.indexOf('ranking') >= 0 || t.indexOf('sichtbar') >= 0) {
-      botReply('SEO ist eines unserer Kerngebiete! Wir bieten SEO Starter (3 Keywords, CHF 399/Mt.) und SEO Professional (10 Keywords, CHF 799/Mt.) als optionale Module an.', [
-        {label: 'SEO-Modul buchen', action: function(){ scrollToPricing(); }},
+      botReply('SEO ist mit über 25 Jahren Erfahrung unser Kerngebiet! Als Module gibt es SEO Starter (3 Keywords, CHF 399/Mt.) und SEO Professional (10 Keywords, CHF 799/Mt.).<br><br>🎁 Im Leasing bekommst Du bei Buchung eines SEO-Moduls das <strong>SEO Kickstart-Setup gratis</strong> (Wert bis CHF 2\'490).', [
+        {label: 'SEO-Modul buchen', action: function(){ goToBestellen('leasing'); }},
         {label: 'Mehr zu SEO erfahren', action: function(){ handleUSP(); }}
       ]);
     } else if (t.indexOf('sea') >= 0 || t.indexOf('ads') >= 0 || t.indexOf('werbung') >= 0 || t.indexOf('kampagne') >= 0) {
-      botReply('Google Ads Management gibt es als SEA Starter (3 Kampagnen, CHF 299/Mt.) oder SEA Professional (8 Kampagnen + Remarketing, CHF 599/Mt.). Media Budget ist exkl.', [
-        {label: 'SEA-Modul anschauen', action: function(){ scrollToPricing(); }},
+      botReply('Google Ads gibt es als SEA Starter (3 Kampagnen, CHF 299/Mt.) oder SEA Professional (8 Kampagnen + Remarketing, CHF 599/Mt.). Media Budget exkl.<br><br>🎁 Im Leasing bekommst Du bei Buchung eines SEA-Moduls das <strong>SEA Kickstart-Setup gratis</strong> (Wert bis CHF 2\'590).', [
+        {label: 'SEA-Modul buchen', action: function(){ goToBestellen('leasing'); }},
         {label: 'Kostenlose Beratung', action: function(){ handleContact(); }}
       ]);
     } else if (t.indexOf('geo') >= 0 || t.indexOf('chatgpt') >= 0 || t.indexOf('ki') >= 0 || t.indexOf('perplexity') >= 0 || t.indexOf('gemini') >= 0) {
