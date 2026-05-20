@@ -241,6 +241,9 @@ document.getElementById('contactForm').addEventListener('submit', async function
   const firstname = sp > 0 ? fullName.slice(0, sp) : fullName;
   const lastname = sp > 0 ? fullName.slice(sp + 1) : '';
 
+  // Shared event_id für Pixel <-> Conversions-API-Deduplizierung
+  var fbLeadId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ('evt_' + Date.now() + '_' + Math.random().toString(36).slice(2));
+
   const payload = {
     firstname,
     lastname,
@@ -250,6 +253,8 @@ document.getElementById('contactForm').addEventListener('submit', async function
     industry: form.branche.value,
     website: form.website.value,
     message: form.message ? form.message.value : '',
+    fbEventId: fbLeadId,
+    isOrder: false,
   };
 
   try {
@@ -263,6 +268,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
       btn.textContent = 'Erfolgreich gesendet!';
       btn.style.background = '#34d399';
       if (window.dataLayer) window.dataLayer.push({ event: 'form_submit_success', form_id: 'contactForm' });
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'Kontaktformular' }, { eventID: fbLeadId });
       // Redirect to thank-you page for conversion tracking
       setTimeout(() => { window.location.href = '/danke'; }, 600);
       return;

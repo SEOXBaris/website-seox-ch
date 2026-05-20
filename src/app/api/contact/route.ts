@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
+import crypto from "crypto";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const HUBSPOT_API = "https://api.hubapi.com";
 const NOTE_TO_CONTACT_ASSOC = 202;
+const META_PIXEL_ID = "376009897763234";
+const META_GRAPH = "https://graph.facebook.com/v21.0";
 
 type ContactPayload = {
   firstname?: string;
@@ -15,7 +18,62 @@ type ContactPayload = {
   industry?: string;
   website?: string;
   message?: string;
+  fbEventId?: string;
+  fbPurchaseEventId?: string;
+  orderValue?: number;
+  isOrder?: boolean;
 };
+
+function sha256(value: string): string {
+  return crypto.createHash("sha256").update(value).digest("hex");
+}
+
+// Meta Conversions API — server-side mirror of the Pixel events (dedupe via event_id)
+async function sendMetaCapi(opts: {
+  eventName: string;
+  eventId?: string;
+  email?: string;
+  phone?: string;
+  firstname?: string;
+  lastname?: string;
+  sourceUrl: string;
+  clientIp?: string;
+  userAgent?: string;
+  customData?: Record<string, unknown>;
+}) {
+  const token = process.env.META_CAPI_TOKEN;
+  if (!token) return; // CAPI optional — Pixel deckt Client-Seite ab
+  const user_data: Record<string, unknown> = {};
+  if (opts.email) user_data.em = [sha256(opts.email.trim().toLowerCase())];
+  if (opts.phone) {
+    const digits = opts.phone.replace(/[^0-9]/g, "");
+    if (digits) user_data.ph = [sha256(digits)];
+  }
+  if (opts.firstname) user_data.fn = [sha256(opts.firstname.trim().toLowerCase())];
+  if (opts.lastname) user_data.ln = [sha256(opts.lastname.trim().toLowerCase())];
+  if (opts.clientIp) user_data.client_ip_address = opts.clientIp;
+  if (opts.userAgent) user_data.client_user_agent = opts.userAgent;
+
+  const body = {
+    data: [
+      {
+        event_name: opts.eventName,
+        event_time: Math.floor(Date.now() / 1000),
+        event_id: opts.eventId,
+        action_source: "website",
+        event_source_url: opts.sourceUrl,
+        user_data,
+        custom_data: opts.customData || {},
+      },
+    ],
+  };
+
+  await fetch(`${META_GRAPH}/${META_PIXEL_ID}/events?access_token=${encodeURIComponent(token)}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  }).catch(() => {}); // non-fatal
+}
 
 function bad(message: string, status = 400) {
   return NextResponse.json({ error: message }, { status });
@@ -43,7 +101,8 @@ export async function POST(req: Request) {
     return bad("Invalid JSON body");
   }
 
-  const { firstname, lastname, email, company, phone, industry, website, message } = body;
+  const { firstname, lastname, email, company, phone, industry, website, message,
+          fbEventId, fbPurchaseEventId, orderValue, isOrder } = body;
   if (!email) return bad("E-Mail ist Pflicht");
   if (!firstname) return bad("Vorname ist Pflicht");
 
@@ -174,6 +233,29 @@ ${message ? `<div style="margin-top:24px;padding:16px;background:#f6f7f9;border-
         text: plain,
       }),
     }).catch(() => {}); // non-fatal
+  }
+
+  // 5) Meta Conversions API (server-side) — gespiegelt zum Pixel, dedupe via event_id
+  const sourceUrl = isOrder ? "https://www.myonepager.ch/bestellen" : "https://www.myonepager.ch/";
+  const clientIp = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || undefined;
+  const userAgent = req.headers.get("user-agent") || undefined;
+
+  await sendMetaCapi({
+    eventName: "Lead",
+    eventId: fbEventId,
+    email, phone, firstname, lastname,
+    sourceUrl, clientIp, userAgent,
+    customData: { content_name: isOrder ? "Bestellung" : "Kontaktformular" },
+  });
+
+  if (isOrder && typeof orderValue === "number" && orderValue > 0) {
+    await sendMetaCapi({
+      eventName: "Purchase",
+      eventId: fbPurchaseEventId,
+      email, phone, firstname, lastname,
+      sourceUrl, clientIp, userAgent,
+      customData: { value: orderValue, currency: "CHF", content_name: "Bestellung" },
+    });
   }
 
   return NextResponse.json({ ok: true, contactId });

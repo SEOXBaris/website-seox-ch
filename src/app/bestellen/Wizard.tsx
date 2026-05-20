@@ -1,7 +1,22 @@
 "use client";
 
-import { useReducer, useState } from "react";
+import { useReducer, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+
+declare global {
+  interface Window { fbq?: (...args: unknown[]) => void; }
+}
+
+function fbTrack(event: string, params?: Record<string, unknown>, eventID?: string) {
+  if (typeof window === "undefined" || typeof window.fbq !== "function") return;
+  if (eventID) window.fbq("track", event, params || {}, { eventID });
+  else window.fbq("track", event, params || {});
+}
+
+function newEventId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+  return "evt_" + Date.now() + "_" + Math.random().toString(36).slice(2);
+}
 
 type PaketId = "1pager" | "essential" | "professional" | "enterprise";
 type Modus = "leasing" | "einmalig";
@@ -186,6 +201,11 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
 
   const summary = priceSummary(state);
 
+  // InitiateCheckout beim Öffnen des Bestell-Wizards (einmal pro Mount)
+  useEffect(() => {
+    fbTrack("InitiateCheckout", { content_category: "website-order" });
+  }, []);
+
   async function handleSubmit() {
     setSubmitting(true);
     setError(null);
@@ -218,6 +238,13 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
     ];
     messageLines.push(...tailLines);
 
+    // Numerischer Bestellwert (Basispaket + gewählte Module); Enterprise = auf Anfrage -> 0
+    const base = p.inquiry ? 0 : ((state.modus === "leasing" ? p.leasing : p.einmalig) ?? 0);
+    const orderValue = base + addons.reduce((s, a) => s + a.price, 0);
+    const hasValue = !p.inquiry && orderValue > 0;
+    const leadEventId = newEventId();
+    const purchaseEventId = newEventId();
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -231,11 +258,20 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
           industry: state.industry,
           website: state.websiteUrl,
           message: messageLines.join("\n"),
+          fbEventId: leadEventId,
+          fbPurchaseEventId: hasValue ? purchaseEventId : undefined,
+          orderValue: hasValue ? orderValue : undefined,
+          isOrder: true,
         }),
       });
       if (!res.ok) {
         const t = await res.text();
         throw new Error(t.slice(0, 200));
+      }
+      // Meta-Pixel: Lead immer, Purchase mit Wert (gleiche event_id wie CAPI -> Dedup)
+      fbTrack("Lead", { content_name: p.name, content_category: state.modus }, leadEventId);
+      if (hasValue) {
+        fbTrack("Purchase", { value: orderValue, currency: "CHF", content_name: p.name, content_category: state.modus }, purchaseEventId);
       }
       router.push("/danke?source=bestellen");
     } catch (e) {
