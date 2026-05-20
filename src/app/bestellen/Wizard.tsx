@@ -210,6 +210,11 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
     setSubmitting(true);
     setError(null);
 
+    // Website-URL tolerant machen: fehlendes Protokoll ergänzen
+    const websiteVal = state.websiteUrl.trim()
+      ? (/^https?:\/\//i.test(state.websiteUrl.trim()) ? state.websiteUrl.trim() : "https://" + state.websiteUrl.trim())
+      : "";
+
     const p = selectedPaket(state);
     const addons = addonList(state).filter((a) => state.addons.includes(a.id));
 
@@ -228,7 +233,7 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
 
     const tailLines = [
       `Branche: ${state.industry || "—"}`,
-      `Aktuelle Website: ${state.websiteUrl || "—"}`,
+      `Aktuelle Website: ${websiteVal || "—"}`,
       `Inhalte vorhanden: ${state.hasContent || "—"}`,
       `Wunschtermin: ${state.wishDate || "—"}`,
       `Bevorzugter Kontakt: ${state.preferredContact}`,
@@ -256,7 +261,7 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
           phone: state.phone,
           company: state.company,
           industry: state.industry,
-          website: state.websiteUrl,
+          website: websiteVal,
           message: messageLines.join("\n"),
           fbEventId: leadEventId,
           fbPurchaseEventId: hasValue ? purchaseEventId : undefined,
@@ -399,7 +404,7 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
 
               <label className="ow-field full">
                 <span>Bestehende Webseite (optional)</span>
-                <input type="url" value={state.websiteUrl} onChange={(e) => dispatch({ type: "SET", field: "websiteUrl", value: e.target.value })} placeholder="https://" />
+                <input type="text" inputMode="url" value={state.websiteUrl} onChange={(e) => dispatch({ type: "SET", field: "websiteUrl", value: e.target.value })} placeholder="z.B. seox.ch" />
               </label>
 
               <fieldset className="ow-field full">

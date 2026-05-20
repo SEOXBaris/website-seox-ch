@@ -244,6 +244,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
   // Shared event_id für Pixel <-> Conversions-API-Deduplizierung
   var fbLeadId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : ('evt_' + Date.now() + '_' + Math.random().toString(36).slice(2));
 
+  // Website-URL tolerant machen: fehlendes Protokoll ergänzen (z.B. "seox.ch" -> "https://seox.ch")
+  var websiteVal = (form.website.value || '').trim();
+  if (websiteVal && !/^https?:\/\//i.test(websiteVal)) websiteVal = 'https://' + websiteVal;
+
   const payload = {
     firstname,
     lastname,
@@ -251,7 +255,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     company: form.firma.value,
     phone: form.telefon.value,
     industry: form.branche.value,
-    website: form.website.value,
+    website: websiteVal,
     message: form.message ? form.message.value : '',
     fbEventId: fbLeadId,
     isOrder: false,
