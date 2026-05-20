@@ -427,11 +427,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
     const isL = model === 'leasing';
 
     // Determine base package (neue 4-Paket-Struktur)
-    var baseName, basePrice, baseInquiry = false, baseSlug, baseValue;
-    if (size === 'large' || care === 'growth') { baseName = 'Enterprise'; basePrice = null; baseInquiry = true; baseSlug = 'enterprise'; baseValue = null; }
-    else if (size === 'medium' || care === 'full-service') { baseName = 'Professional'; basePrice = isL ? 599 : 2899; baseSlug = 'professional'; baseValue = '2\'899'; }
-    else if (size === 'small') { baseName = 'Essential'; basePrice = isL ? 399 : 1499; baseSlug = 'essential'; baseValue = '1\'499'; }
-    else { baseName = '1 Pager'; basePrice = isL ? 199 : 899; baseSlug = '1pager'; baseValue = '899'; } // solo
+    var baseName, basePrice, baseInquiry = false, baseSlug, baseValue, basePages;
+    if (size === 'large' || care === 'growth') { baseName = 'Enterprise'; basePrice = null; baseInquiry = true; baseSlug = 'enterprise'; baseValue = null; basePages = '30+ Seiten (individuell)'; }
+    else if (size === 'medium' || care === 'full-service') { baseName = 'Professional'; basePrice = isL ? 599 : 2899; baseSlug = 'professional'; baseValue = '2\'899'; basePages = 'bis 10 Seiten'; }
+    else if (size === 'small') { baseName = 'Essential'; basePrice = isL ? 399 : 1499; baseSlug = 'essential'; baseValue = '1\'499'; basePages = 'bis 5 Seiten'; }
+    else { baseName = '1 Pager'; basePrice = isL ? 199 : 899; baseSlug = '1pager'; baseValue = '899'; basePages = '1 Landingpage'; } // solo
 
     // Pro- vs Light-Variante der Einmal-Kickstarts je nach Grösse/Betreuung
     var kickPro = (size === 'medium' || size === 'large' || care === 'full-service' || care === 'growth');
@@ -529,7 +529,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
       html += '<div class="konfig-sub">Basierend auf Deinen Angaben haben wir Module vorausgewählt. Du kannst sie jederzeit an- oder abwählen.</div>';
 
       // Base
-      var baseDesc = isL ? 'CR-optimiertes Design, inkl. Hosting & Pflege' : 'CR-optimiertes Design -- volle Eigentumsrechte';
+      var baseDesc = basePages + ' · CR-optimiertes Design, ' + (isL ? 'inkl. Hosting & Pflege' : 'volle Eigentumsrechte');
       var basePriceLabel = baseInquiry ? 'Preis auf Anfrage' : ('CHF ' + kFmt(basePrice) + pUnit);
       html += '<div class="konfig-result-item recommended">';
       html += '<div class="konfig-ri-left"><div class="konfig-ri-name">' + baseName + ' <span class="konfig-tag">Basis</span></div>';
