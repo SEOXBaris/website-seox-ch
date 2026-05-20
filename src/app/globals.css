@@ -2214,6 +2214,18 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+.konfig-gift {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(212, 35, 138, 0.14) 0%, rgba(212, 35, 138, 0.05) 100%);
+  border: 1px solid rgba(212, 35, 138, 0.30);
+  border-radius: 10px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-primary, #e0dfe6);
+}
+.konfig-gift strong { color: var(--pink, #d4238a); }
+
 .konfig-total {
   display: flex;
   justify-content: space-between;
