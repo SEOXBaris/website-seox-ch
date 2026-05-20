@@ -1,4 +1,4 @@
-// Pricing Toggle
+// Pricing Toggle (Webseiten-Pakete)
 function showPricing(type) {
   const leasing = document.getElementById('pricingLeasing');
   const einmalig = document.getElementById('pricingEinmalig');
@@ -14,6 +14,26 @@ function showPricing(type) {
     einmalig.style.display = '';
     btnLeasing.className = 'btn btn-outline';
     btnEinmalig.className = 'btn btn-primary';
+  }
+}
+
+// Module Toggle (optionale Module — unabhängig vom Webseiten-Modus)
+function showModules(type) {
+  const monthly = document.getElementById('modulesMonthly');
+  const onetime = document.getElementById('modulesOneTime');
+  const btnMonthly = document.getElementById('toggleModulesMonthly');
+  const btnOneTime = document.getElementById('toggleModulesOneTime');
+  if (!monthly || !onetime) return;
+  if (type === 'monthly') {
+    monthly.style.display = '';
+    onetime.style.display = 'none';
+    btnMonthly.className = 'btn btn-primary';
+    btnOneTime.className = 'btn btn-outline';
+  } else {
+    monthly.style.display = 'none';
+    onetime.style.display = '';
+    btnMonthly.className = 'btn btn-outline';
+    btnOneTime.className = 'btn btn-primary';
   }
 }
 
