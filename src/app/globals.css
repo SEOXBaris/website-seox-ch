@@ -201,6 +201,9 @@ img { max-width: 100%; display: block; }
   height: 72px;
 }
 
+/* Header darf breiter sein als der Content, damit die Nav nicht gepresst wirkt */
+.header > .container { max-width: 1380px; }
+
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
@@ -214,7 +217,7 @@ img { max-width: 100%; display: block; }
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 26px;
 }
 
 .header-nav a {
