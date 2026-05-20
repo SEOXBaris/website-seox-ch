@@ -1242,6 +1242,28 @@ img { max-width: 100%; display: block; }
 #pricingLeasing .pricing-grid,
 #pricingEinmalig .pricing-grid { grid-template-columns: repeat(4, 1fr); }
 
+/* "Geeignet für …" Badge im Card-Header */
+.pricing-audience {
+  display: inline-block;
+  margin: 8px auto 4px;
+  padding: 5px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  color: var(--text-secondary, #a8a7b3);
+  max-width: 100%;
+  text-align: center;
+}
+.pricing-card.featured .pricing-audience {
+  background: rgba(212, 35, 138, 0.12);
+  border-color: rgba(212, 35, 138, 0.30);
+  color: #f0a8d0;
+}
+
 /* Strike-through "statt CHF X" über dem Aktionspreis */
 .pricing-strike {
   font-size: 0.95rem;
