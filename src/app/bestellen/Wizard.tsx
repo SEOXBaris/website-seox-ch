@@ -525,6 +525,10 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
               <SummaryRow label="Kontakt" value={`${state.salutation === "—" ? "" : state.salutation + " "}${state.firstname} ${state.lastname} · ${state.email}${state.phone ? " · " + state.phone : ""}`} />
             </div>
 
+            <div className="ow-urgency">
+              🔥 <strong>Aktion bis 30.05.2026:</strong> Einrichtung &amp; Setup geschenkt — sichere Dir den Bonus mit Deiner Bestellung.
+            </div>
+
             {error && <div className="ow-error">{error}</div>}
           </section>
         )}

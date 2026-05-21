@@ -109,7 +109,32 @@ fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`}
             src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
           />
         </noscript>
+
+        <div className="promo-bar" id="promoBar" role="note">
+          <span className="promo-text">
+            <span aria-hidden="true">🎁</span> Aktion bis 30.05.: <strong>Einrichtung &amp; Setup geschenkt</strong> bei Bestellung
+          </span>
+          <span className="promo-countdown" id="promoCountdown"></span>
+        </div>
+
         {children}
+
+        <Script id="promo-countdown" strategy="afterInteractive">
+          {`(function(){
+  var el=document.getElementById('promoCountdown');
+  if(!el)return;
+  var deadline=new Date('2026-05-30T23:59:59+02:00').getTime();
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var diff=deadline-Date.now();
+    if(diff<=0){document.body.classList.add('promo-expired');return;}
+    var d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
+    el.textContent='noch '+d+'T '+pad(h)+':'+pad(m)+':'+pad(s);
+    setTimeout(tick,1000);
+  }
+  tick();
+})();`}
+        </Script>
       </body>
     </html>
   );
