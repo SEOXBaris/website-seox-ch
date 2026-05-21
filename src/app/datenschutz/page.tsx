@@ -22,7 +22,7 @@ export default function DatenschutzPage() {
           </p>
           <p>
             SEOX GmbH<br />
-            Thurgauerstrasse 132, 8152 Opfikon<br />
+            Sonnenstrasse 4, 8280 Kreuzlingen<br />
             <a href="mailto:info@seox.ch">info@seox.ch</a>
           </p>
 

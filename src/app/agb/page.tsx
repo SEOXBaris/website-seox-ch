@@ -83,7 +83,7 @@ export default function AGBPage() {
           <p>
             Es gilt ausschliesslich schweizerisches Recht unter Ausschluss der Kollisionsnormen
             und des UN-Kaufrechts. Ausschliesslicher Gerichtsstand ist der Sitz der
-            Anbieterin in Opfikon, Schweiz.
+            Anbieterin in Kreuzlingen, Schweiz.
           </p>
 
           <p className="legal-meta">Stand: Mai 2026</p>
