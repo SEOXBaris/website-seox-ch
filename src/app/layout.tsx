@@ -112,7 +112,7 @@ fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`}
 
         <div className="promo-bar" id="promoBar" role="note">
           <span className="promo-text">
-            <span aria-hidden="true">🎁</span> Aktion bis 30.05.: <strong>Einrichtung &amp; Setup geschenkt</strong> bei Bestellung
+            <span aria-hidden="true">🎁</span> Aktion bis 30.05.: <strong>Einrichtung &amp; Setup geschenkt</strong> (Wert CHF 699)
           </span>
           <span className="promo-countdown" id="promoCountdown"></span>
         </div>

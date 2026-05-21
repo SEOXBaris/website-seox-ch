@@ -526,7 +526,7 @@ export function OrderWizard({ initialPaket, initialModus, initialAddons }: { ini
             </div>
 
             <div className="ow-urgency">
-              🔥 <strong>Aktion bis 30.05.2026:</strong> Einrichtung &amp; Setup geschenkt — sichere Dir den Bonus mit Deiner Bestellung.
+              🔥 <strong>Aktion bis 30.05.2026:</strong> Einrichtung &amp; Setup (Wert CHF 699) geschenkt — sichere Dir den Bonus mit Deiner Bestellung.
             </div>
 
             {error && <div className="ow-error">{error}</div>}
