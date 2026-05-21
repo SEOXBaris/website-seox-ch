@@ -19,8 +19,8 @@ export default function ImpressumPage() {
           <h2>Anbieterin</h2>
           <p>
             SEOX GmbH<br />
-            Thurgauerstrasse 132<br />
-            8152 Opfikon<br />
+            Sonnenstrasse 4<br />
+            8280 Kreuzlingen<br />
             Schweiz
           </p>
 
@@ -36,7 +36,7 @@ export default function ImpressumPage() {
 
           <h2>Handelsregister</h2>
           <p>
-            Eingetragen im Handelsregister des Kantons Zürich.<br />
+            Eingetragen im Handelsregister des Kantons Thurgau.<br />
             UID: CHE-[bitte ergänzen].<br />
             Handelsregister-Nr.: CH-[bitte ergänzen].
           </p>
@@ -66,7 +66,7 @@ export default function ImpressumPage() {
           <h2>Anwendbares Recht und Gerichtsstand</h2>
           <p>
             Es gilt ausschliesslich schweizerisches Recht unter Ausschluss der Kollisionsnormen.
-            Gerichtsstand ist der Sitz der Anbieterin in Opfikon, Schweiz.
+            Gerichtsstand ist der Sitz der Anbieterin in Kreuzlingen, Schweiz.
           </p>
 
           <p className="legal-meta">Stand: Mai 2026</p>
